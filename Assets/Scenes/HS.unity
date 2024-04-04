@@ -784,6 +784,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1136415735}
     m_Modifications:
+    - target: {fileID: 90568945219073007, guid: 9f19389abdfafc74a8f6d809271cdecf, type: 3}
+      propertyPath: _priceSprite.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 90568945219073007, guid: 9f19389abdfafc74a8f6d809271cdecf, type: 3}
+      propertyPath: _priceSprite.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: c1b9dfd2578475e4d98c66d933a3f23f, type: 3}
+    - target: {fileID: 90568945219073007, guid: 9f19389abdfafc74a8f6d809271cdecf, type: 3}
+      propertyPath: _priceSprite.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: e206d20e4394b944aacc3a760e2ca160, type: 3}
+    - target: {fileID: 90568945219073007, guid: 9f19389abdfafc74a8f6d809271cdecf, type: 3}
+      propertyPath: _priceSprite.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4e116b3e1cbe1d2439723fffc777e20c, type: 3}
     - target: {fileID: 388694202478279946, guid: 9f19389abdfafc74a8f6d809271cdecf, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -868,10 +884,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1629206048, guid: 2efd4a1d00af6ac409c7fa3b73ae98c7, type: 3}
+    - target: {fileID: 1372849569766685319, guid: 9f19389abdfafc74a8f6d809271cdecf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2381650347246209079, guid: 9f19389abdfafc74a8f6d809271cdecf, type: 3}
       propertyPath: m_Name
       value: Spring
       objectReference: {fileID: 0}
+    - target: {fileID: 4615075586830598277, guid: 9f19389abdfafc74a8f6d809271cdecf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1629206048, guid: 4ad1b4befcd2a84479b22e2a599acf4b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1179,7 +1203,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1045994732}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UITester, Assembly-CSharp
         m_MethodName: OpenShopPanel
         m_Mode: 1
@@ -2805,13 +2829,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spring
       objectReference: {fileID: 0}
+    - target: {fileID: 4615075586830598277, guid: 9f19389abdfafc74a8f6d809271cdecf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1629206048, guid: ce122c9aeb96b6e4f91ccb58b4792b3a, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4652873965506675205, guid: 9f19389abdfafc74a8f6d809271cdecf, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2099341394}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f19389abdfafc74a8f6d809271cdecf, type: 3}
 --- !u!224 &579754015 stripped
 RectTransform:
@@ -3625,7 +3650,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1045994732}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UITester, Assembly-CSharp
         m_MethodName: CloseShopPanel
         m_Mode: 1
@@ -3771,6 +3796,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spring
       objectReference: {fileID: 0}
+    - target: {fileID: 4615075586830598277, guid: 9f19389abdfafc74a8f6d809271cdecf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1629206048, guid: 379264fa333c4b54ca3d64dfb4675159, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4041,7 +4070,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1045994732}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UITester, Assembly-CSharp
         m_MethodName: CloseSellPanel
         m_Mode: 1
@@ -4103,7 +4132,6 @@ GameObject:
   - component: {fileID: 1045994730}
   - component: {fileID: 1045994729}
   - component: {fileID: 1045994731}
-  - component: {fileID: 1045994732}
   m_Layer: 5
   m_Name: UtilityPanel
   m_TagString: Untagged
@@ -4197,20 +4225,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &1045994732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1045994727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a705c2d99743e594585a241b45b19476, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _shopPanel: {fileID: 577048952}
-  _sellPanel: {fileID: 912512024}
 --- !u!1 &1065545666
 GameObject:
   m_ObjectHideFlags: 0
@@ -5514,7 +5528,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1045994732}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UITester, Assembly-CSharp
         m_MethodName: CloseShopPanel
         m_Mode: 1
@@ -7850,7 +7864,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1045994732}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UITester, Assembly-CSharp
         m_MethodName: OpenSellPanel
         m_Mode: 1
@@ -8126,7 +8140,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1045994732}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UITester, Assembly-CSharp
         m_MethodName: CloseShopPanel
         m_Mode: 1
@@ -8176,23 +8190,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2073026814}
   m_CullTransparentMesh: 1
---- !u!1 &2099341391 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4652873965506675205, guid: 9f19389abdfafc74a8f6d809271cdecf, type: 3}
-  m_PrefabInstance: {fileID: 579754014}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2099341394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2099341391}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afad3ac8f7ab7bf448df5a8ad149478f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2119606732
 GameObject:
   m_ObjectHideFlags: 0

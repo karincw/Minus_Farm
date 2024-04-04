@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 388694202478279946}
   - component: {fileID: 1417652983012158418}
   - component: {fileID: 2389764910258573124}
+  - component: {fileID: -7629344070249817836}
   m_Layer: 5
   m_Name: InvenUIItem
   m_TagString: Untagged
@@ -155,6 +156,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-7629344070249817836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2381650347246209079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e91a7c634d97bb43ab12af042f75e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fruitNum: 0
+  _priceSprite:
+  - {fileID: 21300000, guid: c1b9dfd2578475e4d98c66d933a3f23f, type: 3}
+  - {fileID: 21300000, guid: e206d20e4394b944aacc3a760e2ca160, type: 3}
+  - {fileID: 21300000, guid: 4e116b3e1cbe1d2439723fffc777e20c, type: 3}
 --- !u!1 &4366298983693381698
 GameObject:
   m_ObjectHideFlags: 0
