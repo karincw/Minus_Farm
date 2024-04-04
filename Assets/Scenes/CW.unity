@@ -1524,7 +1524,7 @@ GameObject:
   - component: {fileID: 348190115}
   - component: {fileID: 348190114}
   m_Layer: 5
-  m_Name: TilePanel
+  m_Name: CardPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1705,7 +1705,7 @@ GameObject:
   - component: {fileID: 385053118}
   - component: {fileID: 385053117}
   m_Layer: 5
-  m_Name: CardLists
+  m_Name: StandCards
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

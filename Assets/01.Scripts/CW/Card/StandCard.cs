@@ -4,8 +4,10 @@ using UnityEngine;
 
 namespace CW
 {
-    public class DragAndDrop : MonoBehaviour
+
+    public class StandCard : MonoBehaviour
     {
 
     }
+
 }
