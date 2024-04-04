@@ -4,9 +4,10 @@ using UnityEngine;
 
 namespace CW
 {
-    [CreateAssetMenu(fileName ="CW/SO/CardSO")]
+    [CreateAssetMenu(menuName = "CW/SO/CardSO")]
     public class CardSO : ScriptableObject
     {
-        
+        public string curName;
+        public int age;
     }
 }

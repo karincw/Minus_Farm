@@ -6,8 +6,13 @@ namespace CW
 {
     public class CardInven : MonoBehaviour
     {
-        private List<CardSO> _inventory = new List<CardSO>();
+        [SerializeField] private List<CardSO> _inventory = new List<CardSO>();
 
+        /// <summary>
+        /// Suffle알고리즘으로 인벤토리의 카드들을 랜덤으로 섞어줌
+        /// </summary>
+        /// <param name="suffleCount"></param>
+        [ContextMenu("Suffle")]
         public void Suffle(int suffleCount = 100)
         {
             for (int i = 0; i < suffleCount; ++i)
@@ -27,19 +32,23 @@ namespace CW
         /// <param name="count">가져올 개수 초기값 = 10</param>
         /// <param name="suffledGet">섞은다음 가져올건지 아니면 그냥 가져올건지</param>
         /// <returns></returns>
+        [ContextMenu("GetTiles")]
         public CardSO[] GetTiles(int count = 10, bool suffledGet = false)
         {
             if (_inventory.Count < count)
                 count = _inventory.Count - 1;
-            
+
             if (suffledGet) Suffle();
 
             CardSO[] returnList = new CardSO[count];
             for (int i = 0; i < count; ++i)
             {
                 returnList[i] = _inventory[count - i];
+
                 _inventory.RemoveAt(count - i);
+                Debug.Log(returnList[i]);
             }
+
             return returnList;
         }
 
