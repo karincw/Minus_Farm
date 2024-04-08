@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Tile
   - 
   - 
   - 
@@ -46,4 +46,7 @@ TagManager:
     locked: 0
   - name: Crop
     uniqueID: 1280247451
+    locked: 0
+  - name: DragAndDrop
+    uniqueID: 3780881259
     locked: 0

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f343d575cb3fb8d40a94a6abfb8f3494, type: 3}
   m_Name: t 4
   m_EditorClassIdentifier: 
-  curName: 
-  description: 89
-  Sprite: {fileID: -142930311, guid: 49866aa83d03c004e995c177ba502342, type: 3}
+  curName: EggPlant
+  description: EggPlant
+  sprite: {fileID: -1629206048, guid: 49866aa83d03c004e995c177ba502342, type: 3}
+  tileBase: {fileID: 11400000, guid: 189f156ae59858f4f87bc0a54ee7c40e, type: 2}
