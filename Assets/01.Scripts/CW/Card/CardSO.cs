@@ -8,6 +8,7 @@ namespace CW
     public class CardSO : ScriptableObject
     {
         public string curName;
-        public int age;
+        public string description;
+        public Sprite Sprite;
     }
 }
