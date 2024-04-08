@@ -1,11 +1,6 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.ConstrainedExecution;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace CW
 {
@@ -20,26 +15,22 @@ namespace CW
         private void Awake()
         {
             _cardInven = FindObjectOfType<CardInven>();
+            _currentCards.Clear();
         }
 
         [ContextMenu("Stand")]
         public void Stand()
         {
-            _currentCards.Clear();
-            _currentCards.AddRange(_cardInven.GetCards());
-            _currentCards.Add(ScriptableObject.CreateInstance<CardSO>());
+            _currentCards.AddRange(_cardInven.GetCards(suffledGet : true));
 
             int curCardSize = _currentCards.Count - 1;
             for (int i = 0; i < 6; i++)
             {
                 int cur = curCardSize - i;
                 CardSO nextCard = _currentCards[cur];
-                _standImages[i].currentCard = nextCard;
-                _standImages[i].visible = nextCard == null ? true : false;
+                _standImages[i].CurrentCard = nextCard;
                 _currentCards.RemoveAt(cur);
             }
-
-            UpdateCard();
         }
 
         [ContextMenu("Update")]
@@ -53,7 +44,7 @@ namespace CW
                 {
                     if (_standImages[nextIdx] != null)
                     {
-                        nextCard = _standImages[nextIdx].currentCard;
+                        nextCard = _standImages[nextIdx].CurrentCard;
                     }
                     else if (nextCard == null && _currentCards.Count > 0)
                     {
@@ -62,8 +53,7 @@ namespace CW
                         _currentCards.RemoveAt(cur);
                     }
 
-                    _standImages[i].currentCard = nextCard;
-                    _standImages[i].visible = nextCard == null ? true : false;
+                    _standImages[i].CurrentCard = nextCard;
                 }
                 else
                 {
@@ -74,12 +64,7 @@ namespace CW
                         _currentCards.RemoveAt(cur);
                     }
 
-                    _standImages[i].currentCard = nextCard;
-                    _standImages[i].visible = nextCard == null ? true : false;
-                }
-                if (i == 0 && _currentCards.Count > 0)
-                {
-                    _descriptionText.text = _currentCards[_currentCards.Count - 1].description;
+                    _standImages[i].CurrentCard = nextCard;
                 }
 
             }

@@ -41,17 +41,18 @@ namespace CW
             if (suffledGet) Suffle();
 
             CardSO[] returnList = new CardSO[count];
+            int lastIdx = _inventory.Count - 1;
             for (int i = 0; i < count; ++i)
             {
-                returnList[i] = _inventory[count - i];
+                returnList[i] = _inventory[lastIdx - i];
 
-                _inventory.RemoveAt(count - i);
+                _inventory.RemoveAt(lastIdx - i);
             }
 
             return returnList;
-        }
+        } 
 
-        /// <summary>
+        /// <summary> 
         /// Count값만큰 card를 인벤토리에 추가해줌 
         /// </summary>
         /// <param name="card"></param>
