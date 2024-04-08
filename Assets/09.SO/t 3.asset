@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f343d575cb3fb8d40a94a6abfb8f3494, type: 3}
   m_Name: t 3
   m_EditorClassIdentifier: 
-  curName: 
-  description: 9
-  Sprite: {fileID: -142930311, guid: 5b4c34b4eda22c447b6b810921dc8607, type: 3}
+  curName: Cauliflower
+  description: Cauliflower
+  sprite: {fileID: -142930311, guid: 5b4c34b4eda22c447b6b810921dc8607, type: 3}
+  tileBase: {fileID: 11400000, guid: 94537185a81e7124ba51635b1b08fd8a, type: 2}

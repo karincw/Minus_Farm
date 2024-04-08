@@ -21,7 +21,13 @@ namespace CW
         [ContextMenu("Stand")]
         public void Stand()
         {
-            _currentCards.AddRange(_cardInven.GetCards(suffledGet : true));
+            if (_currentCards.Count > 0)
+            {
+                _currentCards.AddRange(_cardInven.GetCards());
+                return;
+            }
+
+            _currentCards.AddRange(_cardInven.GetCards());
 
             int curCardSize = _currentCards.Count - 1;
             for (int i = 0; i < 6; i++)

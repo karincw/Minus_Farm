@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 namespace CW
 {
@@ -9,6 +10,7 @@ namespace CW
     {
         public string curName;
         public string description;
-        public Sprite Sprite;
+        public Sprite sprite;
+        public TileBase tileBase;
     }
 }

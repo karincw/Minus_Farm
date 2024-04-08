@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f343d575cb3fb8d40a94a6abfb8f3494, type: 3}
   m_Name: t 9
   m_EditorClassIdentifier: 
-  curName: 
-  description: 345
-  Sprite: {fileID: -142930311, guid: 34b48741727900c469d1a1b3c12ef69d, type: 3}
+  curName: Spinach
+  description: Spinach
+  sprite: {fileID: -142930311, guid: 34b48741727900c469d1a1b3c12ef69d, type: 3}
+  tileBase: {fileID: 11400000, guid: 9f7db68fe0202404e9aeb4e490369cb5, type: 2}

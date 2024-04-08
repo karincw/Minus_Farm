@@ -23,17 +23,21 @@ namespace CW
                 {
                     _currentImage.sprite = null;
                     _currentImage.color = new Color(1, 1, 1, 0);
-                    if (_descriptionText != null)
+                    if (IsCurrentImage == true)
+                    {
                         _descriptionText.text = "";
+                        GetComponent<Drag>().currentCard = _currentCard;
+                    }
                     return;
                 }
 
                 _currentImage.color = new Color(1, 1, 1, 1);
-                _currentImage.sprite = _currentCard.Sprite;
+                _currentImage.sprite = _currentCard.sprite;
 
-                if (UseDescription == true)
+                if (IsCurrentImage == true)
                 {
                     _descriptionText.text = _currentCard.description;
+                    GetComponent<Drag>().currentCard = _currentCard;
                 }
             }
         }
@@ -43,7 +47,7 @@ namespace CW
             _currentImage = GetComponent<Image>();
         }
 
-        public bool UseDescription = false;
+        public bool IsCurrentImage = false;
 
     }
 

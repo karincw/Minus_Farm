@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f343d575cb3fb8d40a94a6abfb8f3494, type: 3}
   m_Name: t 2
   m_EditorClassIdentifier: 
-  curName: 
-  description: 01
-  Sprite: {fileID: -142930311, guid: b17961b0693d217429e1469adadef7d0, type: 3}
+  curName: Carrot
+  description: Carrot
+  sprite: {fileID: -142930311, guid: b17961b0693d217429e1469adadef7d0, type: 3}
+  tileBase: {fileID: 11400000, guid: 811803bf5c87a2e44be89fee5f4c7220, type: 2}
