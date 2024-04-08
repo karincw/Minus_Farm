@@ -1704,6 +1704,7 @@ GameObject:
   - component: {fileID: 385053119}
   - component: {fileID: 385053118}
   - component: {fileID: 385053117}
+  - component: {fileID: 385053120}
   m_Layer: 5
   m_Name: StandCards
   m_TagString: Untagged
@@ -1718,7 +1719,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385053115}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1799,6 +1800,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385053115}
   m_CullTransparentMesh: 1
+--- !u!114 &385053120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385053115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5be57066b9e9044398ca8432d6859b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _standImages:
+  - {fileID: 1206158359}
+  - {fileID: 652759771}
+  - {fileID: 1609198398}
+  - {fileID: 236819365}
+  - {fileID: 2119606734}
+  - {fileID: 441207367}
+  _descriptionText: {fileID: 1947301967}
+  _currentCards: []
 --- !u!1001 &393589028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3988,7 +4010,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 053b61f21fca56146a756da34f8e6046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inventory: []
+  _inventory:
+  - {fileID: 11400000, guid: 2460543b4eb0eda4799c0f5815e13959, type: 2}
+  - {fileID: 11400000, guid: 604d281a4fa4b244fb0159ecf00b561f, type: 2}
+  - {fileID: 11400000, guid: d9440d67139ab9c46861eefdc4825889, type: 2}
+  - {fileID: 11400000, guid: 3caa9a4ba2f36a34b895ddac73b10948, type: 2}
+  - {fileID: 11400000, guid: a859b4213d41b7441936ee68b93b21d5, type: 2}
+  - {fileID: 11400000, guid: 9a10252d716945949b0a0c5e4138d10c, type: 2}
+  - {fileID: 11400000, guid: 398c65fdeabec3441b7da29bc5d67c92, type: 2}
+  - {fileID: 11400000, guid: 780da74d5986cb04aa31749b1d7ebcab, type: 2}
+  - {fileID: 11400000, guid: 12d89fb11daa60f4ea258ae4a75ef8b0, type: 2}
+  - {fileID: 11400000, guid: 1d67b533d3381984e8069480d7e57817, type: 2}
+  - {fileID: 11400000, guid: b4d0546c5f6436c4fba2a9d2c0b76968, type: 2}
+  - {fileID: 11400000, guid: 2460543b4eb0eda4799c0f5815e13959, type: 2}
+  - {fileID: 11400000, guid: 604d281a4fa4b244fb0159ecf00b561f, type: 2}
+  - {fileID: 11400000, guid: d9440d67139ab9c46861eefdc4825889, type: 2}
+  - {fileID: 11400000, guid: 3caa9a4ba2f36a34b895ddac73b10948, type: 2}
+  - {fileID: 11400000, guid: a859b4213d41b7441936ee68b93b21d5, type: 2}
+  - {fileID: 11400000, guid: 9a10252d716945949b0a0c5e4138d10c, type: 2}
+  - {fileID: 11400000, guid: 398c65fdeabec3441b7da29bc5d67c92, type: 2}
+  - {fileID: 11400000, guid: 780da74d5986cb04aa31749b1d7ebcab, type: 2}
+  - {fileID: 11400000, guid: 12d89fb11daa60f4ea258ae4a75ef8b0, type: 2}
+  - {fileID: 11400000, guid: 1d67b533d3381984e8069480d7e57817, type: 2}
+  - {fileID: 11400000, guid: b4d0546c5f6436c4fba2a9d2c0b76968, type: 2}
 --- !u!4 &921219813
 Transform:
   m_ObjectHideFlags: 0
@@ -8001,7 +8045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

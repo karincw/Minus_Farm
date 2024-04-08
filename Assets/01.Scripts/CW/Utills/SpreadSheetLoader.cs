@@ -7,11 +7,12 @@ using UnityEngine.Networking;
 
 namespace CW
 {
-
+    //Async Await으로 바꾸기
     public class SpreadSheetLoader : MonoBehaviour
     {
         private readonly string documentID = "1hxz8zOcXDzjCdvcK8zhihAWl85gQUqRsmOrN93Boaqs";
 
+        //Async Await으로 바꾸기
         IEnumerator GetDataFromSheet(string sheetID = "0", Action<string[]> Processs = null)
         {
             UnityWebRequest www = UnityWebRequest.Get($"https://docs.google.com/spreadsheets/d/{documentID}/export?format=tsv&gid={sheetID}");
@@ -76,7 +77,6 @@ namespace CW
             { //없으면 만들어줘라
                 asset = ScriptableObject.CreateInstance<CardSO>();
                 asset.curName = name;
-                asset.age = age;
                 string filename = UnityEditor.AssetDatabase.GenerateUniqueAssetPath($"Assets/09.SO/SheetLoader/{name}.asset");
                 //Create전에 값을 넣어야 해 2023.07.18
                 AssetDatabase.DeleteAsset(filename);
@@ -85,7 +85,6 @@ namespace CW
             else
             { // 있다면 값만 변경
                 asset.name = name;
-                asset.age = age;
                 EditorUtility.SetDirty(asset);
             }
 

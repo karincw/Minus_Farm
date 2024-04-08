@@ -33,7 +33,7 @@ namespace CW
         /// <param name="suffledGet">섞은다음 가져올건지 아니면 그냥 가져올건지</param>
         /// <returns></returns>
         [ContextMenu("GetTiles")]
-        public CardSO[] GetTiles(int count = 10, bool suffledGet = false)
+        public CardSO[] GetCards(int count = 10, bool suffledGet = false)
         {
             if (_inventory.Count < count)
                 count = _inventory.Count - 1;
@@ -46,10 +46,22 @@ namespace CW
                 returnList[i] = _inventory[count - i];
 
                 _inventory.RemoveAt(count - i);
-                Debug.Log(returnList[i]);
             }
 
             return returnList;
+        }
+
+        /// <summary>
+        /// Count값만큰 card를 인벤토리에 추가해줌 
+        /// </summary>
+        /// <param name="card"></param>
+        /// <param name="count"></param>
+        public void AddCard(CardSO card, int count = 1)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                _inventory.Add(card);
+            }
         }
 
     }
