@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: White Rose
+  m_Name: Cauliflower2
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -1629206048, guid: a237ada586a203d4fa0b450657f522f3, type: 3}
+  m_Sprite: {fileID: -817623321, guid: 5b4c34b4eda22c447b6b810921dc8607, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
