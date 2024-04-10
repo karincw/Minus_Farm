@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f343d575cb3fb8d40a94a6abfb8f3494, type: 3}
-  m_Name: t 8
+  m_Name: t 12
   m_EditorClassIdentifier: 
-  curName: Asparagus
-  description: Asparagus
-  sprite: {fileID: -142930311, guid: b1faa56451e3a1c4cbde5305cd1c5013, type: 3}
-  tileBase: {fileID: 11400000, guid: 271d458e97e5b82469c01f7f00ceaf50, type: 2}
+  curName: Cabage
+  description: Cabage
+  sprite: {fileID: -142930311, guid: ef2eeb5630d2ce042834a14a6bcbd8c9, type: 3}
+  tileBase: {fileID: 11400000, guid: 0567a25ceea796742a99f4b30ffa14b9, type: 2}
