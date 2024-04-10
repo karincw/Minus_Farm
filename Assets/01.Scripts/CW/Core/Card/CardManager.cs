@@ -20,7 +20,7 @@ namespace CW
         {
             _standCard.UpdateCard();
         }
-        public void AddCard(CardSO card, int count = 10)
+        public void AddCard(CardSO card, int count = 1)
         {
             _cardInven.AddCard(card, count);
         }

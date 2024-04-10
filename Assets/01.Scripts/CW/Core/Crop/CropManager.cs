@@ -1,5 +1,8 @@
+using AYellowpaper.SerializedCollections;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -9,22 +12,46 @@ namespace CW
     {
         [Header("Settings")]
         [SerializeField] private Tilemap _tileMap;
-        [SerializeField] private Vector2 _offsetCenterPos;
+        [SerializeField] private Vector3Int _offsetCenterPos;
+         private CropUtility _cropUtility;
 
-        [SerializeField] private Dictionary<Vector2, TileBase> tiles = new Dictionary<Vector2, TileBase>();
+        [SerializeField] private SerializedDictionary<Vector3Int, Crop> tiles = new SerializedDictionary<Vector3Int, Crop>();
 
-        private void Start()
+        private void Awake()
         {
+            _cropUtility = FindObjectOfType<CropUtility>();
         }
 
-        public void TileFindAll()
+        public void AddCrop(Vector3Int pos, CardSO card)
         {
-            for (int i = 0; i < 7; i++)
+            Crop newCropData = _cropUtility.cardToCropDataDic[card];
+            Crop newCrop = new Crop(newCropData.growCycle, newCropData.cropTile);
+            tiles.Add(pos, newCrop);
+            foreach (var item in tiles)
             {
-                for (int j = 0; j < 7; j++)
-                {
+                Crop crop = item.Value;
+                crop.growIdx++;
+            }
+        } 
 
-                }
+        public CardSO card;
+        [ContextMenu("Test")]
+        public void AllTest()
+        {
+            AddCrop(new Vector3Int(0, 0, 0), card);
+
+            StartCoroutine(Test());
+        }
+
+        public IEnumerator Test()
+        {
+            yield return new WaitForSeconds(2);
+            foreach (var item in tiles)
+            {
+                Crop crop = tiles[item.Key];
+                crop.growIdx++;
+                tiles[item.Key] = crop;
+                //내용 변경되서 에러남                
             }
         }
 

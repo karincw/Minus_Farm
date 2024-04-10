@@ -229,6 +229,60 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 388694202478279946, guid: 9f19389abdfafc74a8f6d809271cdecf, type: 3}
   m_PrefabInstance: {fileID: 11130931}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &49328413
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 49328415}
+  - component: {fileID: 49328414}
+  m_Layer: 0
+  m_Name: CropUtil
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &49328414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49328413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 960124733930fd44187e8af76be2308e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileToCropDic:
+    _serializedList:
+    - Key: {fileID: 11400000, guid: 271d458e97e5b82469c01f7f00ceaf50, type: 2}
+      Value:
+        growCycle: 2
+        growIdx: 1
+        cropTile:
+        - {fileID: 11400000, guid: 271d458e97e5b82469c01f7f00ceaf50, type: 2}
+        - {fileID: 11400000, guid: 371ba7f209025c14380d6a0f5b8b43d4, type: 2}
+        - {fileID: 11400000, guid: 1579530d23f7caa4fb6957abefdca310, type: 2}
+--- !u!4 &49328415
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49328413}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &59889125
 GameObject:
   m_ObjectHideFlags: 0
@@ -9265,3 +9319,4 @@ SceneRoots:
   - {fileID: 921219813}
   - {fileID: 1928666034}
   - {fileID: 1855092564}
+  - {fileID: 49328415}
