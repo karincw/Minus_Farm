@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e91a7c634d97bb43ab12af042f75e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fruitNum: 0
+  _fruitCount: 0
   _priceSprite:
   - {fileID: 21300000, guid: c1b9dfd2578475e4d98c66d933a3f23f, type: 3}
   - {fileID: 21300000, guid: e206d20e4394b944aacc3a760e2ca160, type: 3}
@@ -318,6 +318,7 @@ GameObject:
   - component: {fileID: 259880215936428008}
   - component: {fileID: 2444150738368303223}
   - component: {fileID: 4615075586830598277}
+  - component: {fileID: 5513081467419253210}
   m_Layer: 5
   m_Name: CropImage
   m_TagString: Untagged
@@ -366,7 +367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -382,6 +383,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5513081467419253210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4652873965506675205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b72586eeb422887478cbccadde3a3274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentCard: {fileID: 0}
 --- !u!1 &6061584586057916369
 GameObject:
   m_ObjectHideFlags: 0

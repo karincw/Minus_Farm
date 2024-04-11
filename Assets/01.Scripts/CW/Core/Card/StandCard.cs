@@ -20,8 +20,8 @@ namespace CW
 
         [ContextMenu("Stand")]
         public void Stand()
-        {
-            if (_currentCards.Count > 0)
+        {                                                                                                                                                                                                              
+            if (_standImages[0].CurrentCard != null)
             {
                 _currentCards.AddRange(_cardInven.GetCards());
                 return;
