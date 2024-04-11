@@ -7,23 +7,12 @@ namespace HS
     public class UiButton : MonoBehaviour
     {
 
-        private GameObject _backpackUi;
-        private GameObject _shopUi;
-        private GameObject _sellUi;
+        [SerializeField] private GameObject _backpackUi;
+        [SerializeField] private GameObject _shopUi;
+        [SerializeField] private GameObject _sellUi;
         private bool _shopUiActive = false;
         private bool _backpackUiActive = false;
         private bool _sellUiActive = false;
-
-        private void Awake()
-        {
-            _backpackUi = GameObject.Find("MerchantPanel");
-            _shopUi = GameObject.Find("ShopPanel");
-            _sellUi = GameObject.Find("SellPanel");
-            _shopUi.gameObject.SetActive(false);
-            _sellUi.gameObject.SetActive(false);
-            _backpackUi.gameObject.SetActive(false);
-            _shopUi.transform.Find("SeedPanel").gameObject.SetActive(false);
-        }
 
         public void Backpack()
         {
@@ -76,13 +65,11 @@ namespace HS
             {
                 _shopUi.transform.Find("SeedPanel").gameObject.SetActive(false);
                 _shopUi.transform.Find("Real_EstatePanel").gameObject.SetActive(true);
-                Debug.Log("부동산으로 이동");
             }
             else if (_shopUi.transform.Find("Real_EstatePanel").gameObject.activeSelf == true)
             {
                 _shopUi.transform.Find("Real_EstatePanel").gameObject.SetActive(false);
                 _shopUi.transform.Find("SeedPanel").gameObject.SetActive(true);
-                Debug.Log("씨앗상점으로 이동");
             }
         }
     }
