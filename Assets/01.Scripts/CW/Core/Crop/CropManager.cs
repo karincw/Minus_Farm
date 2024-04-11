@@ -1,8 +1,6 @@
 using AYellowpaper.SerializedCollections;
 using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using UnityEditor.U2D.Aseprite;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -12,47 +10,75 @@ namespace CW
     {
         [Header("Settings")]
         [SerializeField] private Tilemap _tileMap;
-        [SerializeField] private Vector3Int _offsetCenterPos;
-         private CropUtility _cropUtility;
+        public bool nextTurn;
 
         [SerializeField] private SerializedDictionary<Vector3Int, Crop> tiles = new SerializedDictionary<Vector3Int, Crop>();
+        [HideInInspector] public CropUtility cropUtility;
 
         private void Awake()
         {
-            _cropUtility = FindObjectOfType<CropUtility>();
+            cropUtility = FindObjectOfType<CropUtility>();
+        }
+
+        private void Start()
+        {
+            StartCoroutine(GrowCoroutine());
         }
 
         public void AddCrop(Vector3Int pos, CardSO card)
         {
-            Crop newCropData = _cropUtility.cardToCropDataDic[card];
-            Crop newCrop = new Crop(newCropData.growCycle, newCropData.cropTile);
-            tiles.Add(pos, newCrop);
-            foreach (var item in tiles)
+            Crop newCropData = cropUtility.cardToCropDataDic[card];
+            Crop newCrop = new Crop(newCropData.growCycle, newCropData.cropTile, newCropData.sprite);
+
+            if (tiles.ContainsKey(pos))
             {
-                Crop crop = item.Value;
-                crop.growIdx++;
+                Debug.LogError($"Dictionary DoubleAdd : {pos}this positionKey is contain");
+                return;
             }
-        } 
 
-        public CardSO card;
-        [ContextMenu("Test")]
-        public void AllTest()
-        {
-            AddCrop(new Vector3Int(0, 0, 0), card);
-
-            StartCoroutine(Test());
+            tiles.Add(pos, newCrop);
         }
 
-        public IEnumerator Test()
+        public IEnumerator GrowCoroutine()
         {
-            yield return new WaitForSeconds(2);
-            foreach (var item in tiles)
+            yield return new WaitUntil(() =>
             {
-                Crop crop = tiles[item.Key];
+                if (nextTurn == true)
+                {
+                    nextTurn = false;
+                    return true;
+                }
+                return false;
+            });
+
+            for (int i = 0; i < tiles.Count; i++)
+            {
+                var targetKey = tiles.Keys.ToList()[i];
+                Crop crop = tiles[targetKey];
                 crop.growIdx++;
-                tiles[item.Key] = crop;
-                //내용 변경되서 에러남                
+
+                //식물이 자랐는지 확인
+                TileBase tilebase = null;
+                int cropGrowIdx = crop.growIdx / crop.growCycle;
+
+                if (crop.cropTile.Length - 1 >= cropGrowIdx)
+                {
+                    tilebase = crop.cropTile[cropGrowIdx];
+                }
+                else
+                {
+                    Debug.Log("썩음?");
+                }
+
+                if (tilebase != null)
+                {
+                    _tileMap.SetTile(targetKey, tilebase);
+                }
+
+                tiles[targetKey] = crop;
             }
+
+            StartCoroutine(GrowCoroutine());
         }
 
     }

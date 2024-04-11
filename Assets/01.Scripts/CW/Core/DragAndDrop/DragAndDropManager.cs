@@ -8,23 +8,33 @@ namespace CW
         public DragAndDrop dragObject;
         private SpriteRenderer _spriteRenderer;
         private CardSO _card;
-        public CardSO Card
+        public CardSO Card { get => _card; }
+        private bool _isSeed;
+        public bool IsSeed { get => _isSeed; set => _isSeed = value; }
+        public bool CanDrop { get; private set; }
+
+        public void SetImage(CardSO card)
         {
-            get => _card;
-            set
+            _card = card;
+            if (_card != null)
             {
-                _card = value;
-                if (_card != null)
-                {
-                    _spriteRenderer.sprite = _card.sprite;
-                }
-                else
-                {
-                    _spriteRenderer.sprite = null;
-                }
+                _spriteRenderer.sprite = _card.sprite;
+                CanDrop = true;
+            }
+            else
+            {
+                _spriteRenderer.sprite = null;
+                CanDrop = false;
             }
         }
-        
+        public void SetImage(Sprite sprite = null)
+        {
+            CanDrop = sprite != null;
+
+            _spriteRenderer.sprite = sprite;
+        }
+
+
         private void Awake()
         {
             _spriteRenderer = dragObject.GetComponent<SpriteRenderer>();
