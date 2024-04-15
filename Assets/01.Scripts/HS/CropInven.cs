@@ -40,13 +40,11 @@ namespace HS
             return _fruitCount;
         }
 
-        [ContextMenu("countChange")]
         public void CountChange()
         {
             _countText.text = _fruitCount.ToString();
         }
 
-        [ContextMenu("random")]
         public void Random_Price()
         {
             _currentPrice = Random.Range(_minPrice, _maxPrice);

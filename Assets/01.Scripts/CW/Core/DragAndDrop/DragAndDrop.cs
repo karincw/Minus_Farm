@@ -1,6 +1,6 @@
-using System;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using HS;
 
 namespace CW
 {
@@ -11,7 +11,13 @@ namespace CW
         [SerializeField] private LayerMask _dropToPlantLayer;
         [SerializeField] private LayerMask _dropToSellLayer;
         [SerializeField] private Tilemap _tileMap;
+        UiButton _uiButton;
         CardSO currentCard;
+
+        private void Awake()
+        {
+            _uiButton = GameObject.Find("UtilityPanel").GetComponent<UiButton>();
+        }
 
         private void Update()
         {
@@ -47,13 +53,14 @@ namespace CW
 
         private void DropToSelling()
         {
-            DragAndDropManager.Instance.SetImage();
-            Debug.Log($"DropToSelling");
             bool isHit = Physics2D.OverlapCircle(transform.position, _detectRadius, _dropToSellLayer);
             if (isHit)
             {
-                //판매 이미지 띄우기
+                Debug.Log($"DropToSelling");
+
+                _uiButton.SellOpen();
             }
+            DragAndDropManager.Instance.SetImage();
         }
     }
 }

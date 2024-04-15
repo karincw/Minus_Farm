@@ -2,7 +2,6 @@ using UnityEngine;
 
 namespace CW
 {
-
     public class DragAndDropManager : MonoSingleton<DragAndDropManager>
     {
         public DragAndDrop dragObject;
@@ -27,13 +26,13 @@ namespace CW
                 CanDrop = false;
             }
         }
+
         public void SetImage(Sprite sprite = null)
         {
             CanDrop = sprite != null;
 
             _spriteRenderer.sprite = sprite;
         }
-
 
         private void Awake()
         {
@@ -48,7 +47,5 @@ namespace CW
                 dragObject.transform.position = mousePos;
             }
         }
-
     }
-
 }

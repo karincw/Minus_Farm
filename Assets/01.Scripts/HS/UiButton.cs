@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace HS
 {
@@ -10,11 +9,18 @@ namespace HS
         [SerializeField] private GameObject _backpackUi;
         [SerializeField] private GameObject _shopUi;
         [SerializeField] private GameObject _sellUi;
+        private Image _fruitImageUi;
+        private Sprite _fruitImage;
         private bool _shopUiActive = false;
         private bool _backpackUiActive = false;
         private bool _sellUiActive = false;
 
-        public void Backpack()
+        private void Awake()
+        {
+            _fruitImageUi = _sellUi.transform.Find("Image").GetComponent<Image>();
+        }
+
+        public void BackpackOpen()
         {
             if (!(_sellUiActive || _shopUiActive))
             {
@@ -23,7 +29,7 @@ namespace HS
             }
         }
 
-        public void Shop()
+        public void ShopOpen()
         {
             if (!(_sellUiActive || _backpackUiActive))
             {
@@ -32,12 +38,16 @@ namespace HS
             }
         }
 
-        public void Sell()
+        public void SellOpen()
         {
             if (!(_shopUiActive || _backpackUiActive))
             {
                 _sellUi.gameObject.SetActive(true);
                 _sellUiActive = true;
+
+                _fruitImage = GameObject.Find("DragObject").GetComponent<SpriteRenderer>().sprite;
+
+                _fruitImageUi.sprite = _fruitImage;
             }
         }
 
@@ -49,7 +59,7 @@ namespace HS
 
         public void SellClose()
         {
-            _sellUi.gameObject .SetActive(false);
+            _sellUi.gameObject.SetActive(false);
             _sellUiActive = false;
         }
 
