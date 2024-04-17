@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -9,8 +10,17 @@ namespace CW
         public CardSO currentCard;
         [SerializeField] private bool _isSeed = false;
 
+        [Header("ClickToDescription")]
+        [SerializeField] private bool _clickToDescription = false;
+        [SerializeField] private TextMeshProUGUI _descriptionText;
+
         public void OnPointerDown(PointerEventData eventData)
         {
+            if(_clickToDescription)
+            {
+                _descriptionText.text = currentCard.description;
+            }
+
             if (_isSeed == false)
             {
                 var crop = CropManager.Instance.cropUtility.cardToCropDataDic[currentCard];
