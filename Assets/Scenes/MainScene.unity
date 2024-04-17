@@ -260,6 +260,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardToCropDataDic:
     _serializedList:
+    - Key: {fileID: 11400000, guid: fa883b9e3820fae498f94c0db232702e, type: 2}
+      Value:
+        growCycle: 2
+        growIdx: 0
+        cropTile:
+        - {fileID: 11400000, guid: 6a04d1be5e470794cb040453a926306e, type: 2}
+        - {fileID: 11400000, guid: 271d458e97e5b82469c01f7f00ceaf50, type: 2}
+        sprite: {fileID: 1806722093, guid: ce122c9aeb96b6e4f91ccb58b4792b3a, type: 3}
     - Key: {fileID: 11400000, guid: d9440d67139ab9c46861eefdc4825889, type: 2}
       Value:
         growCycle: 4
@@ -2335,7 +2343,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &488118942
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3023,7 +3031,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &608272783
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3071,8 +3079,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 6ee5b4dfdd9eaaf49b53407cb0256ccd, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4948,6 +4956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tileMap: {fileID: 1796639554}
+  _groundSO: {fileID: 11400000, guid: fa883b9e3820fae498f94c0db232702e, type: 2}
   nextTurn: 0
   tiles:
     _serializedList: []
@@ -5838,6 +5847,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   _tileMap: {fileID: 1796639554}
+  _canPlantingTile: {fileID: 11400000, guid: 6a04d1be5e470794cb040453a926306e, type: 2}
 --- !u!212 &1323659733
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8608,6 +8618,7 @@ GameObject:
   - component: {fileID: 1954729597}
   - component: {fileID: 1954729596}
   - component: {fileID: 1954729595}
+  - component: {fileID: 1954729599}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -8705,6 +8716,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1954729599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954729594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee54d7d808bdf8e4e9ddc85dc657a20b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rect: {fileID: 2006496750}
+  _target: {fileID: 0}
+--- !u!224 &2006496750 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 259880215936428008, guid: 9f19389abdfafc74a8f6d809271cdecf, type: 3}
+  m_PrefabInstance: {fileID: 579754014}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2012727482
 GameObject:
   m_ObjectHideFlags: 0

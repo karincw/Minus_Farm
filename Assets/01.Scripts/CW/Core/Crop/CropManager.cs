@@ -10,6 +10,7 @@ namespace CW
     {
         [Header("Settings")]
         [SerializeField] private Tilemap _tileMap;
+        [SerializeField] private CardSO _groundSO;
         public bool nextTurn;
 
         [SerializeField] private SerializedDictionary<Vector3Int, Crop> tiles = new SerializedDictionary<Vector3Int, Crop>();
@@ -23,6 +24,35 @@ namespace CW
         private void Start()
         {
             StartCoroutine(GrowCoroutine());
+            StartSetting();
+        }
+
+#if UNITY_EDITOR
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                nextTurn = true;
+            }
+        }
+
+#endif
+
+
+        private void StartSetting()
+        {
+            for (int i = -2; i < 1; i++)
+            {
+                for (int j = -2; j < 1; j++)
+                {
+
+                    Vector3Int cellPos = _tileMap.WorldToCell(new Vector3Int(i, j));
+
+                    _tileMap.SetTile(cellPos, _groundSO.tileBase);
+                    CropManager.Instance.AddCrop(cellPos, _groundSO);
+                }
+            }
         }
 
         public void AddCrop(Vector3Int pos, CardSO card)
@@ -32,7 +62,8 @@ namespace CW
 
             if (tiles.ContainsKey(pos))
             {
-                Debug.LogError($"Dictionary DoubleAdd : {pos}this positionKey is contain");
+                //Debug.LogError($"Dictionary DoubleAdd : {pos}this positionKey is contain");
+                tiles[pos] = newCrop;
                 return;
             }
 
@@ -67,7 +98,7 @@ namespace CW
                 }
                 else
                 {
-                    Debug.Log("½âÀ½?");
+
                 }
 
                 if (tilebase != null)

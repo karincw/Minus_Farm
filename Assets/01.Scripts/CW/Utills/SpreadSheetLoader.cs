@@ -47,7 +47,7 @@ namespace CW
 
                 yield break;
             }
-            //Try문을 나갈때 무도전 실행해줌
+            //Try문을 나갈때 무조건 실행해줌
             finally
             {
 
