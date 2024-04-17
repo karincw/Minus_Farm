@@ -58,7 +58,7 @@ namespace CW
         public void AddCrop(Vector3Int pos, CardSO card)
         {
             Crop newCropData = cropUtility.cardToCropDataDic[card];
-            Crop newCrop = new Crop(newCropData.growCycle, newCropData.cropTile, newCropData.sprite);
+            Crop newCrop = new Crop(newCropData.growCycle, newCropData.cropTile, newCropData.sprite, card);
 
             if (tiles.ContainsKey(pos))
             {
@@ -68,6 +68,17 @@ namespace CW
             }
 
             tiles.Add(pos, newCrop);
+        }
+        public CardSO GetPosToCard(Vector3Int pos)
+        {
+            if (tiles.ContainsKey(pos))
+            {
+                return tiles[pos].currentCard;
+            }
+
+            Debug.LogError($"tiles is Not Have {pos}");
+            return null;
+
         }
 
         public IEnumerator GrowCoroutine()

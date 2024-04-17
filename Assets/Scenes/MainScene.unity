@@ -268,6 +268,7 @@ MonoBehaviour:
         - {fileID: 11400000, guid: 6a04d1be5e470794cb040453a926306e, type: 2}
         - {fileID: 11400000, guid: 271d458e97e5b82469c01f7f00ceaf50, type: 2}
         sprite: {fileID: 1806722093, guid: ce122c9aeb96b6e4f91ccb58b4792b3a, type: 3}
+        currentCard: {fileID: 0}
     - Key: {fileID: 11400000, guid: d9440d67139ab9c46861eefdc4825889, type: 2}
       Value:
         growCycle: 4
@@ -277,6 +278,7 @@ MonoBehaviour:
         - {fileID: 11400000, guid: b8d97fd89d88d1c40a92e6a6b0baa9ca, type: 2}
         - {fileID: 11400000, guid: 58447e2290c0395438cf9076dd4bb0e5, type: 2}
         sprite: {fileID: -1629206048, guid: ce122c9aeb96b6e4f91ccb58b4792b3a, type: 3}
+        currentCard: {fileID: 0}
     - Key: {fileID: 11400000, guid: 780da74d5986cb04aa31749b1d7ebcab, type: 2}
       Value:
         growCycle: 4
@@ -286,6 +288,7 @@ MonoBehaviour:
         - {fileID: 11400000, guid: 371ba7f209025c14380d6a0f5b8b43d4, type: 2}
         - {fileID: 11400000, guid: 1579530d23f7caa4fb6957abefdca310, type: 2}
         sprite: {fileID: -1629206048, guid: ce122c9aeb96b6e4f91ccb58b4792b3a, type: 3}
+        currentCard: {fileID: 0}
     - Key: {fileID: 11400000, guid: 2460543b4eb0eda4799c0f5815e13959, type: 2}
       Value:
         growCycle: 4
@@ -295,6 +298,7 @@ MonoBehaviour:
         - {fileID: 11400000, guid: 8c7473f4a81084c43a13ef8062455b02, type: 2}
         - {fileID: 11400000, guid: 3a8843ff25eb786419f6aac38327866b, type: 2}
         sprite: {fileID: -1629206048, guid: 03446d47fd43ff8418b5f8d403755e72, type: 3}
+        currentCard: {fileID: 0}
 --- !u!4 &49328415
 Transform:
   m_ObjectHideFlags: 0
@@ -7830,6 +7834,7 @@ GameObject:
   - component: {fileID: 1796639557}
   - component: {fileID: 1796639556}
   - component: {fileID: 1796639555}
+  - component: {fileID: 1796639558}
   m_Layer: 6
   m_Name: UseTilemap
   m_TagString: Untagged
@@ -8273,6 +8278,21 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &1796639558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796639551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7591eb61564e0e248831e82d049b67b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1805149087
 GameObject:
   m_ObjectHideFlags: 0
