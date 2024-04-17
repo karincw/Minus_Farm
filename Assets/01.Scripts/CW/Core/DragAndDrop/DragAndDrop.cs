@@ -13,6 +13,7 @@ namespace CW
         [SerializeField] private Tilemap _tileMap;
         UiButton _uiButton;
         CardSO currentCard;
+        public int cropCount, cropPrice;
 
         private void Awake()
         {
@@ -30,7 +31,7 @@ namespace CW
                 }
                 else
                 {
-                    DropToSelling();
+                    DropToSelling(cropCount, cropPrice);
                 }
             }
         }
@@ -51,14 +52,14 @@ namespace CW
             }
         }
 
-        private void DropToSelling()
+        private void DropToSelling(int cropCount, int cropPrice)
         {
             bool isHit = Physics2D.OverlapCircle(transform.position, _detectRadius, _dropToSellLayer);
             if (isHit)
             {
                 Debug.Log($"DropToSelling");
 
-                _uiButton.SellOpen();
+                _uiButton.SellOpen(cropCount, cropPrice);
             }
             DragAndDropManager.Instance.SetImage();
         }

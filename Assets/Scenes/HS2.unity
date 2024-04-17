@@ -262,7 +262,7 @@ RectTransform:
   m_Father: {fileID: 909830804}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -936,7 +936,7 @@ RectTransform:
   m_Father: {fileID: 639302942}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1088,6 +1088,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1136415735}
     m_Modifications:
+    - target: {fileID: -7629344070249817836, guid: 9f19389abdfafc74a8f6d809271cdecf, type: 3}
+      propertyPath: _fruitCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -7629344070249817836, guid: 9f19389abdfafc74a8f6d809271cdecf, type: 3}
+      propertyPath: _currentPrice
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 388694202478279946, guid: 9f19389abdfafc74a8f6d809271cdecf, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1851,7 +1859,7 @@ GameObject:
   - component: {fileID: 309643795}
   - component: {fileID: 309643794}
   m_Layer: 5
-  m_Name: Price
+  m_Name: Count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4540,13 +4548,14 @@ GameObject:
   - component: {fileID: 912512023}
   - component: {fileID: 912512025}
   - component: {fileID: 912512024}
+  - component: {fileID: 912512026}
   m_Layer: 5
   m_Name: SellPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &912512023
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4611,6 +4620,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 912512022}
   m_CullTransparentMesh: 1
+--- !u!114 &912512026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912512022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e74cb24aded6c64f98f55e73fe95e55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &921219811
 GameObject:
   m_ObjectHideFlags: 0
@@ -6358,6 +6379,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   _tileMap: {fileID: 1796639554}
+  cropCount: 0
+  cropPrice: 0
 --- !u!212 &1323659733
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9941,7 +9964,7 @@ GameObject:
   - component: {fileID: 2052187811}
   - component: {fileID: 2052187810}
   m_Layer: 5
-  m_Name: Quantity
+  m_Name: Price
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
