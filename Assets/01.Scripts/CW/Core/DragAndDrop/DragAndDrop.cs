@@ -11,6 +11,7 @@ namespace CW
         [SerializeField] private LayerMask _dropToPlantLayer;
         [SerializeField] private LayerMask _dropToSellLayer;
         [SerializeField] private Tilemap _tileMap;
+        [SerializeField] private TileBase _canPlantingTile;
         CardSO currentCard;
 
         private void Update()
@@ -37,6 +38,7 @@ namespace CW
             {
                 Vector3Int cellPos = _tileMap.WorldToCell(transform.position);
                 Debug.Log($"{cellPos} ¸ÂÀ½");
+                if (_tileMap.GetTile(cellPos) != _canPlantingTile) return;
 
                 _tileMap.SetTile(cellPos, currentCard.tileBase);
                 CropManager.Instance.AddCrop(cellPos, currentCard);

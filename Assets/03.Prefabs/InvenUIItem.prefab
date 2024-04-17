@@ -169,10 +169,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fruitCount: 0
-  _priceSprite:
-  - {fileID: 21300000, guid: c1b9dfd2578475e4d98c66d933a3f23f, type: 3}
-  - {fileID: 21300000, guid: e206d20e4394b944aacc3a760e2ca160, type: 3}
-  - {fileID: 21300000, guid: 4e116b3e1cbe1d2439723fffc777e20c, type: 3}
+  _minPrice: 5000
+  _maxPrice: 10000
+  _currentPrice: 0
+  _upPriceSprite: {fileID: 21300000, guid: 4e116b3e1cbe1d2439723fffc777e20c, type: 3}
+  _downPriceSprite: {fileID: 21300000, guid: e206d20e4394b944aacc3a760e2ca160, type: 3}
+  _samePriceSprite: {fileID: 21300000, guid: c1b9dfd2578475e4d98c66d933a3f23f, type: 3}
 --- !u!1 &4366298983693381698
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,6 +398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCard: {fileID: 0}
+  _isSeed: 0
 --- !u!1 &6061584586057916369
 GameObject:
   m_ObjectHideFlags: 0
