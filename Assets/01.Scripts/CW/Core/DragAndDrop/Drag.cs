@@ -8,6 +8,7 @@ namespace CW
     {
         public CardSO currentCard;
         private GameObject _crop;
+        public CropInven _cropInven;
         [SerializeField] private bool _isSeed = false;
 
         public void OnPointerDown(PointerEventData eventData)
@@ -17,10 +18,8 @@ namespace CW
                 var crop = CropManager.Instance.cropUtility.cardToCropDataDic[currentCard];
                 DragAndDropManager.Instance.SetImage(crop.sprite);
 
-                DragAndDropManager.Instance.dragObject.cropCount 
-                    = transform.parent.GetComponentInParent<CropInven>()._fruitCount;
-                DragAndDropManager.Instance.dragObject.cropPrice 
-                    = transform.parent.GetComponentInParent<CropInven>()._currentPrice;
+                _cropInven = transform.parent.GetComponentInParent<CropInven>();
+                DragAndDropManager.Instance.dragObject._cropInven = _cropInven;
             }
             else
             {

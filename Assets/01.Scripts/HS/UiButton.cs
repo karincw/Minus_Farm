@@ -1,5 +1,3 @@
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -41,17 +39,20 @@ namespace HS
             }
         }
 
-        public void SellOpen(int _count, int _price)
+        public void SellOpen(CropInven cropInven)
         {
-            if (!(_shopUiActive || _backpackUiActive))
+            if (cropInven._fruitCount != 0)
             {
-                _sellUi.gameObject.SetActive(true);
-                _sellUiActive = true;
+                if (!(_shopUiActive || _backpackUiActive))
+                {
+                    _sellUi.gameObject.SetActive(true);
+                    _sellUiActive = true;
 
-                _fruitImage = GameObject.Find("DragObject").GetComponent<SpriteRenderer>().sprite;
+                    _fruitImage = GameObject.Find("DragObject").GetComponent<SpriteRenderer>().sprite;
 
-                _fruitImageUi.sprite = _fruitImage;
-                _sellFruit.Set_CountAndPrice(_price, _count);
+                    _fruitImageUi.sprite = _fruitImage;
+                    _sellFruit.Set_CountAndPrice(cropInven);
+                }
             }
         }
 

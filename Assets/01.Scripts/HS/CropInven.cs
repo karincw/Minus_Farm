@@ -6,24 +6,25 @@ namespace HS
 {
     public class CropInven : MonoBehaviour
     {
-        public int _fruitCount = 0;
-        private int _minPrice = 5000;
-        private int _maxPrice = 10000;
-        public int _currentPrice = 0;
+        [SerializeField] public int _fruitCount = 0;
+        [SerializeField] private int _minPrice = 5000;
+        [SerializeField] private int _maxPrice = 10000;
+        [SerializeField] public int _currentPrice = 0;
         private int _beforePrice;
-        private TMP_Text _priceText;
-        private TMP_Text _countText;
+        private TextMeshProUGUI _priceText;
+        private TextMeshProUGUI _countText;
         private Image _priceImage;
         [SerializeField]
         private Sprite[] _priceSprite;
 
         private void Awake()
         {
-            _priceText = transform.Find("Price").GetComponent<TMP_Text>();
+            _priceText = transform.Find("Price").GetComponent<TextMeshProUGUI>();
             _priceImage = transform.Find("PriceImage").GetComponent<Image>();
-            _countText = transform.Find("Count").GetComponent<TMP_Text>();
+            _countText = transform.Find("Count").GetComponent<TextMeshProUGUI>();
             _priceImage.sprite = _priceSprite[0];
-            CountChange();
+            _countText.text = _fruitCount.ToString();
+            _priceText.text = _currentPrice.ToString();
         }
 
         public void SetCount(int count)

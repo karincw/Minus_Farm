@@ -1,23 +1,47 @@
-using CW;
-using HS;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class SellFruit : MonoBehaviour
+namespace HS
 {
-    private int _price, _count;
-    private TextMeshProUGUI _countText;
-    private TextMeshProUGUI _priceText;
-
-    private void Start()
+    public class SellFruit : MonoBehaviour
     {
-        _priceText.text = transform.Find("Price").GetComponent<TextMeshProUGUI>().text = _price.ToString();
-        _countText.text = transform.Find("Count").GetComponent<TextMeshProUGUI>().text = $"{1} / {_count}";
-    }
+        private int _currentPrice, _price, _maxCount, _currentCount;
+        private TextMeshProUGUI _countText;
+        private TextMeshProUGUI _priceText;
+        private Slider _priceSlider;
+        private CropInven _cropInven;
 
-    public void Set_CountAndPrice(int price, int count)
-    {
-        _price = price;
-        _count = count;
+        private void Awake()
+        {
+            _priceSlider = transform.Find("Slider").GetComponent<Slider>();
+            _priceText = transform.Find("Price").GetComponent<TextMeshProUGUI>();
+            _countText = transform.Find("Count").GetComponent<TextMeshProUGUI>();
+        }
+
+        public void On_CountAndPriceChange()
+        {
+            _currentCount = Mathf.RoundToInt(_maxCount * _priceSlider.value);
+            _currentPrice = _currentCount * _price;
+            _priceText.text = _currentPrice.ToString();
+            _countText.text = $"{_currentCount} / {_maxCount}";
+        }
+
+        public void Set_CountAndPrice(CropInven cropInven)
+        {
+            _cropInven = cropInven;
+            _price = cropInven._currentPrice;
+            _maxCount = cropInven._fruitCount;
+            _priceText.text = _currentPrice.ToString();
+            _countText.text = $"{_currentCount} / {_maxCount}";
+        }
+
+        public void Sell_Fruit()
+        {
+            GameObject.Find("Right").GetComponent<TopBarRightUi>().AddCredit(_currentPrice);
+            _cropInven._fruitCount -= _currentCount;
+            _cropInven.CountChange();
+            _priceSlider.value = 0f;
+        }
     }
 }
