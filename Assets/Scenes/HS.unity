@@ -5925,10 +5925,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2614e50e7279d8541a8ae20d18bf9ea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tileHalfSize: 0.5
-  _dropLayer:
+  _detectRadius: 0
+  _dropToPlantLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
+  _dropToSellLayer:
+    serializedVersion: 2
+    m_Bits: 0
   _tileMap: {fileID: 0}
 --- !u!1001 &1463816326
 PrefabInstance:
@@ -8278,7 +8281,6 @@ GameObject:
   - component: {fileID: 1954729597}
   - component: {fileID: 1954729596}
   - component: {fileID: 1954729595}
-  - component: {fileID: 1954729599}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -8376,25 +8378,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1954729599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1954729594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee54d7d808bdf8e4e9ddc85dc657a20b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rect: {fileID: 2006496750}
-  _target: {fileID: 1840886774}
---- !u!224 &2006496750 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 259880215936428008, guid: 9f19389abdfafc74a8f6d809271cdecf, type: 3}
-  m_PrefabInstance: {fileID: 579754014}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2012727482
 GameObject:
   m_ObjectHideFlags: 0

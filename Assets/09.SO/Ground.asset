@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f343d575cb3fb8d40a94a6abfb8f3494, type: 3}
-  m_Name: t 4
+  m_Name: Ground
   m_EditorClassIdentifier: 
-  curName: EggPlant
-  description: EggPlant
-  sprite: {fileID: -142930311, guid: 49866aa83d03c004e995c177ba502342, type: 3}
-  tileBase: {fileID: 11400000, guid: 189f156ae59858f4f87bc0a54ee7c40e, type: 2}
+  curName: Ground
+  description: Ground
+  sprite: {fileID: 0}
+  tileBase: {fileID: 11400000, guid: 6a04d1be5e470794cb040453a926306e, type: 2}

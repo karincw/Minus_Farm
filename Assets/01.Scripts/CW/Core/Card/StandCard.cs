@@ -18,9 +18,25 @@ namespace CW
             _currentCards.Clear();
         }
 
+#if UNITY_EDITOR
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.U))
+            {
+                UpdateCard();
+            }
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                Stand();
+            }
+        }
+
+#endif
+
         [ContextMenu("Stand")]
         public void Stand()
-        {                                                                                                                                                                                                              
+        {
             if (_standImages[0].CurrentCard != null)
             {
                 _currentCards.AddRange(_cardInven.GetCards());

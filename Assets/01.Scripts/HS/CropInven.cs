@@ -7,22 +7,23 @@ namespace HS
     public class CropInven : MonoBehaviour
     {
         [SerializeField] private int _fruitCount = 0;
-        private int _minPrice = 5000;
-        private int _maxPrice = 10000;
-        private int _currentPrice = 0;
+        [SerializeField] private int _minPrice = 5000;
+        [SerializeField] private int _maxPrice = 10000;
+        [SerializeField] private int _currentPrice = 0;
         private int _beforePrice;
-        private TMP_Text _priceText;
-        private TMP_Text _countText;
+
+        private TextMeshProUGUI _priceText;
+        private TextMeshProUGUI _countText;
         private Image _priceImage;
-        [SerializeField]
-        private Sprite[] _priceSprite;
+        //[SerializeField] private Sprite[] _priceSprite;
+        [SerializeField] private Sprite _upPriceSprite, _downPriceSprite, _samePriceSprite;
 
         private void Awake()
         {
-            _priceText = transform.Find("Price").GetComponent<TMP_Text>();
+            _priceText = transform.Find("Price").GetComponent<TextMeshProUGUI>();
+            _countText = transform.Find("Count").GetComponent<TextMeshProUGUI>();
             _priceImage = transform.Find("PriceImage").GetComponent<Image>();
-            _countText = transform.Find("Count").GetComponent<TMP_Text>();
-            _priceImage.sprite = _priceSprite[0];
+            _priceImage.sprite = _samePriceSprite;
         }
 
         public void SetCount(int count)
@@ -52,18 +53,19 @@ namespace HS
             _currentPrice = Random.Range(_minPrice, _maxPrice);
             if (_currentPrice > _beforePrice)
             {
-                _priceImage.sprite = _priceSprite[2];
+                _priceImage.sprite = _upPriceSprite;
             }
             else if (_currentPrice < _beforePrice)
             {
-                _priceImage.sprite = _priceSprite[1];
+                _priceImage.sprite = _downPriceSprite;
             }
             else
             {
-                _priceImage.sprite = _priceSprite[0];
+                _priceImage.sprite = _samePriceSprite;
             }
             _priceText.text = _currentPrice.ToString();
             _beforePrice = _currentPrice;
+            CountChange();
         }
     }
 }
