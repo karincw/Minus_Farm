@@ -11,6 +11,8 @@ namespace CW
 
         private Image _currentImage;
 
+        public bool IsCurrentImage = false;
+
         private CardSO _currentCard;
         public CardSO CurrentCard
         {
@@ -47,7 +49,10 @@ namespace CW
             _currentImage = GetComponent<Image>();
         }
 
-        public bool IsCurrentImage = false;
+        public void SetDescription(string text)
+        {
+            _descriptionText.text = text;
+        }
 
     }
 

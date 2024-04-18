@@ -1,3 +1,4 @@
+using System.Data.SqlTypes;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -12,6 +13,9 @@ namespace CW
         public Sprite sprite;
         public CardSO currentCard;
 
+        public int water;
+        public int nutrition;
+
         public Crop(int growCycle, TileBase[] cropTile, Sprite sprite, CardSO card, int growIdx = 0)
         {
             this.growCycle = growCycle;
@@ -19,7 +23,8 @@ namespace CW
             this.growIdx = growIdx;
             this.sprite = sprite;
             this.currentCard = card;
+            water = 50;
+            nutrition = 50;
         }
     }
-
 }

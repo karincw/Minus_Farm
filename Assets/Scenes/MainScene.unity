@@ -269,6 +269,8 @@ MonoBehaviour:
         - {fileID: 11400000, guid: 271d458e97e5b82469c01f7f00ceaf50, type: 2}
         sprite: {fileID: 1806722093, guid: ce122c9aeb96b6e4f91ccb58b4792b3a, type: 3}
         currentCard: {fileID: 0}
+        water: 0
+        nutrition: 0
     - Key: {fileID: 11400000, guid: d9440d67139ab9c46861eefdc4825889, type: 2}
       Value:
         growCycle: 4
@@ -279,6 +281,8 @@ MonoBehaviour:
         - {fileID: 11400000, guid: 58447e2290c0395438cf9076dd4bb0e5, type: 2}
         sprite: {fileID: -1629206048, guid: ce122c9aeb96b6e4f91ccb58b4792b3a, type: 3}
         currentCard: {fileID: 0}
+        water: 0
+        nutrition: 0
     - Key: {fileID: 11400000, guid: 780da74d5986cb04aa31749b1d7ebcab, type: 2}
       Value:
         growCycle: 4
@@ -289,6 +293,8 @@ MonoBehaviour:
         - {fileID: 11400000, guid: 1579530d23f7caa4fb6957abefdca310, type: 2}
         sprite: {fileID: -1629206048, guid: ce122c9aeb96b6e4f91ccb58b4792b3a, type: 3}
         currentCard: {fileID: 0}
+        water: 0
+        nutrition: 0
     - Key: {fileID: 11400000, guid: 2460543b4eb0eda4799c0f5815e13959, type: 2}
       Value:
         growCycle: 4
@@ -299,6 +305,8 @@ MonoBehaviour:
         - {fileID: 11400000, guid: 3a8843ff25eb786419f6aac38327866b, type: 2}
         sprite: {fileID: -1629206048, guid: 03446d47fd43ff8418b5f8d403755e72, type: 3}
         currentCard: {fileID: 0}
+        water: 0
+        nutrition: 0
 --- !u!4 &49328415
 Transform:
   m_ObjectHideFlags: 0
@@ -5647,6 +5655,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentCard: {fileID: 0}
   _isSeed: 1
+  _clickToDescription: 1
+  _card: {fileID: 1206158361}
 --- !u!1 &1232098281
 GameObject:
   m_ObjectHideFlags: 0
@@ -7918,8 +7928,8 @@ Tilemap:
   - first: {x: -2, y: -2, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -7928,8 +7938,8 @@ Tilemap:
   - first: {x: -1, y: -2, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -7938,8 +7948,8 @@ Tilemap:
   - first: {x: 0, y: -2, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -7948,8 +7958,8 @@ Tilemap:
   - first: {x: -2, y: -1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -7958,8 +7968,8 @@ Tilemap:
   - first: {x: -1, y: -1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -7968,8 +7978,8 @@ Tilemap:
   - first: {x: 0, y: -1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -7978,8 +7988,8 @@ Tilemap:
   - first: {x: -2, y: 0, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -7988,8 +7998,8 @@ Tilemap:
   - first: {x: -1, y: 0, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -7998,8 +8008,8 @@ Tilemap:
   - first: {x: 0, y: 0, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -8007,13 +8017,9 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 9
     m_Data: {fileID: 11400000, guid: 6a04d1be5e470794cb040453a926306e, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 9
     m_Data: {fileID: -472400551, guid: 62799a0c2b2a9dd4aa2fa93dda3d5160, type: 3}
   m_TileMatrixArray:
@@ -8293,6 +8299,7 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 64
+  _descriptionText: {fileID: 1947301967}
 --- !u!1 &1805149087
 GameObject:
   m_ObjectHideFlags: 0
@@ -8549,7 +8556,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uCE74\uB4DC \uC124\uBA85"
+  m_text: "beetrot\nwater : \n100 / 100\nnutrition : \n100/ 100"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2bea461a9a3356f4299964d4aee7543d, type: 2}
   m_sharedMaterial: {fileID: 452256809223898375, guid: 2bea461a9a3356f4299964d4aee7543d, type: 2}
@@ -8576,8 +8583,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42
-  m_fontSizeBase: 42
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

@@ -46,7 +46,6 @@ namespace CW
             {
                 for (int j = -2; j < 1; j++)
                 {
-
                     Vector3Int cellPos = _tileMap.WorldToCell(new Vector3Int(i, j));
 
                     _tileMap.SetTile(cellPos, _groundSO.tileBase);
@@ -69,16 +68,36 @@ namespace CW
 
             tiles.Add(pos, newCrop);
         }
-        public CardSO GetPosToCard(Vector3Int pos)
+        public Crop GetPosToCrop(Vector3Int pos, ref bool IsNull)
         {
             if (tiles.ContainsKey(pos))
             {
-                return tiles[pos].currentCard;
+                IsNull = false;
             }
+            else
+            {
+                IsNull = true;
+                Debug.LogError($"tiles is Not Have {pos}");
+            }
+            return tiles[pos];
+        }
 
-            Debug.LogError($"tiles is Not Have {pos}");
-            return null;
+        public void NextCycle()
+        {
+            nextTurn = true;
+        }
 
+        public void Harvest(Vector3Int pos)
+        {
+            if (tiles.ContainsKey(pos))
+            {
+                _tileMap.SetTile(pos, _groundSO.tileBase);
+                //수확 사잍클
+            }
+            else
+            {
+                Debug.LogError($"tiles is Not Have {pos}");
+            }
         }
 
         public IEnumerator GrowCoroutine()
@@ -98,6 +117,8 @@ namespace CW
                 var targetKey = tiles.Keys.ToList()[i];
                 Crop crop = tiles[targetKey];
                 crop.growIdx++;
+                crop.water -= 10;
+                crop.nutrition -= 10;
 
                 //식물이 자랐는지 확인
                 TileBase tilebase = null;

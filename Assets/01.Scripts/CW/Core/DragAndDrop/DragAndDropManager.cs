@@ -13,7 +13,7 @@ namespace CW
         public bool IsSeed { get => _isSeed; set => _isSeed = value; }
         public bool CanDrop { get; private set; }
 
-        public void SetImage(CardSO card)
+        public void SetCard(CardSO card)
         {
             _card = card;
             if (_card != null)

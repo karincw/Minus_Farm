@@ -12,23 +12,23 @@ namespace CW
 
         [Header("ClickToDescription")]
         [SerializeField] private bool _clickToDescription = false;
-        [SerializeField] private TextMeshProUGUI _descriptionText;
+        [SerializeField] private Card _card;
 
         public void OnPointerDown(PointerEventData eventData)
         {
             if(_clickToDescription)
             {
-                _descriptionText.text = currentCard.description;
+                _card.SetDescription(currentCard.description);
             }
 
-            if (_isSeed == false)
+            if (_isSeed)
             {
-                var crop = CropManager.Instance.cropUtility.cardToCropDataDic[currentCard];
-                DragAndDropManager.Instance.SetImage(crop.sprite);
+                DragAndDropManager.Instance.SetCard(currentCard);
             }
             else
             {
-                DragAndDropManager.Instance.SetImage(currentCard);
+                var crop = CropManager.Instance.cropUtility.cardToCropDataDic[currentCard];
+                DragAndDropManager.Instance.SetImage(crop.sprite);
             }
             DragAndDropManager.Instance.IsSeed = _isSeed;
         }
