@@ -25,18 +25,19 @@ namespace HS
             _priceImage.sprite = _priceSprite[0];
             _countText.text = _fruitCount.ToString();
             _priceText.text = _currentPrice.ToString();
+            RandomPrice();
         }
 
         public void SetCount(int count)
         {
             _fruitCount = count;
-            CountChange();
+            ChangeCount();
         }
 
         public void AddCount(int count)
         {
             _fruitCount += count;
-            CountChange();
+            ChangeCount();
         }
 
         public int GetCount()
@@ -44,12 +45,12 @@ namespace HS
             return _fruitCount;
         }
 
-        public void CountChange()
+        public void ChangeCount()
         {
             _countText.text = _fruitCount.ToString();
         }
 
-        public void Random_Price()
+        public void RandomPrice()
         {
             _currentPrice = Random.Range(_minPrice, _maxPrice);
             if (_currentPrice > _beforePrice)

@@ -12,5 +12,6 @@ namespace CW
         public string description;
         public Sprite sprite;
         public TileBase tileBase;
+        public int price;
     }
 }

@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TopBarMiddleUi : MonoBehaviour
 {
@@ -7,6 +8,9 @@ public class TopBarMiddleUi : MonoBehaviour
     private bool _ismorning = true;
     [SerializeField] private float _passesTime;
     [SerializeField] private int day, month;
+
+    public UnityEvent OnDayChangeEvent;
+    public UnityEvent OnDaynightChangeEvent;
 
     private TextMeshProUGUI _dayNightTxt;
     private TextMeshProUGUI _dateTime;
@@ -27,6 +31,7 @@ public class TopBarMiddleUi : MonoBehaviour
             {
                 _dayNightTxt.text = "Àú³á";
                 _ismorning = false;
+                OnDaynightChangeEvent.Invoke();
             }
             else
             {
@@ -39,6 +44,8 @@ public class TopBarMiddleUi : MonoBehaviour
                     month++;
                     day = 0;
                 }
+                OnDaynightChangeEvent.Invoke();
+                OnDayChangeEvent.Invoke();
                 _dateTime.text = $"{month.ToString("D2")} {day.ToString("D2")}";
             }
             _currentTime = 0;

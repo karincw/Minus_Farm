@@ -40,7 +40,7 @@ namespace HS
         {
             GameObject.Find("Right").GetComponent<TopBarRightUi>().AddCredit(_currentPrice);
             _cropInven._fruitCount -= _currentCount;
-            _cropInven.CountChange();
+            _cropInven.ChangeCount();
             _priceSlider.value = 0f;
         }
     }
