@@ -12,5 +12,10 @@ namespace CW
         public string description;
         public Sprite sprite;
         public TileBase tileBase;
+        public bool actionCard;
+
+        [Header("ActionCard Settings")]
+        public int water_changeValue;
+        public int Nutrition_changeValue;
     }
 }

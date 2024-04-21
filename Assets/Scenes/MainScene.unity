@@ -3444,6 +3444,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragObject: {fileID: 1323659732}
+  IsSeed: 0
+  IsAction: 0
 --- !u!1 &770739301
 GameObject:
   m_ObjectHideFlags: 0
@@ -4260,8 +4262,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 604d281a4fa4b244fb0159ecf00b561f, type: 2}
   - {fileID: 11400000, guid: 2460543b4eb0eda4799c0f5815e13959, type: 2}
   - {fileID: 11400000, guid: 604d281a4fa4b244fb0159ecf00b561f, type: 2}
-  - {fileID: 11400000, guid: 2460543b4eb0eda4799c0f5815e13959, type: 2}
   - {fileID: 11400000, guid: d9440d67139ab9c46861eefdc4825889, type: 2}
+  - {fileID: 11400000, guid: 2460543b4eb0eda4799c0f5815e13959, type: 2}
+  - {fileID: 11400000, guid: 1f9f3e7bde049a246928c50f266f3d4f, type: 2}
   - {fileID: 11400000, guid: 3caa9a4ba2f36a34b895ddac73b10948, type: 2}
   - {fileID: 11400000, guid: a859b4213d41b7441936ee68b93b21d5, type: 2}
   - {fileID: 11400000, guid: 9a10252d716945949b0a0c5e4138d10c, type: 2}

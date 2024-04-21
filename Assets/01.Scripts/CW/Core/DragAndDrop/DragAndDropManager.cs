@@ -9,15 +9,19 @@ namespace CW
         private SpriteRenderer _spriteRenderer;
         private CardSO _card;
         public CardSO Card { get => _card; }
-        private bool _isSeed;
-        public bool IsSeed { get => _isSeed; set => _isSeed = value; }
         public bool CanDrop { get; private set; }
+
+        public bool IsSeed;
+        public bool IsAction;
 
         public void SetCard(CardSO card)
         {
+            IsAction = false;
             _card = card;
             if (_card != null)
             {
+                if(card.actionCard)
+                    IsAction = true;
                 _spriteRenderer.sprite = _card.sprite;
                 CanDrop = true;
             }

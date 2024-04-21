@@ -68,6 +68,15 @@ namespace CW
 
             tiles.Add(pos, newCrop);
         }
+        public void ChangeCrop(Vector3Int pos, Crop crop)
+        {
+            if (tiles.ContainsKey(pos))
+            {
+                tiles[pos] = crop;
+                return;
+            }
+            Debug.LogError($"Dictionary haven't {pos}this positionKey");
+        }
         public Crop GetPosToCrop(Vector3Int pos, ref bool IsNull)
         {
             if (tiles.ContainsKey(pos))

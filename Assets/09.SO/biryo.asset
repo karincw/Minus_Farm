@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f343d575cb3fb8d40a94a6abfb8f3494, type: 3}
   m_Name: biryo
   m_EditorClassIdentifier: 
-  curName: Beetrot
-  description: Beetrot
-  sprite: {fileID: -142930311, guid: 24360d9ee5d4d9c4786e5258b3cb2b21, type: 3}
-  tileBase: {fileID: 11400000, guid: f5ea1f02d80fc1d45ae0f34746fb1e70, type: 2}
+  curName: "\uBE44\uB8CC"
+  description: "\uBE44\uB8CC"
+  sprite: {fileID: -142930311, guid: aaa9db6fd353db4469e2115ff308d9d2, type: 3}
+  tileBase: {fileID: 0}
+  actionCard: 1
+  water_changeValue: -10
+  Nutrition_changeValue: 20
