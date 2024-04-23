@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace HS
 {
-    public class UiButton : MonoBehaviour
+    public class UtilityButton : MonoBehaviour
     {
         [SerializeField] private GameObject _backpackUi;
         [SerializeField] private GameObject _shopUi;

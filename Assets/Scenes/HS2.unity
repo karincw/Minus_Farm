@@ -622,7 +622,7 @@ GameObject:
   - component: {fileID: 92176096}
   - component: {fileID: 92176095}
   m_Layer: 5
-  m_Name: Button
+  m_Name: CancelButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -691,8 +691,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1045994732}
-        m_TargetAssemblyTypeName: HS.UiButton, Assembly-CSharp
+      - m_Target: {fileID: 1045994733}
+        m_TargetAssemblyTypeName: HS.UtilityButton, Assembly-CSharp
         m_MethodName: ShopClose
         m_Mode: 1
         m_Arguments:
@@ -1192,8 +1192,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1045994732}
-        m_TargetAssemblyTypeName: HS.UiButton, Assembly-CSharp
+      - m_Target: {fileID: 1045994733}
+        m_TargetAssemblyTypeName: HS.UtilityButton, Assembly-CSharp
         m_MethodName: ShopOpen
         m_Mode: 1
         m_Arguments:
@@ -4951,8 +4951,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1045994732}
-        m_TargetAssemblyTypeName: HS.UiButton, Assembly-CSharp
+      - m_Target: {fileID: 1045994733}
+        m_TargetAssemblyTypeName: HS.UtilityButton, Assembly-CSharp
         m_MethodName: SellClose
         m_Mode: 1
         m_Arguments:
@@ -5025,7 +5025,7 @@ GameObject:
   - component: {fileID: 1032265264}
   - component: {fileID: 1032265263}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5094,8 +5094,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1045994732}
-        m_TargetAssemblyTypeName: HS.UiButton, Assembly-CSharp
+      - m_Target: {fileID: 1045994733}
+        m_TargetAssemblyTypeName: HS.UtilityButton, Assembly-CSharp
         m_MethodName: ShopChange
         m_Mode: 1
         m_Arguments:
@@ -5167,7 +5167,7 @@ GameObject:
   - component: {fileID: 1045994730}
   - component: {fileID: 1045994729}
   - component: {fileID: 1045994731}
-  - component: {fileID: 1045994732}
+  - component: {fileID: 1045994733}
   m_Layer: 5
   m_Name: UtilityPanel
   m_TagString: Untagged
@@ -5261,7 +5261,7 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &1045994732
+--- !u!114 &1045994733
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5270,7 +5270,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1045994727}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34d1a7af95b59e04ab1fcbb014eb4a34, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a2c42dbc58c1bc43898a1df54729d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _backpackUi: {fileID: 1446885368}
@@ -6818,7 +6818,7 @@ GameObject:
   - component: {fileID: 1376076101}
   - component: {fileID: 1376076100}
   m_Layer: 5
-  m_Name: BuyButton
+  m_Name: SellButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6890,18 +6890,6 @@ MonoBehaviour:
       - m_Target: {fileID: 912512026}
         m_TargetAssemblyTypeName: HS.SellFruit, Assembly-CSharp
         m_MethodName: Sell_Fruit
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1045994732}
-        m_TargetAssemblyTypeName: HS.UiButton, Assembly-CSharp
-        m_MethodName: SellClose
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7639,8 +7627,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1045994732}
-        m_TargetAssemblyTypeName: HS.UiButton, Assembly-CSharp
+      - m_Target: {fileID: 1045994733}
+        m_TargetAssemblyTypeName: HS.UtilityButton, Assembly-CSharp
         m_MethodName: BackpackClose
         m_Mode: 1
         m_Arguments:
@@ -8539,8 +8527,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1045994732}
-        m_TargetAssemblyTypeName: HS.UiButton, Assembly-CSharp
+      - m_Target: {fileID: 1045994733}
+        m_TargetAssemblyTypeName: HS.UtilityButton, Assembly-CSharp
         m_MethodName: BackpackOpen
         m_Mode: 1
         m_Arguments:
@@ -9525,7 +9513,7 @@ GameObject:
   - component: {fileID: 1798312015}
   - component: {fileID: 1798312014}
   m_Layer: 5
-  m_Name: Button
+  m_Name: CancelButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9594,8 +9582,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1045994732}
-        m_TargetAssemblyTypeName: HS.UiButton, Assembly-CSharp
+      - m_Target: {fileID: 1045994733}
+        m_TargetAssemblyTypeName: HS.UtilityButton, Assembly-CSharp
         m_MethodName: ShopClose
         m_Mode: 1
         m_Arguments:
@@ -9823,7 +9811,7 @@ GameObject:
   - component: {fileID: 1874876498}
   - component: {fileID: 1874876497}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9892,8 +9880,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1045994732}
-        m_TargetAssemblyTypeName: HS.UiButton, Assembly-CSharp
+      - m_Target: {fileID: 1045994733}
+        m_TargetAssemblyTypeName: HS.UtilityButton, Assembly-CSharp
         m_MethodName: ShopChange
         m_Mode: 1
         m_Arguments:

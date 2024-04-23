@@ -11,13 +11,13 @@ namespace CW
         [SerializeField] private LayerMask _dropToPlantLayer;
         [SerializeField] private LayerMask _dropToSellLayer;
         [SerializeField] private Tilemap _tileMap;
-        UiButton _uiButton;
+        UtilityButton _uiButton;
         CardSO currentCard;
         public CropInven _cropInven;
 
         private void Awake()
         {
-            _uiButton = GameObject.Find("UtilityPanel").GetComponent<UiButton>();
+            _uiButton = GameObject.Find("UtilityPanel").GetComponent<UtilityButton>();
         }
 
         private void Update()
