@@ -37,8 +37,20 @@ namespace HS
 
         public void BuyFruit(int num)
         {
-            CardManager.Instance.AddCard(_seed[num]);
-            _topBarRightUi.ChangeCredit(-_seed[num].price);
+            if (_topBarRightUi._credit >= _seed[num].price)
+            {
+                CardManager.Instance.AddCard(_seed[num]);
+                _topBarRightUi.ChangeCredit(-_seed[num].price);
+            }
+            else
+            {
+                transform.Find("Warning").gameObject.SetActive(true);
+            }
+        }
+
+        public void CloseWarning()
+        {
+            transform.Find("Warning").gameObject.SetActive(false);
         }
     }
 }

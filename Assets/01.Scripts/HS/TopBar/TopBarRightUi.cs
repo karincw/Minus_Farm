@@ -6,18 +6,18 @@ namespace HS
     public class TopBarRightUi : MonoBehaviour
     {
         private TextMeshProUGUI _creditText;
-        [SerializeField] private int credit;
+        public int _credit;
 
         private void Awake()
         {
             _creditText = transform.Find("Credit").GetComponent<TextMeshProUGUI>();
-            _creditText.text = credit.ToString();
+            _creditText.text = _credit.ToString();
         }
 
         public void ChangeCredit(int value)
         {
-            credit += value;
-            _creditText.text = credit.ToString();
+            _credit += value;
+            _creditText.text = _credit.ToString();
         }
     }
 }
