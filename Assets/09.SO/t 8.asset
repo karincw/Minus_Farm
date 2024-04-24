@@ -16,3 +16,4 @@ MonoBehaviour:
   description: Asparagus
   sprite: {fileID: -142930311, guid: b1faa56451e3a1c4cbde5305cd1c5013, type: 3}
   tileBase: {fileID: 11400000, guid: 271d458e97e5b82469c01f7f00ceaf50, type: 2}
+  price: 8000

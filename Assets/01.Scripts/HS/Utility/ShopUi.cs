@@ -1,6 +1,7 @@
 using CW;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,25 +9,36 @@ namespace HS
 {
     public class ShopUi : MonoBehaviour
     {
-        [SerializeField] private List<CardSO> _cardSOs = new List<CardSO>();
+        [SerializeField] private TopBarRightUi _topBarRightUi;
+        [SerializeField] private List<CardSO> _cardSO = new List<CardSO>();
         [SerializeField] private List<Image> _image = new List<Image>();
+        [SerializeField] private List<TextMeshProUGUI> _price = new List<TextMeshProUGUI>();
+        private List<CardSO> _seed = new List<CardSO>();
 
         private void Awake()
         {
             SeedChange();
         }
 
-        [ContextMenu("dsdsds")]
         public void SeedChange()
         {
-            List<CardSO> _seed = _cardSOs.ToList();
+            List<CardSO> _changeSeed = _cardSO.ToList();
 
             for (int i = 0; i < 6; i++)
             {
-                int index = Random.Range(0, _seed.Count);
-                _image[i].sprite = _seed[index].sprite;
-                _seed.RemoveAt(index);
+                int index = Random.Range(0, _changeSeed.Count);
+                _image[i].sprite = _changeSeed[index].sprite;
+                _price[i].text = $"{_changeSeed[index].price}G";
+
+                _seed.Add(_changeSeed[index]);
+                _changeSeed.RemoveAt(index);
             }
+        }
+
+        public void BuyFruit(int num)
+        {
+            CardManager.Instance.AddCard(_seed[num]);
+            _topBarRightUi.ChangeCredit(-_seed[num].price);
         }
     }
 }

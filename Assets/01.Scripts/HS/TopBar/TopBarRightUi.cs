@@ -14,7 +14,7 @@ namespace HS
             _creditText.text = credit.ToString();
         }
 
-        public void AddCredit(int value)
+        public void ChangeCredit(int value)
         {
             credit += value;
             _creditText.text = credit.ToString();

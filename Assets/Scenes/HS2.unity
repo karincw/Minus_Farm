@@ -609,6 +609,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &87634298 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2092171409441158451, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+  m_PrefabInstance: {fileID: 1238901639}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &92176093
 GameObject:
   m_ObjectHideFlags: 0
@@ -1216,6 +1227,26 @@ PrefabInstance:
       propertyPath: _cardSO
       value: 
       objectReference: {fileID: 11400000, guid: d9440d67139ab9c46861eefdc4825889, type: 2}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1523262598}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyFruit
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HS.ShopUi, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4298134096084778543, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
       propertyPath: m_Name
       value: ShopSlot (2)
@@ -1300,7 +1331,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1293081870705704860, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2081,7 +2113,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1293081870705704860, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2454,7 +2487,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1293081870705704860, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2601,6 +2635,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &530607115 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2092171409441158451, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+  m_PrefabInstance: {fileID: 536073781}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &536073781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2613,6 +2658,26 @@ PrefabInstance:
       propertyPath: _cardSO
       value: 
       objectReference: {fileID: 11400000, guid: 3caa9a4ba2f36a34b895ddac73b10948, type: 2}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1523262598}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyFruit
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HS.ShopUi, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4298134096084778543, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
       propertyPath: m_Name
       value: ShopSlot (3)
@@ -2697,7 +2762,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1293081870705704860, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3708,6 +3774,26 @@ PrefabInstance:
       propertyPath: _cardSO
       value: 
       objectReference: {fileID: 11400000, guid: 604d281a4fa4b244fb0159ecf00b561f, type: 2}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1523262598}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyFruit
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HS.ShopUi, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4298134096084778543, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
       propertyPath: m_Name
       value: ShopSlot (1)
@@ -3792,7 +3878,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1293081870705704860, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4791,6 +4878,26 @@ PrefabInstance:
       propertyPath: _cardSO
       value: 
       objectReference: {fileID: 11400000, guid: 2460543b4eb0eda4799c0f5815e13959, type: 2}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1523262598}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Buuy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HS.ShopUi, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4298134096084778543, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
       propertyPath: m_Name
       value: ShopSlot
@@ -4875,7 +4982,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1293081870705704860, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5472,6 +5580,26 @@ PrefabInstance:
       propertyPath: _cardSO
       value: 
       objectReference: {fileID: 11400000, guid: 9a10252d716945949b0a0c5e4138d10c, type: 2}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1523262598}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyFruit
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HS.ShopUi, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4298134096084778543, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
       propertyPath: m_Name
       value: ShopSlot (5)
@@ -5556,7 +5684,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1293081870705704860, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6014,7 +6143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60b001d3cb6bffb42800ba414f4e88a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  credit: 10
+  credit: 22579
 --- !u!1001 &1238901639
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6027,6 +6156,26 @@ PrefabInstance:
       propertyPath: _cardSO
       value: 
       objectReference: {fileID: 11400000, guid: a859b4213d41b7441936ee68b93b21d5, type: 2}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1523262598}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyFruit
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HS.ShopUi, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4298134096084778543, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
       propertyPath: m_Name
       value: ShopSlot (4)
@@ -6111,7 +6260,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1293081870705704860, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6192,6 +6342,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1243040763}
   m_CullTransparentMesh: 1
+--- !u!114 &1250880224 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2092171409441158451, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+  m_PrefabInstance: {fileID: 1085214006}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1265475346 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1269424372764598488, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
@@ -6201,6 +6362,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1284915167 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2092171409441158451, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+  m_PrefabInstance: {fileID: 209098470}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1294978474
@@ -6254,7 +6426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbb94fe44918eea4aa03fb8155af0161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _passesTime: 5
+  _passesTime: 30
   day: 11
   month: 4
   OnDayChangeEvent:
@@ -6262,7 +6434,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1533416289}
         m_TargetAssemblyTypeName: HS.CropInven, Assembly-CSharp
-        m_MethodName: Random_Price
+        m_MethodName: RandomPrice
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6274,7 +6446,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 579754016}
         m_TargetAssemblyTypeName: HS.CropInven, Assembly-CSharp
-        m_MethodName: Random_Price
+        m_MethodName: RandomPrice
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6286,7 +6458,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1013906382}
         m_TargetAssemblyTypeName: HS.CropInven, Assembly-CSharp
-        m_MethodName: Random_Price
+        m_MethodName: RandomPrice
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6298,7 +6470,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1463816328}
         m_TargetAssemblyTypeName: HS.CropInven, Assembly-CSharp
-        m_MethodName: Random_Price
+        m_MethodName: RandomPrice
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6310,7 +6482,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1545758135}
         m_TargetAssemblyTypeName: HS.CropInven, Assembly-CSharp
-        m_MethodName: Random_Price
+        m_MethodName: RandomPrice
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6322,7 +6494,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1847253750}
         m_TargetAssemblyTypeName: HS.CropInven, Assembly-CSharp
-        m_MethodName: Random_Price
+        m_MethodName: RandomPrice
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6334,7 +6506,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1332034844}
         m_TargetAssemblyTypeName: HS.CropInven, Assembly-CSharp
-        m_MethodName: Random_Price
+        m_MethodName: RandomPrice
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6346,7 +6518,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1039677232}
         m_TargetAssemblyTypeName: HS.CropInven, Assembly-CSharp
-        m_MethodName: Random_Price
+        m_MethodName: RandomPrice
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6358,7 +6530,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2041183176}
         m_TargetAssemblyTypeName: HS.CropInven, Assembly-CSharp
-        m_MethodName: Random_Price
+        m_MethodName: RandomPrice
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6370,7 +6542,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1141150932}
         m_TargetAssemblyTypeName: HS.CropInven, Assembly-CSharp
-        m_MethodName: Random_Price
+        m_MethodName: RandomPrice
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6382,7 +6554,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1660906759}
         m_TargetAssemblyTypeName: HS.CropInven, Assembly-CSharp
-        m_MethodName: Random_Price
+        m_MethodName: RandomPrice
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6394,7 +6566,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1377136007}
         m_TargetAssemblyTypeName: HS.CropInven, Assembly-CSharp
-        m_MethodName: Random_Price
+        m_MethodName: RandomPrice
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6406,7 +6578,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1718321013}
         m_TargetAssemblyTypeName: HS.CropInven, Assembly-CSharp
-        m_MethodName: Random_Price
+        m_MethodName: RandomPrice
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6418,7 +6590,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1712853497}
         m_TargetAssemblyTypeName: HS.CropInven, Assembly-CSharp
-        m_MethodName: Random_Price
+        m_MethodName: RandomPrice
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6733,7 +6905,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1293081870705704860, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7295,7 +7468,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1293081870705704860, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7848,7 +8022,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1523262595
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7920,7 +8094,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e774661b613878439ddccd7f7becea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardSOs:
+  _topBarRightUi: {fileID: 1232098283}
+  _cardSO:
   - {fileID: 11400000, guid: 2460543b4eb0eda4799c0f5815e13959, type: 2}
   - {fileID: 11400000, guid: 604d281a4fa4b244fb0159ecf00b561f, type: 2}
   - {fileID: 11400000, guid: d9440d67139ab9c46861eefdc4825889, type: 2}
@@ -7940,6 +8115,13 @@ MonoBehaviour:
   - {fileID: 884923805}
   - {fileID: 1727453014}
   - {fileID: 1876674899}
+  _price:
+  - {fileID: 1726319421}
+  - {fileID: 1867560118}
+  - {fileID: 1284915167}
+  - {fileID: 530607115}
+  - {fileID: 87634298}
+  - {fileID: 1250880224}
 --- !u!114 &1533416289 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -7629344070249817836, guid: 9f19389abdfafc74a8f6d809271cdecf, type: 3}
@@ -8059,7 +8241,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1293081870705704860, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8799,7 +8982,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1293081870705704860, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9033,6 +9217,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e91a7c634d97bb43ab12af042f75e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1726319421 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2092171409441158451, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+  m_PrefabInstance: {fileID: 1011103214}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1727453014 stripped
@@ -9898,6 +10093,17 @@ Transform:
   - {fileID: 978017205}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1867560118 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2092171409441158451, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+  m_PrefabInstance: {fileID: 881392867}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1874876495
 GameObject:
   m_ObjectHideFlags: 0

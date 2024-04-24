@@ -38,7 +38,7 @@ namespace HS
 
         public void Sell_Fruit()
         {
-            GameObject.Find("Right").GetComponent<TopBarRightUi>().AddCredit(_currentPrice);
+            GameObject.Find("Right").GetComponent<TopBarRightUi>().ChangeCredit(_currentPrice);
             _cropInven._fruitCount -= _currentCount;
             _cropInven.ChangeCount();
             _priceSlider.value = 0f;

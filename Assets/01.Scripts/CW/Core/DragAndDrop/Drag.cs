@@ -18,8 +18,10 @@ namespace CW
                 var crop = CropManager.Instance.cropUtility.cardToCropDataDic[currentCard];
                 DragAndDropManager.Instance.SetImage(crop.sprite);
 
+                #region
                 _cropInven = transform.parent.GetComponentInParent<CropInven>();
                 DragAndDropManager.Instance.dragObject._cropInven = _cropInven;
+                #endregion
             }
             else
             {

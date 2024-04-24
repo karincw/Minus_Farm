@@ -16,3 +16,4 @@ MonoBehaviour:
   description: GreenBellPepper
   sprite: {fileID: -142930311, guid: df598a3e9b2d98c458a5fea055f16653, type: 3}
   tileBase: {fileID: 11400000, guid: a7003c5e59023094d84b573d5e148377, type: 2}
+  price: 5000

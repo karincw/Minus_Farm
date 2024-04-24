@@ -58,8 +58,9 @@ namespace CW
             if (isHit)
             {
                 Debug.Log($"DropToSelling");
-
+                #region
                 _uiButton.SellOpen(cropInven);
+                #endregion
             }
             DragAndDropManager.Instance.SetImage();
         }

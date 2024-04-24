@@ -16,3 +16,4 @@ MonoBehaviour:
   description: Leek
   sprite: {fileID: -142930311, guid: 948f7acd8a2306b4098e9ef7068243b9, type: 3}
   tileBase: {fileID: 11400000, guid: f658cf4bd2bd30e4d819dc464e6b6fec, type: 2}
+  price: 6000
