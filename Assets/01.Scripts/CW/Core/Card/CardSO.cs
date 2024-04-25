@@ -29,6 +29,7 @@ namespace CW
         public string description;
         public Sprite sprite;
         public TileBase tileBase;
+        public int price;
 
         [Header("ActionCard Settings")]
         public int action_water_changeValue;

@@ -1,3 +1,4 @@
+using HS;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -13,6 +14,7 @@ namespace CW
         [Header("ClickToDescription")]
         [SerializeField] private bool _clickToDescription = false;
         [SerializeField] private Card _card;
+        public CropInven _cropInven;
 
         public void OnPointerDown(PointerEventData eventData)
         {
@@ -29,6 +31,8 @@ namespace CW
             {
                 var crop = CropManager.Instance.cropUtility.cardToCropDataDic[currentCard];
                 DragAndDropManager.Instance.SetImage(crop.sprite);
+                _cropInven = transform.parent.GetComponentInParent<CropInven>();
+                DragAndDropManager.Instance.dragObject._cropInven = _cropInven;
             }
         }
     }
