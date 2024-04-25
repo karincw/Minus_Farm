@@ -39,7 +39,6 @@ namespace CW
 
 #endif
 
-
         private void StartSetting()
         {
             for (int i = -2; i < 1; i++)
@@ -68,6 +67,13 @@ namespace CW
 
             tiles.Add(pos, newCrop);
         }
+
+        public void SetGroundTile(Vector3Int tilePos)
+        {
+            AddCrop(tilePos, _groundSO);
+            _tileMap.SetTile(tilePos, _groundSO.tileBase);
+        }
+
         public void ChangeCrop(Vector3Int pos, Crop crop)
         {
             if (tiles.ContainsKey(pos))
@@ -77,6 +83,7 @@ namespace CW
             }
             Debug.LogError($"Dictionary haven't {pos}this positionKey");
         }
+
         public Crop GetPosToCrop(Vector3Int pos, ref bool IsNull)
         {
             if (tiles.ContainsKey(pos))
@@ -153,6 +160,14 @@ namespace CW
             StartCoroutine(GrowCoroutine());
         }
 
+        public Vector3Int GetRandomCropPos()
+        {
+            var keys = tiles.Keys.ToArray();
+
+            int randomIndex = Random.Range(0, keys.Length);
+
+            return keys[randomIndex];
+        }
     }
 
 }

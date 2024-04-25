@@ -25,18 +25,24 @@ namespace CW
             currentCard = DMInstance.Card;
             if (DMInstance.CanDrop && Input.GetMouseButtonUp(0))
             {
-                if (DMInstance.IsAction)
+                switch(DMInstance.currentType)
                 {
-                    DropToAction();
+                    case CardType.None:
+                        DropToSelling();
+                        break;
+
+                    case CardType.Seed:
+                        DropToPlanting();
+                        break;
+
+                    case CardType.Item:
+                        DropToAction();
+                        break;
+
+                    case CardType.Building:
+                        break;
                 }
-                else if(DMInstance.IsSeed)
-                {
-                    DropToPlanting();
-                }
-                else
-                {
-                    DropToSelling();
-                }
+
             }
         }
 
@@ -53,8 +59,8 @@ namespace CW
                 Crop crop = CropManager.Instance.GetPosToCrop(tilePos, ref isNull);
                 if (!isNull)
                 {
-                    crop.water += DragAndDropManager.Instance.Card.water_changeValue;
-                    crop.nutrition += DragAndDropManager.Instance.Card.Nutrition_changeValue;
+                    crop.water += DragAndDropManager.Instance.Card.action_water_changeValue;
+                    crop.nutrition += DragAndDropManager.Instance.Card.action_nutrition_changeValue;
                     CropManager.Instance.ChangeCrop(tilePos, crop);
                 }
 

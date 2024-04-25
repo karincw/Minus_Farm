@@ -16,7 +16,7 @@ namespace CW
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            if(_clickToDescription)
+            if (_clickToDescription)
             {
                 _card.SetDescription(currentCard.description);
             }
@@ -30,7 +30,6 @@ namespace CW
                 var crop = CropManager.Instance.cropUtility.cardToCropDataDic[currentCard];
                 DragAndDropManager.Instance.SetImage(crop.sprite);
             }
-            DragAndDropManager.Instance.IsSeed = _isSeed;
         }
     }
 

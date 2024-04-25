@@ -11,17 +11,15 @@ namespace CW
         public CardSO Card { get => _card; }
         public bool CanDrop { get; private set; }
 
-        public bool IsSeed;
-        public bool IsAction;
+        public CardType currentType;
 
         public void SetCard(CardSO card)
         {
-            IsAction = false;
             _card = card;
+            currentType = card.cardType;
+
             if (_card != null)
             {
-                if(card.actionCard)
-                    IsAction = true;
                 _spriteRenderer.sprite = _card.sprite;
                 CanDrop = true;
             }
@@ -33,6 +31,7 @@ namespace CW
         }
         public void SetImage(Sprite sprite = null)
         {
+            currentType = CardType.None;
             CanDrop = sprite != null;
 
             _spriteRenderer.sprite = sprite;
