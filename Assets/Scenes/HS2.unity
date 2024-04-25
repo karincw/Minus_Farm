@@ -3312,13 +3312,14 @@ GameObject:
   - component: {fileID: 734025057}
   - component: {fileID: 734025059}
   - component: {fileID: 734025058}
+  - component: {fileID: 734025060}
   m_Layer: 5
   m_Name: Real_EstatePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &734025057
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3381,6 +3382,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734025056}
   m_CullTransparentMesh: 1
+--- !u!114 &734025060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734025056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd1e6caef91823749b6edc5be30edc55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tile: {fileID: 11400000, guid: 6a04d1be5e470794cb040453a926306e, type: 2}
+  firstPositions:
+  - {x: -3, y: -3, z: 0}
+  - {x: -3, y: -2, z: 0}
+  - {x: -3, y: -1, z: 0}
+  - {x: -3, y: 0, z: 0}
+  - {x: -3, y: 1, z: 0}
+  - {x: -2, y: 1, z: 0}
+  - {x: -1, y: 1, z: 0}
+  - {x: 0, y: 1, z: 0}
+  - {x: 1, y: 1, z: 0}
+  - {x: 1, y: 0, z: 0}
+  - {x: 1, y: -1, z: 0}
+  - {x: 1, y: -2, z: 0}
+  - {x: 1, y: -3, z: 0}
+  - {x: 0, y: -3, z: 0}
+  - {x: -1, y: -3, z: 0}
+  - {x: -2, y: -3, z: 0}
+  secondPositions:
+  - {x: -4, y: -4, z: 0}
+  - {x: -3, y: -4, z: 0}
+  - {x: -2, y: -4, z: 0}
+  - {x: -1, y: -4, z: 0}
+  - {x: 0, y: -4, z: 0}
+  - {x: 1, y: -4, z: 0}
+  - {x: 2, y: -4, z: 0}
+  - {x: 2, y: -3, z: 0}
+  - {x: 2, y: -2, z: 0}
+  - {x: 2, y: -1, z: 0}
+  - {x: 2, y: 0, z: 0}
+  - {x: 2, y: 1, z: 0}
+  - {x: 2, y: 2, z: 0}
+  - {x: 1, y: 2, z: 0}
+  - {x: 0, y: 2, z: 0}
+  - {x: -1, y: 2, z: 0}
+  - {x: -2, y: 2, z: 0}
+  - {x: -3, y: 2, z: 0}
+  - {x: -4, y: 2, z: 0}
+  - {x: -4, y: 1, z: 0}
+  - {x: -4, y: 0, z: 0}
+  - {x: -4, y: -1, z: 0}
+  - {x: -4, y: -2, z: 0}
+  - {x: -4, y: -3, z: 0}
+  credit: {fileID: 1232098283}
 --- !u!1 &755300721
 GameObject:
   m_ObjectHideFlags: 0
@@ -5516,9 +5573,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a2c42dbc58c1bc43898a1df54729d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _backpackUi: {fileID: 1446885368}
-  _shopUi: {fileID: 1523262594}
-  _sellUi: {fileID: 912512022}
+  backpackUi: {fileID: 1446885368}
+  shopUi: {fileID: 1523262594}
+  sellUi: {fileID: 912512022}
 --- !u!1 &1065545666
 GameObject:
   m_ObjectHideFlags: 0
@@ -5615,9 +5672,37 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2092171409441158451, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_text
+      value: 20000G
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092171409441158451, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_fontSize
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092171409441158451, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 734025060}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeFarm2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RealEstate, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4298134096084778543, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
       propertyPath: m_Name
       value: ShopSlot (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5003329680733928159, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -21
       objectReference: {fileID: 0}
     - target: {fileID: 8779014817806460452, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
       propertyPath: m_Pivot.x
@@ -6423,7 +6508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60b001d3cb6bffb42800ba414f4e88a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _credit: 0
+  credit: 40000
 --- !u!1001 &1238901639
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8118,7 +8203,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1523262595
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8191,7 +8276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e774661b613878439ddccd7f7becea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _topBarRightUi: {fileID: 1232098283}
+  topBarRightUi: {fileID: 1232098283}
   _cardSO:
   - {fileID: 11400000, guid: 2460543b4eb0eda4799c0f5815e13959, type: 2}
   - {fileID: 11400000, guid: 604d281a4fa4b244fb0159ecf00b561f, type: 2}
@@ -8205,14 +8290,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1d67b533d3381984e8069480d7e57817, type: 2}
   - {fileID: 11400000, guid: b4d0546c5f6436c4fba2a9d2c0b76968, type: 2}
   - {fileID: 11400000, guid: 4a54fead8f0ed654ea1d026a32d15b00, type: 2}
-  _image:
+  image:
   - {fileID: 1265475346}
   - {fileID: 1120301166}
   - {fileID: 1182608727}
   - {fileID: 884923805}
   - {fileID: 1727453014}
   - {fileID: 1876674899}
-  _price:
+  price:
   - {fileID: 1726319421}
   - {fileID: 1867560118}
   - {fileID: 1284915167}
@@ -9261,9 +9346,37 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2092171409441158451, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_text
+      value: 10000G
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092171409441158451, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_fontSize
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092171409441158451, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 734025060}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeFarm1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843218849761517572, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RealEstate, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4298134096084778543, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
       propertyPath: m_Name
       value: ShopSlot (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5003329680733928159, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -21
       objectReference: {fileID: 0}
     - target: {fileID: 8779014817806460452, guid: 5708fd8b3fc641042b7438aac2c80625, type: 3}
       propertyPath: m_Pivot.x
@@ -10426,7 +10539,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1931241645
 RectTransform:
   m_ObjectHideFlags: 0

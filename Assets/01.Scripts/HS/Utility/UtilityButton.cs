@@ -5,27 +5,27 @@ namespace HS
 {
     public class UtilityButton : MonoBehaviour
     {
-        [SerializeField] private GameObject _backpackUi;
-        [SerializeField] private GameObject _shopUi;
-        [SerializeField] private GameObject _sellUi;
+        [SerializeField] private GameObject backpackUi;
+        [SerializeField] private GameObject shopUi;
+        [SerializeField] private GameObject sellUi;
         private SellFruit _sellFruit;
         private Image _fruitImageUi;
         private Sprite _fruitImage;
-        private bool _shopUiActive = false;
-        private bool _backpackUiActive = false;
-        private bool _sellUiActive = false;
+        private bool _shopUiActive;
+        private bool _backpackUiActive;
+        private bool _sellUiActive;
 
         private void Awake()
         {
-            _fruitImageUi = _sellUi.transform.Find("Image").GetComponent<Image>();
-            _sellFruit = _sellUi.GetComponent<SellFruit>();
+            _fruitImageUi = sellUi.transform.Find("Image").GetComponent<Image>();
+            _sellFruit = sellUi.GetComponent<SellFruit>();
         }
 
         public void BackpackOpen()
         {
             if (!(_sellUiActive || _shopUiActive))
             {
-                _backpackUi.gameObject.SetActive(true);
+                backpackUi.gameObject.SetActive(true);
                 _backpackUiActive = true;
             }
         }
@@ -34,7 +34,7 @@ namespace HS
         {
             if (!(_sellUiActive || _backpackUiActive))
             {
-                _shopUi.gameObject.SetActive(true);
+                shopUi.gameObject.SetActive(true);
                 _shopUiActive = true;
             }
         }
@@ -45,7 +45,7 @@ namespace HS
             {
                 if (!(_shopUiActive || _backpackUiActive))
                 {
-                    _sellUi.gameObject.SetActive(true);
+                    sellUi.gameObject.SetActive(true);
                     _sellUiActive = true;
 
                     _fruitImage = GameObject.Find("DragObject").GetComponent<SpriteRenderer>().sprite;
@@ -58,33 +58,33 @@ namespace HS
 
         public void BackpackClose()
         {
-            _backpackUi.gameObject.SetActive(false);
+            backpackUi.gameObject.SetActive(false);
             _backpackUiActive = false;
         }
 
         public void SellClose()
         {
-            _sellUi.gameObject.SetActive(false);
+            sellUi.gameObject.SetActive(false);
             _sellUiActive = false;
         }
 
         public void ShopClose()
         {
-            _shopUi.gameObject.SetActive(false);
+            shopUi.gameObject.SetActive(false);
             _shopUiActive = false;
         }
 
         public void ShopChange()
         {
-            if (_shopUi.transform.Find("SeedPanel").gameObject.activeSelf == true)
+            if (shopUi.transform.Find("SeedPanel").gameObject.activeSelf)
             {
-                _shopUi.transform.Find("SeedPanel").gameObject.SetActive(false);
-                _shopUi.transform.Find("Real_EstatePanel").gameObject.SetActive(true);
+                shopUi.transform.Find("SeedPanel").gameObject.SetActive(false);
+                shopUi.transform.Find("Real_EstatePanel").gameObject.SetActive(true);
             }
-            else if (_shopUi.transform.Find("Real_EstatePanel").gameObject.activeSelf == true)
+            else if (shopUi.transform.Find("Real_EstatePanel").gameObject.activeSelf)
             {
-                _shopUi.transform.Find("Real_EstatePanel").gameObject.SetActive(false);
-                _shopUi.transform.Find("SeedPanel").gameObject.SetActive(true);
+                shopUi.transform.Find("Real_EstatePanel").gameObject.SetActive(false);
+                shopUi.transform.Find("SeedPanel").gameObject.SetActive(true);
             }
         }
     }
