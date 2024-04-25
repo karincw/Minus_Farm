@@ -1,3 +1,4 @@
+using HS;
 using System;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -12,11 +13,13 @@ namespace CW
         [SerializeField] private LayerMask _dropToSellLayer;
         [SerializeField] private Tilemap _tileMap;
         [SerializeField] private TileBase _canPlantingTile;
+        public CropInven _cropInven;
+        private UtilityButton _utility;
         CardSO currentCard;
 
-        private void Start()
+        private void Awake()
         {
-
+            _utility = GameObject.Find("UtilityPanel").GetComponent<UtilityButton>();
         }
 
         private void Update()
@@ -28,7 +31,7 @@ namespace CW
                 switch(DMInstance.currentType)
                 {
                     case CardType.None:
-                        DropToSelling();
+                        DropToSelling(_cropInven);
                         break;
 
                     case CardType.Seed:
@@ -85,14 +88,14 @@ namespace CW
             }
         }
 
-        private void DropToSelling()
+        private void DropToSelling(CropInven cropInven)
         {
-            DragAndDropManager.Instance.SetImage();
             bool isHit = Physics2D.OverlapCircle(transform.position, _detectRadius, _dropToSellLayer);
             if (isHit)
             {
-                //판매 이미지 띄우기
+                _utility.SellOpen(cropInven);
             }
+            DragAndDropManager.Instance.SetImage();
         }
     }
 }

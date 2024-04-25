@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f343d575cb3fb8d40a94a6abfb8f3494, type: 3}
   m_Name: t 4
   m_EditorClassIdentifier: 
+  cardType: 0
   curName: EggPlant
   description: EggPlant
   sprite: {fileID: -142930311, guid: 49866aa83d03c004e995c177ba502342, type: 3}
   tileBase: {fileID: 11400000, guid: 189f156ae59858f4f87bc0a54ee7c40e, type: 2}
-  actionCard: 0
-  water_changeValue: 0
-  Nutrition_changeValue: 0
+  price: 44444
+  action_water_changeValue: 0
+  action_nutrition_changeValue: 0
+  itemType: 0
+  Building_water_changeValue: 0
+  Building_Nutrition_changeValue: 0
