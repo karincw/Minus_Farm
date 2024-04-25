@@ -6,66 +6,68 @@ namespace HS
 {
     public class CropInven : MonoBehaviour
     {
-        [SerializeField] private int _fruitCount = 0;
+        [SerializeField] public int _fruitCount = 0;
         [SerializeField] private int _minPrice = 5000;
         [SerializeField] private int _maxPrice = 10000;
-        [SerializeField] private int _currentPrice = 0;
+        [SerializeField] public int _currentPrice = 0;
         private int _beforePrice;
-
         private TextMeshProUGUI _priceText;
         private TextMeshProUGUI _countText;
         private Image _priceImage;
-        //[SerializeField] private Sprite[] _priceSprite;
-        [SerializeField] private Sprite _upPriceSprite, _downPriceSprite, _samePriceSprite;
+        [SerializeField]
+        private Sprite[] _priceSprite;
 
         private void Awake()
         {
             _priceText = transform.Find("Price").GetComponent<TextMeshProUGUI>();
-            _countText = transform.Find("Count").GetComponent<TextMeshProUGUI>();
             _priceImage = transform.Find("PriceImage").GetComponent<Image>();
-            _priceImage.sprite = _samePriceSprite;
+            _countText = transform.Find("Count").GetComponent<TextMeshProUGUI>();
+            _priceImage.sprite = _priceSprite[0];
+            _countText.text = _fruitCount.ToString();
+            _priceText.text = _currentPrice.ToString();
+            RandomPrice();
         }
 
         public void SetCount(int count)
         {
             _fruitCount = count;
-            CountChange();
+            ChangeCount();
         }
+
         public void AddCount(int count)
         {
             _fruitCount += count;
-            CountChange();
+            ChangeCount();
         }
+
         public int GetCount()
         {
             return _fruitCount;
         }
 
-        [ContextMenu("countChange")]
-        public void CountChange()
+        public void ChangeCount()
         {
             _countText.text = _fruitCount.ToString();
         }
 
-        [ContextMenu("random")]
-        public void Random_Price()
+        public void RandomPrice()
         {
             _currentPrice = Random.Range(_minPrice, _maxPrice);
             if (_currentPrice > _beforePrice)
             {
-                _priceImage.sprite = _upPriceSprite;
+                _priceImage.sprite = _priceSprite[2];
             }
             else if (_currentPrice < _beforePrice)
             {
-                _priceImage.sprite = _downPriceSprite;
+                _priceImage.sprite = _priceSprite[1];
             }
             else
             {
-                _priceImage.sprite = _samePriceSprite;
+                _priceImage.sprite = _priceSprite[0];
             }
+
             _priceText.text = _currentPrice.ToString();
             _beforePrice = _currentPrice;
-            CountChange();
         }
     }
 }
