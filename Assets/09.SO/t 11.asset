@@ -16,3 +16,6 @@ MonoBehaviour:
   description: Yam
   sprite: {fileID: -142930311, guid: 277f6a2bb53ba614496fbd7c1644395d, type: 3}
   tileBase: {fileID: 11400000, guid: 75c26aa59e9e5cc4da879130c659cabc, type: 2}
+  actionCard: 0
+  water_changeValue: 0
+  Nutrition_changeValue: 0

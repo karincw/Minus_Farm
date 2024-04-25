@@ -1,9 +1,5 @@
-using CW;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 
 namespace CW
@@ -25,12 +21,19 @@ namespace CW
             if (Input.GetMouseButtonDown(0))
             {
                 Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                bool isHit = Physics2D.OverlapCircle(mousePos, 0.4f, targetLayer);
+                bool isHit = Physics2D.OverlapCircle(mousePos, 0.1f, targetLayer);
                 if (isHit)
                 {
                     var tilePos = _tilemap.WorldToCell(mousePos);
-                    CardSO card = CropManager.Instance.GetPosToCard(tilePos);
-                    _descriptionText.text = card.description;
+                    bool isNull = true;
+                    Crop crop = CropManager.Instance.GetPosToCrop(tilePos, ref isNull);
+                    if (!isNull)
+                    {
+                        _descriptionText.text = crop.currentCard.description;
+                        _descriptionText.text += $"\nwater : {crop.water} / 100\n";
+                        _descriptionText.text += $"nutrition : {crop.nutrition} / 100\n";
+                    }
+
                 }
 
             }

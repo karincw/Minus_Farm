@@ -16,3 +16,6 @@ MonoBehaviour:
   description: WhiteRose
   sprite: {fileID: -142930311, guid: a237ada586a203d4fa0b450657f522f3, type: 3}
   tileBase: {fileID: 11400000, guid: fcae99a8c7c2ebd4ca212c2b55f44781, type: 2}
+  actionCard: 0
+  water_changeValue: 0
+  Nutrition_changeValue: 0

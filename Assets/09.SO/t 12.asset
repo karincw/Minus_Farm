@@ -16,3 +16,6 @@ MonoBehaviour:
   description: Cabage
   sprite: {fileID: -142930311, guid: ef2eeb5630d2ce042834a14a6bcbd8c9, type: 3}
   tileBase: {fileID: 11400000, guid: 0567a25ceea796742a99f4b30ffa14b9, type: 2}
+  actionCard: 0
+  water_changeValue: 0
+  Nutrition_changeValue: 0
