@@ -16,4 +16,6 @@ MonoBehaviour:
   description: Lily
   sprite: {fileID: -142930311, guid: eb9a6190e0327c641a836896ec04ac0b, type: 3}
   tileBase: {fileID: 11400000, guid: 078df4acde3abe44299d69d187d13aa1, type: 2}
-  price: 7000
+  actionCard: 0
+  water_changeValue: 0
+  Nutrition_changeValue: 0

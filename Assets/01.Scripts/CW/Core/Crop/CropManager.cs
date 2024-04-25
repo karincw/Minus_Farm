@@ -39,14 +39,12 @@ namespace CW
 
 #endif
 
-
         private void StartSetting()
         {
             for (int i = -2; i < 1; i++)
             {
                 for (int j = -2; j < 1; j++)
                 {
-
                     Vector3Int cellPos = _tileMap.WorldToCell(new Vector3Int(i, j));
 
                     _tileMap.SetTile(cellPos, _groundSO.tileBase);
@@ -58,7 +56,7 @@ namespace CW
         public void AddCrop(Vector3Int pos, CardSO card)
         {
             Crop newCropData = cropUtility.cardToCropDataDic[card];
-            Crop newCrop = new Crop(newCropData.growCycle, newCropData.cropTile, newCropData.sprite);
+            Crop newCrop = new Crop(newCropData.growCycle, newCropData.cropTile, newCropData.sprite, card);
 
             if (tiles.ContainsKey(pos))
             {
@@ -68,6 +66,54 @@ namespace CW
             }
 
             tiles.Add(pos, newCrop);
+        }
+
+        public void SetGroundTile(Vector3Int tilePos)
+        {
+            AddCrop(tilePos, _groundSO);
+            _tileMap.SetTile(tilePos, _groundSO.tileBase);
+        }
+
+        public void ChangeCrop(Vector3Int pos, Crop crop)
+        {
+            if (tiles.ContainsKey(pos))
+            {
+                tiles[pos] = crop;
+                return;
+            }
+            Debug.LogError($"Dictionary haven't {pos}this positionKey");
+        }
+
+        public Crop GetPosToCrop(Vector3Int pos, ref bool IsNull)
+        {
+            if (tiles.ContainsKey(pos))
+            {
+                IsNull = false;
+            }
+            else
+            {
+                IsNull = true;
+                Debug.LogError($"tiles is Not Have {pos}");
+            }
+            return tiles[pos];
+        }
+
+        public void NextCycle()
+        {
+            nextTurn = true;
+        }
+
+        public void Harvest(Vector3Int pos)
+        {
+            if (tiles.ContainsKey(pos))
+            {
+                _tileMap.SetTile(pos, _groundSO.tileBase);
+                //수확 사잍클
+            }
+            else
+            {
+                Debug.LogError($"tiles is Not Have {pos}");
+            }
         }
 
         public IEnumerator GrowCoroutine()
@@ -87,6 +133,8 @@ namespace CW
                 var targetKey = tiles.Keys.ToList()[i];
                 Crop crop = tiles[targetKey];
                 crop.growIdx++;
+                crop.water -= 10;
+                crop.nutrition -= 10;
 
                 //식물이 자랐는지 확인
                 TileBase tilebase = null;
@@ -112,6 +160,14 @@ namespace CW
             StartCoroutine(GrowCoroutine());
         }
 
+        public Vector3Int GetRandomCropPos()
+        {
+            var keys = tiles.Keys.ToArray();
+
+            int randomIndex = Random.Range(0, keys.Length);
+
+            return keys[randomIndex];
+        }
     }
 
 }

@@ -1,33 +1,35 @@
-using HS;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace CW
 {
+
     public class Drag : MonoBehaviour, IPointerDownHandler
     {
         public CardSO currentCard;
-        private GameObject _crop;
-        public CropInven _cropInven;
         [SerializeField] private bool _isSeed = false;
+
+        [Header("ClickToDescription")]
+        [SerializeField] private bool _clickToDescription = false;
+        [SerializeField] private Card _card;
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            if (_isSeed == false)//UI
+            if (_clickToDescription)
             {
-                var crop = CropManager.Instance.cropUtility.cardToCropDataDic[currentCard];
-                DragAndDropManager.Instance.SetImage(crop.sprite);
+                _card.SetDescription(currentCard.description);
+            }
 
-                #region
-                _cropInven = transform.parent.GetComponentInParent<CropInven>();
-                DragAndDropManager.Instance.dragObject._cropInven = _cropInven;
-                #endregion
+            if (_isSeed)
+            {
+                DragAndDropManager.Instance.SetCard(currentCard);
             }
             else
             {
-                DragAndDropManager.Instance.SetImage(currentCard);
+                var crop = CropManager.Instance.cropUtility.cardToCropDataDic[currentCard];
+                DragAndDropManager.Instance.SetImage(crop.sprite);
             }
-            DragAndDropManager.Instance.IsSeed = _isSeed;
         }
     }
 

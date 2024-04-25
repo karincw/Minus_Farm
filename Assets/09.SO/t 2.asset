@@ -16,4 +16,6 @@ MonoBehaviour:
   description: Carrot
   sprite: {fileID: -142930311, guid: b17961b0693d217429e1469adadef7d0, type: 3}
   tileBase: {fileID: 11400000, guid: 811803bf5c87a2e44be89fee5f4c7220, type: 2}
-  price: 2000
+  actionCard: 0
+  water_changeValue: 0
+  Nutrition_changeValue: 0

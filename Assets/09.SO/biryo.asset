@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f343d575cb3fb8d40a94a6abfb8f3494, type: 3}
-  m_Name: t 8
+  m_Name: biryo
   m_EditorClassIdentifier: 
-  curName: Asparagus
-  description: Asparagus
-  sprite: {fileID: -142930311, guid: b1faa56451e3a1c4cbde5305cd1c5013, type: 3}
-  tileBase: {fileID: 11400000, guid: 271d458e97e5b82469c01f7f00ceaf50, type: 2}
-  actionCard: 0
-  water_changeValue: 0
-  Nutrition_changeValue: 0
+  curName: "\uBE44\uB8CC"
+  description: "\uBE44\uB8CC"
+  sprite: {fileID: -142930311, guid: aaa9db6fd353db4469e2115ff308d9d2, type: 3}
+  tileBase: {fileID: 0}
+  actionCard: 1
+  water_changeValue: -10
+  Nutrition_changeValue: 20
