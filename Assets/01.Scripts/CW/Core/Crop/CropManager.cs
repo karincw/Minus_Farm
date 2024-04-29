@@ -24,7 +24,7 @@ namespace CW
         private void Start()
         {
             StartCoroutine(GrowCoroutine());
-            //StartSetting();
+            StartSetting();
         }
 
 #if UNITY_EDITOR

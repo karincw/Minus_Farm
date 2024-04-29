@@ -52,5 +52,10 @@ namespace HS
         {
             transform.Find("Warning").gameObject.SetActive(false);
         }
+
+        public void OpenWarning()
+        {
+            transform.Find("Warning").gameObject.SetActive(true);
+        }
     }
 }
