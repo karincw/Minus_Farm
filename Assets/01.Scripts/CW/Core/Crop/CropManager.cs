@@ -10,7 +10,7 @@ namespace CW
     {
         [Header("Settings")]
         [SerializeField] private Tilemap _tileMap;
-        [SerializeField] private CardSO _groundSO;
+        public CardSO _groundSO;
         public bool nextTurn;
 
         [SerializeField] private SerializedDictionary<Vector3Int, Crop> tiles = new SerializedDictionary<Vector3Int, Crop>();
@@ -24,7 +24,7 @@ namespace CW
         private void Start()
         {
             StartCoroutine(GrowCoroutine());
-            //StartSetting();
+            StartSetting();
         }
 
 #if UNITY_EDITOR
@@ -108,7 +108,7 @@ namespace CW
             if (tiles.ContainsKey(pos))
             {
                 _tileMap.SetTile(pos, _groundSO.tileBase);
-                //¼öÈ® »çŸæÅ¬
+                //ï¿½ï¿½È® ï¿½ï¿½ï¿½Å¬
             }
             else
             {
@@ -136,7 +136,7 @@ namespace CW
                 crop.water -= 10;
                 crop.nutrition -= 10;
 
-                //½Ä¹°ÀÌ ÀÚ¶ú´ÂÁö È®ÀÎ
+                //ï¿½Ä¹ï¿½ï¿½ï¿½ ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
                 TileBase tilebase = null;
                 int cropGrowIdx = crop.growIdx / crop.growCycle;
 

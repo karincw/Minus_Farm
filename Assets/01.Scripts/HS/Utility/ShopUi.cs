@@ -9,11 +9,11 @@ namespace HS
 {
     public class ShopUi : MonoBehaviour
     {
-        [SerializeField] private TopBarRightUi _topBarRightUi;
+        [SerializeField] private TopBarRightUi topBarRightUi;
         [SerializeField] private List<CardSO> _cardSO = new List<CardSO>();
-        [SerializeField] private List<Image> _image = new List<Image>();
-        [SerializeField] private List<TextMeshProUGUI> _price = new List<TextMeshProUGUI>();
-        private List<CardSO> _seed = new List<CardSO>();
+        [SerializeField] private List<Image> image = new List<Image>();
+        [SerializeField] private List<TextMeshProUGUI> price = new List<TextMeshProUGUI>();
+        private readonly List<CardSO> _seed = new List<CardSO>();
 
         private void Awake()
         {
@@ -22,25 +22,25 @@ namespace HS
 
         public void SeedChange()
         {
-            List<CardSO> _changeSeed = _cardSO.ToList();
+            List<CardSO> changeSeed = _cardSO.ToList();
 
             for (int i = 0; i < 6; i++)
             {
-                int index = Random.Range(0, _changeSeed.Count);
-                _image[i].sprite = _changeSeed[index].sprite;
-                _price[i].text = $"{_changeSeed[index].price}G";
+                int index = Random.Range(0, changeSeed.Count);
+                image[i].sprite = changeSeed[index].sprite;
+                price[i].text = $"{changeSeed[index].price}G";
 
-                _seed.Add(_changeSeed[index]);
-                _changeSeed.RemoveAt(index);
+                _seed.Add(changeSeed[index]);
+                changeSeed.RemoveAt(index);
             }
         }
 
         public void BuyFruit(int num)
         {
-            if (_topBarRightUi._credit >= _seed[num].price)
+            if (topBarRightUi.credit >= _seed[num].price)
             {
                 CardManager.Instance.AddCard(_seed[num]);
-                _topBarRightUi.ChangeCredit(-_seed[num].price);
+                topBarRightUi.ChangeCredit(-_seed[num].price);
             }
             else
             {
@@ -51,6 +51,11 @@ namespace HS
         public void CloseWarning()
         {
             transform.Find("Warning").gameObject.SetActive(false);
+        }
+
+        public void OpenWarning()
+        {
+            transform.Find("Warning").gameObject.SetActive(true);
         }
     }
 }
