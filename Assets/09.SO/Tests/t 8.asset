@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f343d575cb3fb8d40a94a6abfb8f3494, type: 3}
-  m_Name: t 1
+  m_Name: t 8
   m_EditorClassIdentifier: 
-  cardType: 0
-  curName: Beetrot
-  description: Beetrot
-  sprite: {fileID: -142930311, guid: 24360d9ee5d4d9c4786e5258b3cb2b21, type: 3}
-  tileBase: {fileID: 11400000, guid: f5ea1f02d80fc1d45ae0f34746fb1e70, type: 2}
-  price: 11111
+  cardType: 1
+  curName: Asparagus
+  description: Asparagus
+  sprite: {fileID: -142930311, guid: b1faa56451e3a1c4cbde5305cd1c5013, type: 3}
+  tileBase: {fileID: 11400000, guid: 271d458e97e5b82469c01f7f00ceaf50, type: 2}
+  price: 0
   action_water_changeValue: 0
   action_nutrition_changeValue: 0
   itemType: 0

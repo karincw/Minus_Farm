@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f343d575cb3fb8d40a94a6abfb8f3494, type: 3}
-  m_Name: t 4
+  m_Name: Tomato
   m_EditorClassIdentifier: 
-  cardType: 0
-  curName: EggPlant
-  description: EggPlant
-  sprite: {fileID: -142930311, guid: 49866aa83d03c004e995c177ba502342, type: 3}
-  tileBase: {fileID: 11400000, guid: 189f156ae59858f4f87bc0a54ee7c40e, type: 2}
-  price: 44444
+  cardType: 1
+  curName: Tomato
+  description: Tomato
+  sprite: {fileID: 21300000, guid: 5b5dab2198379a3478c9f9793c0c0c8a, type: 3}
+  tileBase: {fileID: 11400000, guid: 5a3f195545e89e64ea79bb80abff7b3e, type: 2}
+  price: 0
   action_water_changeValue: 0
   action_nutrition_changeValue: 0
   itemType: 0

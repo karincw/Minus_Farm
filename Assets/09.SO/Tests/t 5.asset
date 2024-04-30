@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f343d575cb3fb8d40a94a6abfb8f3494, type: 3}
   m_Name: t 5
   m_EditorClassIdentifier: 
-  cardType: 0
+  cardType: 1
   curName: GreenBellPepper
   description: GreenBellPepper
   sprite: {fileID: -142930311, guid: df598a3e9b2d98c458a5fea055f16653, type: 3}

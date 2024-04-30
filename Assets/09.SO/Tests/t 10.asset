@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f343d575cb3fb8d40a94a6abfb8f3494, type: 3}
   m_Name: t 10
   m_EditorClassIdentifier: 
+  cardType: 1
   curName: WhiteRose
   description: WhiteRose
   sprite: {fileID: -142930311, guid: a237ada586a203d4fa0b450657f522f3, type: 3}
   tileBase: {fileID: 11400000, guid: fcae99a8c7c2ebd4ca212c2b55f44781, type: 2}
-  actionCard: 0
-  water_changeValue: 0
-  Nutrition_changeValue: 0
+  price: 0
+  action_water_changeValue: 0
+  action_nutrition_changeValue: 0
+  itemType: 0
+  Building_water_changeValue: 0
+  Building_Nutrition_changeValue: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f343d575cb3fb8d40a94a6abfb8f3494, type: 3}
   m_Name: t 6
   m_EditorClassIdentifier: 
-  cardType: 0
+  cardType: 1
   curName: Leek
   description: Leek
   sprite: {fileID: -142930311, guid: 948f7acd8a2306b4098e9ef7068243b9, type: 3}
