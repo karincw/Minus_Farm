@@ -1,8 +1,11 @@
 using AYellowpaper.SerializedCollections;
 using System.Collections;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
+using DG.Tweening;
 
 namespace CW
 {
@@ -11,10 +14,14 @@ namespace CW
         [Header("Settings")]
         [SerializeField] private Tilemap _tileMap;
         [SerializeField] private CardSO _groundSO;
+        [SerializeField] private RectTransform _harvestTargets;
+        [SerializeField] private RectTransform _spawnTargets;
         public bool nextTurn;
 
         [SerializeField] private SerializedDictionary<Vector3Int, Crop> tiles = new SerializedDictionary<Vector3Int, Crop>();
         [HideInInspector] public CropUtility cropUtility;
+        public GameObject _movedCrop;
+        public RectTransform _moveCanvas;
 
         private void Awake()
         {
@@ -24,7 +31,7 @@ namespace CW
         private void Start()
         {
             StartCoroutine(GrowCoroutine());
-            //StartSetting();
+            StartSetting();
         }
 
 #if UNITY_EDITOR
@@ -33,7 +40,7 @@ namespace CW
         {
             if (Input.GetKeyDown(KeyCode.T))
             {
-                nextTurn = true;
+                NextCycle();
             }
         }
 
@@ -103,12 +110,28 @@ namespace CW
             nextTurn = true;
         }
 
-        public void Harvest(Vector3Int pos)
+        public void Harvest(Vector3Int pos, Crop crop)
         {
             if (tiles.ContainsKey(pos))
             {
-                _tileMap.SetTile(pos, _groundSO.tileBase);
-                //수확 사잍클
+                SetGroundTile(pos);
+
+                Vector2 world = _tileMap.CellToWorld(pos);
+                var mover = Instantiate(_movedCrop, _moveCanvas);
+                RectTransform rectTrm = (mover.transform as RectTransform);
+                mover.GetComponent<Image>().sprite = crop.sprite;
+
+                Vector2 ViewportPosition = Camera.main.WorldToViewportPoint(world);
+                Vector2 WorldObject_CanvasPosition = new Vector2(
+                ((ViewportPosition.x * _moveCanvas.sizeDelta.x) - (_moveCanvas.sizeDelta.x * 0.5f)),
+                ((ViewportPosition.y * _moveCanvas.sizeDelta.y) - (_moveCanvas.sizeDelta.y * 0.5f)));
+
+                _spawnTargets.anchoredPosition = WorldObject_CanvasPosition;
+
+                Vector3 start = _spawnTargets.InverseTransformPoint(_moveCanvas.position);
+                rectTrm.anchoredPosition = start;
+
+
             }
             else
             {
@@ -144,9 +167,10 @@ namespace CW
                 {
                     tilebase = crop.cropTile[cropGrowIdx];
                 }
-                else
+                else //다자랐음
                 {
-
+                    if (crop.currentCard == _groundSO) continue;
+                    Harvest(targetKey, crop);
                 }
 
                 if (tilebase != null)
