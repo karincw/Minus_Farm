@@ -27,11 +27,9 @@ namespace test
         {
             if (Input.GetKeyDown(KeyCode.D))
             {
-
                 Vector3 pos = _myRect.InverseTransformPoint(_rect.position);
 
                 _target.anchoredPosition = pos;
-                Debug.Log(pos);
             }
         }
     }
