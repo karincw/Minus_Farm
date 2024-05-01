@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 23552e5d7d201914c8869084f81bb2de
+guid: c6e911dd46d32ec46829d2377b58cb41
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Strewberry_0
+      name: Carrot_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb644760b76e46f49b1fbdf6499de652
-      internalID: 2038803102
+      spriteID: ef8ec08a09a19f84e8c9a52f15a83a04
+      internalID: 1332705505
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Strewberry_1
+      name: Carrot_1
       rect:
         serializedVersion: 2
         x: 256
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d619c626af4fb84c9ae9a9a1a00b164
-      internalID: 1267032091
+      spriteID: 02d774f9c748c124faa3bf6345d672a8
+      internalID: 739714419
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Strewberry_2
+      name: Carrot_2
       rect:
         serializedVersion: 2
         x: 512
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 188670675b6abd64d8efc772bb7f5bca
-      internalID: 440917226
+      spriteID: 8fcd4fe7423dee44a8fe804bd087b368
+      internalID: 312956483
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Strewberry_3
+      name: Carrot_3
       rect:
         serializedVersion: 2
         x: 768
@@ -174,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40d6c5144b2759841a874902d1b1d337
-      internalID: -1430686416
+      spriteID: de2acd80611de2244a2f61d6de9204bb
+      internalID: -1948645210
       vertices: []
       indices: 
       edges: []
@@ -191,10 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Strewberry_0: 2038803102
-      Strewberry_1: 1267032091
-      Strewberry_2: 440917226
-      Strewberry_3: -1430686416
+      Carrot_0: 1332705505
+      Carrot_1: 739714419
+      Carrot_2: 312956483
+      Carrot_3: -1948645210
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

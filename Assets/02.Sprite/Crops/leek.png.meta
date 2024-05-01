@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3c22f7fa8d6f8c54f972f55dca16a55e
+guid: 87abcfe895bb39549af5fe150648ef41
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -97,12 +97,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: leek_0
+      name: Leek_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 204.8
+        width: 256
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -111,19 +111,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39b157d9c4c28154191c15b3092ede42
-      internalID: -1823749626
+      spriteID: 6301b7df691a92b4bb6cb4217f7bbf7b
+      internalID: 434318432
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leek_1
+      name: Leek_1
       rect:
         serializedVersion: 2
-        x: 204
+        x: 256
         y: 0
-        width: 204.8
+        width: 256
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -132,19 +132,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fec12d5c4ac69bd4d9b65a40e2dcfadf
-      internalID: 1182831264
+      spriteID: b3907acddce169d408e38822e04eb1f2
+      internalID: 713661964
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leek_2
+      name: Leek_2
       rect:
         serializedVersion: 2
-        x: 408
+        x: 512
         y: 0
-        width: 204.8
+        width: 256
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -153,19 +153,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb2019d026fe5a84f8d9d785196526db
-      internalID: 408901422
+      spriteID: ede3bafcad6c7af47b53b8e34068e1d7
+      internalID: 2065981211
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leek_3
+      name: Leek_3
       rect:
         serializedVersion: 2
-        x: 612
+        x: 768
         y: 0
-        width: 204.8
+        width: 256
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -174,29 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7788e1aa72889a4183522c8f9c45358
-      internalID: 1677045526
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: leek_4
-      rect:
-        serializedVersion: 2
-        x: 816
-        y: 0
-        width: 204.8
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b7bf19025f5a6bd4b9c9eebba4b82d32
-      internalID: 623051599
+      spriteID: aede540a6951d294bbf4fa1e8b366987
+      internalID: 779848427
       vertices: []
       indices: 
       edges: []
@@ -212,11 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      leek_0: -1823749626
-      leek_1: 1182831264
-      leek_2: 408901422
-      leek_3: 1677045526
-      leek_4: 623051599
+      Leek_0: 434318432
+      Leek_1: 713661964
+      Leek_2: 2065981211
+      Leek_3: 779848427
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
