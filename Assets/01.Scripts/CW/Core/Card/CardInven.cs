@@ -9,7 +9,7 @@ namespace CW
         [SerializeField] private List<CardSO> _inventory = new List<CardSO>();
 
         /// <summary>
-        /// Suffle¾Ë°í¸®ÁòÀ¸·Î ÀÎº¥Åä¸®ÀÇ Ä«µåµéÀ» ·£´ıÀ¸·Î ¼¯¾îÁÜ
+        /// Suffleì•Œê³ ë¦¬ì¦˜ìœ¼ë¡œ ì¸ë²¤í† ë¦¬ì˜ ì¹´ë“œë“¤ì„ ëœë¤ìœ¼ë¡œ ì„ì–´ì¤Œ
         /// </summary>
         /// <param name="suffleCount"></param>
         [ContextMenu("Suffle")]
@@ -27,10 +27,10 @@ namespace CW
         }
 
         /// <summary>
-        /// _inventory¿¡ ÀÖ´Â Ä«µå¸ñ·ÏÁß count°³ÀÇ Ä«µå¸¦ ¹è¿­·Î ¸®ÅÏÇØÁÜ
+        /// _inventoryì— ìˆëŠ” ì¹´ë“œëª©ë¡ì¤‘ countê°œì˜ ì¹´ë“œë¥¼ ë°°ì—´ë¡œ ë¦¬í„´í•´ì¤Œ
         /// </summary>
-        /// <param name="count">°¡Á®¿Ã °³¼ö ÃÊ±â°ª = 10</param>
-        /// <param name="suffledGet">¼¯Àº´ÙÀ½ °¡Á®¿Ã°ÇÁö ¾Æ´Ï¸é ±×³É °¡Á®¿Ã°ÇÁö</param>
+        /// <param name="count">ê°€ì ¸ì˜¬ ê°œìˆ˜ ì´ˆê¸°ê°’ = 10</param>
+        /// <param name="suffledGet">ì„ì€ë‹¤ìŒ ê°€ì ¸ì˜¬ê±´ì§€ ì•„ë‹ˆë©´ ê·¸ëƒ¥ ê°€ì ¸ì˜¬ê±´ì§€</param>
         /// <returns></returns>
         [ContextMenu("GetTiles")]
         public CardSO[] GetCards(int count = 10, bool suffledGet = false)
@@ -53,7 +53,7 @@ namespace CW
         } 
 
         /// <summary> 
-        /// Count°ª¸¸Å« card¸¦ ÀÎº¥Åä¸®¿¡ Ãß°¡ÇØÁÜ 
+        /// Countê°’ë§Œí° cardë¥¼ ì¸ë²¤í† ë¦¬ì— ì¶”ê°€í•´ì¤Œ 
         /// </summary>
         /// <param name="card"></param>
         /// <param name="count"></param>

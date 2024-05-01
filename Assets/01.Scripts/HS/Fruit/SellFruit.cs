@@ -9,19 +9,21 @@ namespace HS
         private int _currentPrice, _price, _maxCount, _currentCount;
         private TextMeshProUGUI _countText;
         private TextMeshProUGUI _priceText;
-        private Slider _priceSlider;
+        private TopBarRightUi _barRight;
         private CropInven _cropInven;
+        public Slider priceSlider;
 
         private void Awake()
         {
-            _priceSlider = transform.Find("Slider").GetComponent<Slider>();
+            _barRight = GameObject.Find("Right").GetComponent<TopBarRightUi>();
+            priceSlider = transform.Find("Slider").GetComponent<Slider>();
             _priceText = transform.Find("Price").GetComponent<TextMeshProUGUI>();
             _countText = transform.Find("Count").GetComponent<TextMeshProUGUI>();
         }
 
         public void On_CountAndPriceChange()
         {
-            _currentCount = Mathf.RoundToInt(_maxCount * _priceSlider.value);
+            _currentCount = Mathf.RoundToInt(_maxCount * priceSlider.value);
             _currentPrice = _currentCount * _price;
             _priceText.text = _currentPrice.ToString();
             _countText.text = $"{_currentCount} / {_maxCount}";
@@ -38,10 +40,10 @@ namespace HS
 
         public void Sell_Fruit()
         {
-            GameObject.Find("Right").GetComponent<TopBarRightUi>().ChangeCredit(_currentPrice);
+            _barRight.ChangeCredit(_currentPrice);
             _cropInven._fruitCount -= _currentCount;
             _cropInven.ChangeCount();
-            _priceSlider.value = 0f;
+            priceSlider.value = 0f;
         }
     }
 }
