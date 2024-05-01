@@ -24,8 +24,8 @@ namespace HS
             _countText = transform.Find("Count").GetComponent<TextMeshProUGUI>();
             _priceImage.sprite = _priceSprite[0];
             _countText.text = _fruitCount.ToString();
-            _priceText.text = _currentPrice.ToString();
-            RandomPrice();
+            _priceText.text = _currentPrice.ToString(); 
+            RandomPrice(); 
         }
 
         public void SetCount(int count)

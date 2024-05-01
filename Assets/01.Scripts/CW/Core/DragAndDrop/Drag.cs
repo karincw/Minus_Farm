@@ -13,7 +13,7 @@ namespace CW
 
         [Header("ClickToDescription")]
         [SerializeField] private bool _clickToDescription = false;
-        [SerializeField] private Card _card;
+        [SerializeField] public Card _card;
         public CropInven _cropInven;
 
         public void OnPointerDown(PointerEventData eventData)

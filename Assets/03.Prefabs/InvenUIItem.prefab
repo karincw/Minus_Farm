@@ -168,7 +168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e91a7c634d97bb43ab12af042f75e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fruitCount: 0
+  _fruitCount: 100
+  _minPrice: 5000
+  _maxPrice: 10000
   _currentPrice: 0
   _priceSprite:
   - {fileID: 21300000, guid: c1b9dfd2578475e4d98c66d933a3f23f, type: 3}
@@ -398,6 +400,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentCard: {fileID: 0}
   _isSeed: 0
+  _clickToDescription: 0
+  _card: {fileID: 0}
+  _cropInven: {fileID: 0}
 --- !u!1 &6061584586057916369
 GameObject:
   m_ObjectHideFlags: 0
