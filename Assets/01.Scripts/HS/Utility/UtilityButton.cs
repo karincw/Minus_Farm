@@ -11,6 +11,7 @@ namespace HS
         private SellFruit _sellFruit;
         private Image _fruitImageUi;
         private Sprite _fruitImage;
+        private SpriteRenderer _spriteRenderer;
         private bool _shopUiActive;
         private bool _backpackUiActive;
         private bool _sellUiActive;
@@ -19,6 +20,7 @@ namespace HS
         {
             _fruitImageUi = sellUi.transform.Find("Image").GetComponent<Image>();
             _sellFruit = sellUi.GetComponent<SellFruit>();
+            _spriteRenderer = GameObject.Find("DragObject").GetComponent<SpriteRenderer>();
         }
 
         public void BackpackOpen()
@@ -46,9 +48,10 @@ namespace HS
                 if (!(_shopUiActive || _backpackUiActive))
                 {
                     sellUi.gameObject.SetActive(true);
+                    _sellFruit.priceSlider.value = 0;
                     _sellUiActive = true;
 
-                    _fruitImage = GameObject.Find("DragObject").GetComponent<SpriteRenderer>().sprite;
+                    _fruitImage = _spriteRenderer.sprite;
 
                     _fruitImageUi.sprite = _fruitImage;
                     _sellFruit.Set_CountAndPrice(cropInven);

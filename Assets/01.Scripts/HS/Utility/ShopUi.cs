@@ -1,6 +1,5 @@
 using CW;
 using System.Collections.Generic;
-using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,8 +11,7 @@ namespace HS
         [SerializeField] private TopBarRightUi topBarRightUi;
         [SerializeField] private List<CardSO> _cardSO = new List<CardSO>();
         [SerializeField] private List<Image> image = new List<Image>();
-        [SerializeField] private List<TextMeshProUGUI> price = new List<TextMeshProUGUI>();
-        private readonly List<CardSO> _seed = new List<CardSO>();
+        [SerializeField] private List<TextMeshProUGUI> priceText = new List<TextMeshProUGUI>();
 
         private void Awake()
         {
@@ -22,25 +20,27 @@ namespace HS
 
         public void SeedChange()
         {
-            List<CardSO> changeSeed = _cardSO.ToList();
+            for (int i = 0; i < 100; ++i)
+            {
+                int first = Random.Range(0, _cardSO.Count);
+                int second = Random.Range(0, _cardSO.Count);
 
+                (_cardSO[first], _cardSO[second]) = (_cardSO[second], _cardSO[first]);
+            }
+            
             for (int i = 0; i < 6; i++)
             {
-                int index = Random.Range(0, changeSeed.Count);
-                image[i].sprite = changeSeed[index].sprite;
-                price[i].text = $"{changeSeed[index].price}G";
-
-                _seed.Add(changeSeed[index]);
-                changeSeed.RemoveAt(index);
+                image[i].sprite = _cardSO[i].sprite;
+                priceText[i].text = $"{_cardSO[i].price}G";
             }
         }
 
         public void BuyFruit(int num)
         {
-            if (topBarRightUi.credit >= _seed[num].price)
+            if (topBarRightUi.credit >= _cardSO[num].price)
             {
-                CardManager.Instance.AddCard(_seed[num]);
-                topBarRightUi.ChangeCredit(-_seed[num].price);
+                CardManager.Instance.AddCard(_cardSO[num]);
+                topBarRightUi.ChangeCredit(-_cardSO[num].price);
             }
             else
             {

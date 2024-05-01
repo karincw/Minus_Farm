@@ -6,8 +6,8 @@ namespace HS
 {
     public class TopBarMiddleUi : MonoBehaviour
     {
-        private float _currentTime = 0;
-        private bool _ismorning = true;
+        private float _currentTime;
+        private bool _isMorning = true;
         [SerializeField] private float _passesTime;
         [SerializeField] private int day, month;
 
@@ -29,16 +29,16 @@ namespace HS
 
             if (_currentTime >= _passesTime)
             {
-                if (_ismorning)
+                if (_isMorning)
                 {
                     _dayNightTxt.text = "저녁";
-                    _ismorning = false;
+                    _isMorning = false;
                     OnDaynightChangeEvent.Invoke();
                 }
                 else
                 {
                     _dayNightTxt.text = "아침";
-                    _ismorning = true;
+                    _isMorning = true;
 
                     day++;
                     if (day == 30)

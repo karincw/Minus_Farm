@@ -4149,6 +4149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e74cb24aded6c64f98f55e73fe95e55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  priceSlider: {fileID: 0}
 --- !u!1 &913698894
 GameObject:
   m_ObjectHideFlags: 0
@@ -4975,10 +4976,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tileMap: {fileID: 1796639554}
   _groundSO: {fileID: 11400000, guid: fa883b9e3820fae498f94c0db232702e, type: 2}
+  _harvestTargets: {fileID: 0}
+  _spawnTargets: {fileID: 0}
   nextTurn: 0
   tiles:
     _serializedList: []
   cropUtility: {fileID: 0}
+  _movedCrop: {fileID: 0}
+  _moveCanvas: {fileID: 0}
 --- !u!1001 &1011103214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7375,7 +7380,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1446885369
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7794,7 +7799,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1523262595
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7888,7 +7893,7 @@ MonoBehaviour:
   - {fileID: 884923805}
   - {fileID: 1727453014}
   - {fileID: 1876674899}
-  price:
+  priceText:
   - {fileID: 1726319421}
   - {fileID: 1867560118}
   - {fileID: 1284915167}
