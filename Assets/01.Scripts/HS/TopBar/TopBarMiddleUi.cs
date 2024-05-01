@@ -31,13 +31,13 @@ namespace HS
             {
                 if (_ismorning)
                 {
-                    _dayNightTxt.text = "¿˙≥·";
+                    _dayNightTxt.text = "Ï†ÄÎÖÅ";
                     _ismorning = false;
                     OnDaynightChangeEvent.Invoke();
                 }
                 else
                 {
-                    _dayNightTxt.text = "æ∆ƒß";
+                    _dayNightTxt.text = "ÏïÑÏπ®";
                     _ismorning = true;
 
                     day++;
