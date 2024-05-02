@@ -1,8 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
-using System.Linq;
-using UnityEngine.Events;
 using System.Collections.Generic;
+using System.Collections;
 
 namespace CW
 {
@@ -10,6 +9,14 @@ namespace CW
     public class Crow : MonoBehaviour
     {
         private Vector2 currentPosition;
+        [SerializeField] private GameObject destroyCropEffect;
+        public bool canThrow = true;
+
+        private void Awake()
+        {
+            canThrow = true;
+        }
+
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.G))
@@ -24,7 +31,6 @@ namespace CW
 
         public void MoveTile()
         {
-
             List<string> strList = new List<string>();
 
             Vector2 startPos = CrowManager.Instance.crowStartPos;
@@ -34,15 +40,22 @@ namespace CW
             Vector3Int pos = CropManager.Instance.GetRandomCropPos();
             currentPosition = (Vector3)pos;
 
-            transform.DOMove(pos, 2.5f).OnComplete(() => { DestroyCrop(); });
+            transform.DOMove(pos, 2.5f).OnComplete(() => { StartCoroutine("DestroyCropAndExitCoroutine"); });
         }
 
-        public void DestroyCrop()
+        public IEnumerator DestroyCropAndExitCoroutine()
         {
-            Debug.Log(1);
             Vector3Int currentIntPos = new Vector3Int((int)currentPosition.x, (int)currentPosition.y, 0);
 
+            yield return new WaitForSeconds(1);
+
+            canThrow = false;
             CropManager.Instance.SetGroundTile(currentIntPos);
+            Instantiate(destroyCropEffect, transform.position + new Vector3(0, -0.3f), Quaternion.identity);
+
+            yield return new WaitForSeconds(1);
+
+            MoveExit();
         }
 
         public void MoveExit()

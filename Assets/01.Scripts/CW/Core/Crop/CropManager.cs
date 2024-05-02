@@ -14,14 +14,10 @@ namespace CW
         [Header("Settings")]
         [SerializeField] private Tilemap _tileMap;
         [SerializeField] private CardSO _groundSO;
-        [SerializeField] private RectTransform _harvestTargets;
-        [SerializeField] private RectTransform _spawnTargets;
         public bool nextTurn;
 
         [SerializeField] private SerializedDictionary<Vector3Int, Crop> tiles = new SerializedDictionary<Vector3Int, Crop>();
         [HideInInspector] public CropUtility cropUtility;
-        public GameObject _movedCrop;
-        public RectTransform _moveCanvas;
 
         private void Awake()
         {
@@ -115,23 +111,7 @@ namespace CW
             if (tiles.ContainsKey(pos))
             {
                 SetGroundTile(pos);
-
-                Vector2 world = _tileMap.CellToWorld(pos);
-                var mover = Instantiate(_movedCrop, _moveCanvas);
-                RectTransform rectTrm = (mover.transform as RectTransform);
-                mover.GetComponent<Image>().sprite = crop.sprite;
-
-                Vector2 ViewportPosition = Camera.main.WorldToViewportPoint(world);
-                Vector2 WorldObject_CanvasPosition = new Vector2(
-                ((ViewportPosition.x * _moveCanvas.sizeDelta.x) - (_moveCanvas.sizeDelta.x * 0.5f)),
-                ((ViewportPosition.y * _moveCanvas.sizeDelta.y) - (_moveCanvas.sizeDelta.y * 0.5f)));
-
-                _spawnTargets.anchoredPosition = WorldObject_CanvasPosition;
-
-                Vector3 start = _spawnTargets.InverseTransformPoint(_moveCanvas.position);
-                rectTrm.anchoredPosition = start;
-
-
+                HarvestManager.Instance.Harvest(pos, crop, 4);
             }
             else
             {
