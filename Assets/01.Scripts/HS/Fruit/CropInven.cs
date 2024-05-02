@@ -25,7 +25,7 @@ namespace HS
             _priceImage.sprite = _priceSprite[0];
             _countText.text = _fruitCount.ToString();
             _priceText.text = _currentPrice.ToString(); 
-            RandomPrice(); 
+            RandomPrice();
         }
 
         public void SetCount(int count)

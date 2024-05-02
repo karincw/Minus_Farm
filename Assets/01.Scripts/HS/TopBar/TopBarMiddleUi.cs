@@ -1,6 +1,8 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace HS
 {
@@ -8,32 +10,40 @@ namespace HS
     {
         private float _currentTime;
         private bool _isMorning = true;
-        [SerializeField] private float _passesTime;
-        [SerializeField] private int day, month;
-
-        public UnityEvent OnDayChangeEvent;
-        public UnityEvent OnDaynightChangeEvent;
-
         private TextMeshProUGUI _dayNightTxt;
         private TextMeshProUGUI _dateTime;
+        private Image _image;
+        [SerializeField] private float passesTime;
+        [SerializeField] private int day, month;
+        [SerializeField] private Sprite []sprite;
+        
+        public UnityEvent OnDayChangeEvent;
+        public UnityEvent OnDaynightChangeEvent;
 
         private void Awake()
         {
             _dayNightTxt = transform.Find("Day&NightTxt").GetComponent<TextMeshProUGUI>();
             _dateTime = transform.Find("DateTxt").GetComponent<TextMeshProUGUI>();
+            _image = transform.Find("Day&NightImg").GetComponent<Image>();
+        }
+
+        private void Start()
+        {
+            OnDayChangeEvent.Invoke();
         }
 
         private void Update()
         {
             _currentTime += Time.deltaTime;
 
-            if (_currentTime >= _passesTime)
+            if (_currentTime >= passesTime)
             {
                 if (_isMorning)
                 {
                     _dayNightTxt.text = "저녁";
                     _isMorning = false;
                     OnDaynightChangeEvent.Invoke();
+                    _image.sprite = sprite[0];
                 }
                 else
                 {
@@ -48,6 +58,7 @@ namespace HS
                     }
                     OnDaynightChangeEvent.Invoke();
                     OnDayChangeEvent.Invoke();
+                    _image.sprite = sprite[1];
                     _dateTime.text = $"{month.ToString("D2")} {day.ToString("D2")}";
                 }
                 _currentTime = 0;
