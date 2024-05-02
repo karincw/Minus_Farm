@@ -6,7 +6,7 @@ namespace CW
 {
     public class CardInven : MonoBehaviour
     {
-        [SerializeField] private List<CardSO> _inventory = new List<CardSO>();
+        public List<CardSO> _inventory = new List<CardSO>();
 
         /// <summary>
         /// Suffle알고리즘으로 인벤토리의 카드들을 랜덤으로 섞어줌
