@@ -19,35 +19,38 @@ namespace HS
 
         public void SetInven()
         {
-            int c = _layout.transform.childCount;
-            for (int i = 0; i < c; i++)
+            if (gameObject.activeSelf)
             {
-                Destroy(_layout.transform.GetChild(i).gameObject);
-            }
-
-            _cardInven._inventory = _cardInven._inventory.OrderBy((a) => a.name).ToList();
-            _beforeCardSo = _cardInven._inventory[0];
-            int count = 0;
-            InvenSlot inven;
-            foreach (var card in _cardInven._inventory)
-            {
-                if (card == _beforeCardSo)
+                int c = _layout.transform.childCount;
+                for (int i = 0; i < c; i++)
                 {
-                    count++;
-                }
-                else
-                {
-                    inven = Instantiate(slotPre, _layout.transform);
-                    inven.SetInvenSlot(count, _beforeCardSo.curName, _beforeCardSo.sprite);
-
-                    count = 1;
+                    Destroy(_layout.transform.GetChild(i).gameObject);
                 }
 
-                _beforeCardSo = card;
-            }
+                _cardInven._inventory = _cardInven._inventory.OrderBy((a) => a.name).ToList();
+                _beforeCardSo = _cardInven._inventory[0];
+                int count = 0;
+                InvenSlot inven;
+                foreach (var card in _cardInven._inventory)
+                {
+                    if (card == _beforeCardSo)
+                    {
+                        count++;
+                    }
+                    else
+                    {
+                        inven = Instantiate(slotPre, _layout.transform);
+                        inven.SetInvenSlot(count, _beforeCardSo.curName, _beforeCardSo.sprite);
 
-            inven = Instantiate(slotPre, _layout.transform);
-            inven.SetInvenSlot(count, _beforeCardSo.curName, _beforeCardSo.sprite);
+                        count = 1;
+                    }
+
+                    _beforeCardSo = card;
+                }
+
+                inven = Instantiate(slotPre, _layout.transform);
+                inven.SetInvenSlot(count, _beforeCardSo.curName, _beforeCardSo.sprite);
+            }
         }
     }
 }

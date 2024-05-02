@@ -1,6 +1,8 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 namespace HS
 {
@@ -17,6 +19,8 @@ namespace HS
         [SerializeField]
         private Sprite[] _priceSprite;
 
+        private TopBarMiddleUi _topMiddleUI;
+        
         private void Awake()
         {
             _priceText = transform.Find("Price").GetComponent<TextMeshProUGUI>();
@@ -24,9 +28,13 @@ namespace HS
             _countText = transform.Find("Count").GetComponent<TextMeshProUGUI>();
             _priceImage.sprite = _priceSprite[0];
             _countText.text = _fruitCount.ToString();
-            _priceText.text = _currentPrice.ToString(); 
+            _priceText.text = _currentPrice.ToString();
+            _topMiddleUI = GameObject.Find("Middle").GetComponent<TopBarMiddleUi>();
             RandomPrice();
+            
+            _topMiddleUI.OnDayChangeEvent.AddListener(RandomPrice);
         }
+
 
         public void SetCount(int count)
         {

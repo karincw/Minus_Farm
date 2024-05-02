@@ -13,14 +13,17 @@ namespace HS
         [SerializeField] private CardSO groundSo;
         private UtilityButton _utility;
         private ShopUi _shop;
-        private Tilemap _tilemap;
-        private bool _isUpgrade;    
+        private Tilemap _useTileMap;
+        private Tilemap _unUseTileMap;
+        private bool _isUpgrade;
+        private bool _isMaxUpgrade;
     
         private void Awake()
         {
             _shop = GameObject.Find("ShopPanel").GetComponent<ShopUi>();
             _utility = GameObject.Find("UtilityPanel").GetComponent<UtilityButton>();
-            _tilemap = GameObject.Find("UseTilemap").GetComponent<Tilemap>();
+            _useTileMap = GameObject.Find("UseTilemap").GetComponent<Tilemap>();
+            _unUseTileMap = GameObject.Find("UnUseTileMap").GetComponent<Tilemap>();
         }
 
         public void UpgradeFarm1()
@@ -29,14 +32,15 @@ namespace HS
             {
                 foreach (var t in firstPositions)
                 {
-                    _tilemap.SetTile(t, groundSo.tileBase);
+                    _useTileMap.SetTile(t, groundSo.tileBase);
+                    _unUseTileMap.SetTile(t, groundSo.tileBase);
                     CropManager.Instance.AddCrop(t, groundSo);
                     _isUpgrade = true;
                     _utility.ShopClose();
                 }
                 credit.ChangeCredit(-10000);
             }
-            else if (!_isUpgrade)
+            else
             {
                 _shop.OpenWarning();
             }
@@ -44,15 +48,17 @@ namespace HS
 
         public void UpgradeFarm2()
         {
-            if (_isUpgrade && credit.credit >= 20000)
+            if ((_isUpgrade && credit.credit >= 20000) && !_isMaxUpgrade)
             {
                 foreach (var t in secondPositions)
                 {
-                    _tilemap.SetTile(t, groundSo.tileBase);
+                    _useTileMap.SetTile(t, groundSo.tileBase);
+                    _unUseTileMap.SetTile(t, groundSo.tileBase);
                     CropManager.Instance.AddCrop(t, groundSo);
                     _utility.ShopClose();
                 }
                 credit.ChangeCredit(-20000);
+                _isMaxUpgrade = true;
             }
             else
             {
