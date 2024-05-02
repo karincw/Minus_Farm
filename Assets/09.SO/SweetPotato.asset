@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f343d575cb3fb8d40a94a6abfb8f3494, type: 3}
-  m_Name: Carrot
+  m_Name: SweetPotato
   m_EditorClassIdentifier: 
   cardType: 1
-  curName: Carrot
-  description: Carrot
-  sprite: {fileID: 21300000, guid: e238192b437a1dd49a81f2e04b75d44d, type: 3}
-  tileBase: {fileID: 11400000, guid: 57f2062426f593248b5b1cb7e6e3ef57, type: 2}
+  curName: SweetPotato
+  description: SweetPotato
+  sprite: {fileID: 21300000, guid: b0bb345edc1d9be4e83bca49834e5ed7, type: 3}
+  tileBase: {fileID: 11400000, guid: 792bc098446bdc04ab844cd027a981b0, type: 2}
   price: 0
   action_water_changeValue: 0
   action_nutrition_changeValue: 0
