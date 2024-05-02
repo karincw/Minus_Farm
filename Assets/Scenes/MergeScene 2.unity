@@ -658,6 +658,7 @@ MonoBehaviour:
   - 0.2
   - 0.2
   cropSpawnDealy: 0.1
+  _cropParents: {fileID: 638005057}
 --- !u!1001 &192824422
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1375,8 +1376,8 @@ MonoBehaviour:
   day: 11
   month: 4
   sprite:
-  - {fileID: 21300000, guid: 8417f713d01d4a146983eb2702d2a510, type: 3}
   - {fileID: 21300000, guid: d8c5467f8b6aab54e8361b5da4005286, type: 3}
+  - {fileID: 21300000, guid: 8417f713d01d4a146983eb2702d2a510, type: 3}
   OnDayChangeEvent:
     m_PersistentCalls:
       m_Calls:
@@ -7070,7 +7071,7 @@ PrefabInstance:
       objectReference: {fileID: -1629206048, guid: ef2eeb5630d2ce042834a14a6bcbd8c9, type: 3}
     - target: {fileID: 2381650347246209079, guid: 9f19389abdfafc74a8f6d809271cdecf, type: 3}
       propertyPath: m_Name
-      value: Tamato
+      value: Tomato
       objectReference: {fileID: 0}
     - target: {fileID: 4615075586830598277, guid: 9f19389abdfafc74a8f6d809271cdecf, type: 3}
       propertyPath: m_Sprite
@@ -8430,7 +8431,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1612241708
 RectTransform:
   m_ObjectHideFlags: 0

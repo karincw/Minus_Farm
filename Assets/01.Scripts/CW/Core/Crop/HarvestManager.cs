@@ -1,8 +1,11 @@
+using System;
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using HS;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace CW
 {
@@ -13,6 +16,9 @@ namespace CW
         [SerializeField] private Transform _moverTrm;
         [SerializeField] private float[] times;
         [SerializeField] private float cropSpawnDealy;
+        private CropInven _cropInven;
+        [SerializeField] private Transform _cropParents;
+
 
         public void Harvest(Vector3 pos, Crop crop, int count)
         {
@@ -48,7 +54,8 @@ namespace CW
                     .Join(sr.DOFade(0, fadeSpeed))
                     .OnComplete(() =>
                     {
-                        //아이템 추가
+                        Debug.Log(crop.currentCard.curName);
+                        _cropParents.Find(crop.currentCard.curName).GetComponent<CropInven>().AddCount(1);
                         Destroy(move.gameObject);
                     });
 

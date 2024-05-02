@@ -15,7 +15,8 @@ namespace HS
         private ShopUi _shop;
         private Tilemap _useTileMap;
         private Tilemap _unUseTileMap;
-        private bool _isUpgrade;    
+        private bool _isUpgrade;
+        private bool _isMaxUpgrade;
     
         private void Awake()
         {
@@ -39,7 +40,7 @@ namespace HS
                 }
                 credit.ChangeCredit(-10000);
             }
-            else if (!_isUpgrade)
+            else
             {
                 _shop.OpenWarning();
             }
@@ -47,7 +48,7 @@ namespace HS
 
         public void UpgradeFarm2()
         {
-            if (_isUpgrade && credit.credit >= 20000)
+            if ((_isUpgrade && credit.credit >= 20000) && !_isMaxUpgrade)
             {
                 foreach (var t in secondPositions)
                 {
@@ -57,6 +58,7 @@ namespace HS
                     _utility.ShopClose();
                 }
                 credit.ChangeCredit(-20000);
+                _isMaxUpgrade = true;
             }
             else
             {
