@@ -13,14 +13,16 @@ namespace HS
         [SerializeField] private CardSO groundSo;
         private UtilityButton _utility;
         private ShopUi _shop;
-        private Tilemap _tilemap;
+        private Tilemap _useTileMap;
+        private Tilemap _unUseTileMap;
         private bool _isUpgrade;    
     
         private void Awake()
         {
             _shop = GameObject.Find("ShopPanel").GetComponent<ShopUi>();
             _utility = GameObject.Find("UtilityPanel").GetComponent<UtilityButton>();
-            _tilemap = GameObject.Find("UseTilemap").GetComponent<Tilemap>();
+            _useTileMap = GameObject.Find("UseTilemap").GetComponent<Tilemap>();
+            _unUseTileMap = GameObject.Find("UnUseTileMap").GetComponent<Tilemap>();
         }
 
         public void UpgradeFarm1()
@@ -29,7 +31,8 @@ namespace HS
             {
                 foreach (var t in firstPositions)
                 {
-                    _tilemap.SetTile(t, groundSo.tileBase);
+                    _useTileMap.SetTile(t, groundSo.tileBase);
+                    _unUseTileMap.SetTile(t, groundSo.tileBase);
                     CropManager.Instance.AddCrop(t, groundSo);
                     _isUpgrade = true;
                     _utility.ShopClose();
@@ -48,7 +51,8 @@ namespace HS
             {
                 foreach (var t in secondPositions)
                 {
-                    _tilemap.SetTile(t, groundSo.tileBase);
+                    _useTileMap.SetTile(t, groundSo.tileBase);
+                    _unUseTileMap.SetTile(t, groundSo.tileBase);
                     CropManager.Instance.AddCrop(t, groundSo);
                     _utility.ShopClose();
                 }

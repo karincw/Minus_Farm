@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace HS
@@ -29,7 +28,8 @@ namespace HS
 
         private void Start()
         {
-            OnDayChangeEvent.Invoke();
+            OnDayChangeEvent?.Invoke();
+            OnDaynightChangeEvent?.Invoke();
         }
 
         private void Update()
