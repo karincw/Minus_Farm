@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f343d575cb3fb8d40a94a6abfb8f3494, type: 3}
-  m_Name: Umul
+  m_Name: Water
   m_EditorClassIdentifier: 
-  cardType: 3
-  curName: "\uC6B0\uBB3C"
-  description: "\uC6B0\uBB3C"
-  sprite: {fileID: 21300000, guid: cd2618d292dc85e49a3ffea4c3daaa5b, type: 3}
-  tileBase: {fileID: 11400000, guid: daa8e13a31dee654f96365901848bfdd, type: 2}
+  cardType: 2
+  curName: Water
+  description: Water
+  sprite: {fileID: 21300000, guid: a29bff80a7c56ec42ab36cd2d5932fa0, type: 3}
+  tileBase: {fileID: 0}
   price: 0
-  action_water_changeValue: 0
+  itemType: 2
+  action_water_changeValue: 50
   action_nutrition_changeValue: 0
-  itemType: 0
+  building: {fileID: 0}
   Building_water_changeValue: 0
   Building_Nutrition_changeValue: 0

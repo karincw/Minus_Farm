@@ -25,6 +25,8 @@ namespace CW
 
             if (_isSeed)
             {
+                if (CropManager.Instance.CanPlanting == false) return;
+
                 DragAndDropManager.Instance.SetCard(currentCard);
             }
             else

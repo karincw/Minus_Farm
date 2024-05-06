@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace CW
 {
@@ -9,19 +10,31 @@ namespace CW
     {
         [SerializeField] Card[] _standImages;
         [SerializeField] TextMeshProUGUI _descriptionText;
-        [SerializeField] List<CardSO> _currentCards = new List<CardSO>();
+        [SerializeField] List<CardSO> _currentCards = new();
         private CardInven _cardInven;
 
         private void Awake()
         {
             _cardInven = FindObjectOfType<CardInven>();
-            _currentCards.Clear();
+
         }
 
-#if UNITY_EDITOR
 
         private void Update()
         {
+            CropManager manager = CropManager.Instance;
+            Transform trm = _standImages[0].transform.parent.Find("CooltimeViewer");
+            if (manager.CanPlanting == false)
+            {
+                float current = manager.Cooldown / manager.Cooltime;
+                trm.GetComponent<Image>().fillAmount = current;
+            }
+            else
+            {
+                trm.GetComponent<Image>().fillAmount = 0;
+            }
+
+#if UNITY_EDITOR
             if (Input.GetKeyDown(KeyCode.U))
             {
                 UpdateCard();
@@ -30,20 +43,14 @@ namespace CW
             {
                 Stand();
             }
+#endif
         }
 
-#endif
 
         [ContextMenu("Stand")]
         public void Stand()
         {
-            if (_standImages[0].CurrentCard != null)
-            {
-                _currentCards.AddRange(_cardInven.GetCards());
-                return;
-            }
-
-            _currentCards.AddRange(_cardInven.GetCards());
+            _currentCards.AddRange(_cardInven.GetCards(1000, true));
 
             int curCardSize = _currentCards.Count - 1;
             for (int i = 0; i < 6; i++)

@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e91a7c634d97bb43ab12af042f75e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fruitCount: 100
+  _fruitCount: 0
   _minPrice: 5000
   _maxPrice: 10000
   _currentPrice: 0

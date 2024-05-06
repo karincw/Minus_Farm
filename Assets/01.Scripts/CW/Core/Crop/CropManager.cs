@@ -1,11 +1,8 @@
 using AYellowpaper.SerializedCollections;
 using System.Collections;
 using System.Linq;
-using TMPro;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using UnityEngine.UI;
-using DG.Tweening;
 
 namespace CW
 {
@@ -19,6 +16,12 @@ namespace CW
         [SerializeField] private SerializedDictionary<Vector3Int, Crop> tiles = new SerializedDictionary<Vector3Int, Crop>();
         [HideInInspector] public CropUtility cropUtility;
 
+        private float plantingCooldown = 0;
+        [SerializeField] private float plantingCooltime = .5f;
+        public float Cooltime { get => plantingCooltime; }
+        public float Cooldown { get => plantingCooldown; }
+        public bool CanPlanting => plantingCooldown <= 0;
+
         private void Awake()
         {
             cropUtility = FindObjectOfType<CropUtility>();
@@ -30,17 +33,23 @@ namespace CW
             StartSetting();
         }
 
-#if UNITY_EDITOR
-
         private void Update()
         {
+            if (plantingCooldown > 0)
+            {
+                plantingCooldown -= Time.deltaTime;
+            }
             if (Input.GetKeyDown(KeyCode.T))
             {
                 NextCycle();
             }
         }
 
-#endif
+
+        public void ActiveCooldown()
+        {
+            plantingCooldown = plantingCooltime;
+        }
 
         private void StartSetting()
         {
@@ -63,12 +72,26 @@ namespace CW
 
             if (tiles.ContainsKey(pos))
             {
-                //Debug.LogError($"Dictionary DoubleAdd : {pos}this positionKey is contain");
                 tiles[pos] = newCrop;
                 return;
             }
 
             tiles.Add(pos, newCrop);
+        }
+
+        public void AddBuilding(Vector3Int pos, CardSO card)
+        {
+            Crop building = new Crop(0, null, null, card);
+
+            if (card.cardType != CardType.Building) return;
+
+            if (tiles.ContainsKey(pos))
+            {
+                tiles[pos] = building;
+                return;
+            }
+
+            tiles.Add(pos, building);
         }
 
         public void SetGroundTile(Vector3Int tilePos)
@@ -82,6 +105,16 @@ namespace CW
             if (tiles.ContainsKey(pos))
             {
                 tiles[pos] = crop;
+                return;
+            }
+            Debug.LogError($"Dictionary haven't {pos}this positionKey");
+        }
+
+        public void DeleteTile(Vector3Int pos)
+        {
+            if (tiles.ContainsKey(pos))
+            {
+                tiles.Remove(pos);
                 return;
             }
             Debug.LogError($"Dictionary haven't {pos}this positionKey");

@@ -15,7 +15,7 @@ namespace HS
         private Image _fillImage;
         private Image _image;
         [SerializeField] private float passesTime;
-        [SerializeField] private int day, month;
+        [SerializeField] private int startDay, startMonth;
         [SerializeField] private Sprite []sprite;
         
         public UnityEvent OnDayChangeEvent;
@@ -47,7 +47,7 @@ namespace HS
                     _fillImage.color = new Color(0.26f,0.13f,0.52f);
                     _dayNightTxt.text = "저녁";
                     _isMorning = false;
-                    OnDaynightChangeEvent.Invoke();
+                    OnDaynightChangeEvent?.Invoke();
                     _image.sprite = sprite[0];
                 }
                 else
@@ -56,16 +56,16 @@ namespace HS
                     _dayNightTxt.text = "아침";
                     _isMorning = true;
 
-                    day++;
-                    if (day == 30)
+                    startDay++;
+                    if (startDay == 30)
                     {
-                        month++;
-                        day = 0;
+                        startMonth++;
+                        startDay = 0;
                     }
-                    OnDaynightChangeEvent.Invoke();
-                    OnDayChangeEvent.Invoke();
+                    OnDaynightChangeEvent?.Invoke();
+                    OnDayChangeEvent?.Invoke();
                     _image.sprite = sprite[1];
-                    _dateTime.text = $"{month.ToString("D2")} {day.ToString("D2")}";
+                    _dateTime.text = $"{startMonth.ToString("D2")} {startDay.ToString("D2")}";
                 }
                 _currentTime = 0;
             }

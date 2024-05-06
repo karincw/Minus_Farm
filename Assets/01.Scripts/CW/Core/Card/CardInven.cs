@@ -13,16 +13,16 @@ namespace CW
         /// </summary>
         /// <param name="suffleCount"></param>
         [ContextMenu("Suffle")]
-        public void Suffle(int suffleCount = 100)
+        public void Suffle(List<CardSO> list, int suffleCount = 100)
         {
             for (int i = 0; i < suffleCount; ++i)
             {
-                int first = Random.Range(0, _inventory.Count);
-                int second = Random.Range(0, _inventory.Count);
+                int first = Random.Range(0, list.Count);
+                int second = Random.Range(0, list.Count);
 
-                var temp = _inventory[first];
-                _inventory[first] = _inventory[second];
-                _inventory[second] = temp;
+                var temp = list[first];
+                list[first] = list[second];
+                list[second] = temp;
             }
         }
 
@@ -35,10 +35,11 @@ namespace CW
         [ContextMenu("GetTiles")]
         public CardSO[] GetCards(int count = 10, bool suffledGet = false)
         {
-            if (_inventory.Count < count)
+            if (_inventory.Count == 0) return null;
+            else if (_inventory.Count < count)
                 count = _inventory.Count - 1;
 
-            if (suffledGet) Suffle();
+            if (suffledGet) Suffle(_inventory);
 
             CardSO[] returnList = new CardSO[count];
             int lastIdx = _inventory.Count - 1;
@@ -50,7 +51,7 @@ namespace CW
             }
 
             return returnList;
-        } 
+        }
 
         /// <summary> 
         /// Count값만큰 card를 인벤토리에 추가해줌 
