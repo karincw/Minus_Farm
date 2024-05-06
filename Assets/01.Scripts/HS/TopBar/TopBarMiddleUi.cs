@@ -11,6 +11,8 @@ namespace HS
         private bool _isMorning = true;
         private TextMeshProUGUI _dayNightTxt;
         private TextMeshProUGUI _dateTime;
+        private Slider _slider;
+        private Image _fillImage;
         private Image _image;
         [SerializeField] private float passesTime;
         [SerializeField] private int day, month;
@@ -21,6 +23,8 @@ namespace HS
 
         private void Awake()
         {
+            _slider = transform.Find("Slider").GetComponent<Slider>();
+            _fillImage = _slider.transform.Find("FillArea").Find("Fill").GetComponent<Image>();
             _dayNightTxt = transform.Find("Day&NightTxt").GetComponent<TextMeshProUGUI>();
             _dateTime = transform.Find("DateTxt").GetComponent<TextMeshProUGUI>();
             _image = transform.Find("Day&NightImg").GetComponent<Image>();
@@ -35,11 +39,12 @@ namespace HS
         private void Update()
         {
             _currentTime += Time.deltaTime;
-
+    
             if (_currentTime >= passesTime)
             {
                 if (_isMorning)
                 {
+                    _fillImage.color = new Color(0.26f,0.13f,0.52f);
                     _dayNightTxt.text = "저녁";
                     _isMorning = false;
                     OnDaynightChangeEvent.Invoke();
@@ -47,6 +52,7 @@ namespace HS
                 }
                 else
                 {
+                    _fillImage.color = new Color(1,0.58f,0);
                     _dayNightTxt.text = "아침";
                     _isMorning = true;
 
@@ -63,6 +69,7 @@ namespace HS
                 }
                 _currentTime = 0;
             }
+            _slider.value = _currentTime / passesTime;
         }
     }
 }
