@@ -16,7 +16,10 @@ namespace CW
 
     public enum ItemType
     {
-        Shovel = 0,
+        None = 0,
+        Shovel,
+        WateringCan,
+        Mnure,
     }
 
     [CreateAssetMenu(menuName = "CW/SO/CardSO")]
@@ -31,14 +34,15 @@ namespace CW
         public TileBase tileBase;
         public int price;
 
-        [Header("ActionCard Settings")]
-        public int action_water_changeValue;
-        public int action_nutrition_changeValue;
-
         [Header("Item Settings")]
         public ItemType itemType;
 
+        [Header("Item Settings")]
+        public int action_water_changeValue;
+        public int action_nutrition_changeValue;
+
         [Header("Building Settings")]
+        public TileBase building;
         public int Building_water_changeValue;
         public int Building_Nutrition_changeValue;
 

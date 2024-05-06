@@ -16,7 +16,6 @@ namespace CW
         [SerializeField] private Transform _moverTrm;
         [SerializeField] private float[] times;
         [SerializeField] private float cropSpawnDealy;
-        private CropInven _cropInven;
         [SerializeField] private Transform _cropParents;
 
 
@@ -44,17 +43,12 @@ namespace CW
                     .Join(move.transform.DOMoveY(originPos.y + 1.3f, times[0]))
                     .Append(move.transform.DOMoveY(originPos.y, times[0]))
 
-                    //.Append(move.transform.DOMoveX(originPos.x + targetDir.x * .5f, times[1]))
-                    //.Join(move.transform.DOMoveY(originPos.y + .6f, times[1]))
-                    //.Append(move.transform.DOMoveY(originPos.y, times[1]))
-
-                    .Append(move.transform.DOMoveX(originPos.x + targetDir.x * .5f, times[2]))
-                    .Join(move.transform.DOMoveY(originPos.y + .3f, times[2]))
-                    .Append(move.transform.DOMoveY(originPos.y, times[2]))
+                    .Append(move.transform.DOMoveX(originPos.x + targetDir.x * .5f, times[1]))
+                    .Join(move.transform.DOMoveY(originPos.y + .3f, times[1]))
+                    .Append(move.transform.DOMoveY(originPos.y, times[1]))
                     .Join(sr.DOFade(0, fadeSpeed))
                     .OnComplete(() =>
                     {
-                        Debug.Log(crop.currentCard.curName);
                         _cropParents.Find(crop.currentCard.curName).GetComponent<CropInven>().AddCount(1);
                         Destroy(move.gameObject);
                     });

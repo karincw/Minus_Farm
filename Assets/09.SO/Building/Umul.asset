@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f343d575cb3fb8d40a94a6abfb8f3494, type: 3}
+  m_Name: Umul
+  m_EditorClassIdentifier: 
+  cardType: 3
+  curName: "\uC6B0\uBB3C"
+  description: "\uC6B0\uBB3C"
+  sprite: {fileID: 21300000, guid: ed237e5b1c2918d46a8ffaaebea6a837, type: 3}
+  tileBase: {fileID: 11400000, guid: daa8e13a31dee654f96365901848bfdd, type: 2}
+  price: 0
+  itemType: 0
+  action_water_changeValue: 0
+  action_nutrition_changeValue: 0
+  building: {fileID: 11400000, guid: ab22e29caeb9ae04bb7e043476b6a290, type: 2}
+  Building_water_changeValue: 0
+  Building_Nutrition_changeValue: 0
