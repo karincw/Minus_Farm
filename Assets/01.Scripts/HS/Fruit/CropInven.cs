@@ -1,4 +1,5 @@
 using System;
+using CW;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,12 +10,13 @@ namespace HS
     public class CropInven : MonoBehaviour
     {
         [SerializeField] public int _fruitCount = 0;
-        [SerializeField] private int _minPrice = 5000;
-        [SerializeField] private int _maxPrice = 10000;
+        [SerializeField] private int _minPrice;
+        [SerializeField] private int _maxPrice;
         [SerializeField] public int _currentPrice = 0;
         private int _beforePrice;
         private TextMeshProUGUI _priceText;
         private TextMeshProUGUI _countText;
+        private Drag _drag;
         private Image _priceImage;
         [SerializeField]
         private Sprite[] _priceSprite;
@@ -26,6 +28,7 @@ namespace HS
             _priceText = transform.Find("Price").GetComponent<TextMeshProUGUI>();
             _priceImage = transform.Find("PriceImage").GetComponent<Image>();
             _countText = transform.Find("Count").GetComponent<TextMeshProUGUI>();
+            _drag = transform.Find("CropImage").GetComponent<Drag>();
             _priceImage.sprite = _priceSprite[0];
             _countText.text = _fruitCount.ToString();
             _priceText.text = _currentPrice.ToString();
@@ -35,6 +38,11 @@ namespace HS
             _topMiddleUI.OnDayChangeEvent.AddListener(RandomPrice);
         }
 
+        private void Start()
+        {
+            _minPrice = _drag.currentCard.sellMinPrice;
+            _maxPrice = _drag.currentCard.sellMaxPrice;
+        }
 
         public void SetCount(int count)
         {
