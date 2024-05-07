@@ -33,6 +33,8 @@ namespace CW
         public Sprite sprite;
         public TileBase tileBase;
         public int price;
+        public int sellMinPrice;
+        public int sellMaxPrice;
 
         [Header("Item Settings")]
         public ItemType itemType;
