@@ -12,6 +12,7 @@ namespace CW
         [SerializeField] private GameObject destroyCropEffect;
         public bool canThrow = true;
         public bool canMove = true;
+        private bool isThrow = false;
 
         private void Awake()
         {
@@ -23,8 +24,9 @@ namespace CW
         {
             if (Input.GetMouseButtonDown(0) && Vector2.Distance(Camera.main.ScreenToWorldPoint(Input.mousePosition), transform.position) < .5f)
             {
-                DOTween.Kill(this.gameObject);
+                DOTween.Kill(this);
                 StopAllCoroutines();
+                isThrow = true;
                 MoveExit();
             }
         }
@@ -50,6 +52,7 @@ namespace CW
 
             yield return new WaitForSeconds(1);
 
+            if (isThrow) yield break;
             canThrow = false;
             CropManager.Instance.SetGroundTile(currentIntPos);
             Instantiate(destroyCropEffect, transform.position + new Vector3(0, -0.3f), Quaternion.identity);
@@ -65,9 +68,11 @@ namespace CW
             endPos.y += Random.Range(-3, 3);
 
             transform.DOMove(endPos, 2f)
-                .OnComplete( () => {
-
+                .OnComplete(() =>
+                {
+                    canThrow = true;
                     canMove = true;
+                    isThrow = false;
                 }
                 );
 

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: umul
+  m_Name: IMG_0843
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 323275675, guid: 1277b129ba500a546b360328e38333de, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4270c60c91efb2c4d9b761150346aa43, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
