@@ -130,6 +130,7 @@ namespace CW
             {
                 IsNull = true;
                 Debug.LogError($"tiles is Not Have {pos}");
+                return new Crop();
             }
             return tiles[pos];
         }
@@ -169,6 +170,9 @@ namespace CW
                 var targetKey = tiles.Keys.ToList()[i];
                 Crop crop = tiles[targetKey];
                 crop.growIdx++;
+
+
+
                 crop.water -= 10;
                 crop.nutrition -= 10;
 
@@ -184,8 +188,8 @@ namespace CW
                 {
                     if (crop.currentCard == _groundSO) continue;
                     Harvest(targetKey, crop);
+                    continue;
                 }
-
                 if (tilebase != null)
                 {
                     _tileMap.SetTile(targetKey, tilebase);

@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f343d575cb3fb8d40a94a6abfb8f3494, type: 3}
   m_Name: Ground
   m_EditorClassIdentifier: 
+  cardType: 0
   curName: Ground
   description: Ground
   sprite: {fileID: 0}
-  tileBase: {fileID: 11400000, guid: 6a04d1be5e470794cb040453a926306e, type: 2}
+  tileBase: {fileID: 11400000, guid: 2c934ea432dcb564a8fa706b71a2f3da, type: 2}
+  price: 0
+  itemType: 0
+  action_water_changeValue: 0
+  action_nutrition_changeValue: 0
+  building: {fileID: 0}
+  Building_water_changeValue: 0
+  Building_Nutrition_changeValue: 0

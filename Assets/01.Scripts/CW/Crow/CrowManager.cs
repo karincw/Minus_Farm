@@ -1,5 +1,4 @@
 using CW;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +8,41 @@ public class CrowManager : MonoSingleton<CrowManager>
     [SerializeField] private Transform _crowEndTrm;
     public Vector2 crowStartPos => _crowStartTrm.position;
     public Vector2 crowEndPos => _crowEndTrm.position;
+
+    [SerializeField] private List<Crow> _crows = new List<Crow>();
+
+    [SerializeField] private float _crowSpawnCooltimebase = 5f;
+    [SerializeField] private float _crowSpawnCooltimeoffset = 2f;
+    private float _crowSpawnCooldown;
+    private float Cooltime => _crowSpawnCooltimebase + Random.Range(-_crowSpawnCooltimeoffset, _crowSpawnCooltimeoffset);
+
+    private void Start()
+    {
+        _crowSpawnCooldown = Cooltime;
+    }
+    private void Update()
+    {
+
+        if (_crowSpawnCooldown < 0)
+        {
+            Crow currentCrow = null;
+            foreach (var crow in _crows)
+            {
+                if (crow.canMove == false) continue;
+
+                currentCrow = crow;
+            }
+            if (currentCrow == null)
+                Debug.LogError("CurrentCrow Is NULL _crows haven't activeCrow");
+
+            currentCrow.MoveTile();
+
+            _crowSpawnCooldown = Cooltime;
+        }
+
+        _crowSpawnCooldown -= Time.deltaTime;
+
+    }
 
 
 

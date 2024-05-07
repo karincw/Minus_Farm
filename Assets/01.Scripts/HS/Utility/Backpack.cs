@@ -27,11 +27,11 @@ namespace HS
                     Destroy(_layout.transform.GetChild(i).gameObject);
                 }
 
-                _cardInven._inventory = _cardInven._inventory.OrderBy((a) => a.name).ToList();
-                _beforeCardSo = _cardInven._inventory[0];
+                _cardInven.inventory = _cardInven.inventory.OrderBy((a) => a.name).ToList();
+                _beforeCardSo = _cardInven.inventory[0];
                 int count = 0;
                 InvenSlot inven;
-                foreach (var card in _cardInven._inventory)
+                foreach (var card in _cardInven.inventory)
                 {
                     if (card == _beforeCardSo)
                     {

@@ -6,23 +6,23 @@ namespace CW
 {
     public class CardInven : MonoBehaviour
     {
-        public List<CardSO> _inventory = new List<CardSO>();
+        public List<CardSO> inventory = new List<CardSO>();
 
         /// <summary>
         /// Suffle알고리즘으로 인벤토리의 카드들을 랜덤으로 섞어줌
         /// </summary>
         /// <param name="suffleCount"></param>
         [ContextMenu("Suffle")]
-        public void Suffle(List<CardSO> list, int suffleCount = 100)
+        public void Suffle(int suffleCount = 100)
         {
+            if (inventory.Count == 0 || inventory == null) return;
+            int max = inventory.Count;
             for (int i = 0; i < suffleCount; ++i)
             {
-                int first = Random.Range(0, list.Count);
-                int second = Random.Range(0, list.Count);
+                int first = Random.Range(0, max);
+                int second = Random.Range(0, max);
 
-                var temp = list[first];
-                list[first] = list[second];
-                list[second] = temp;
+                (inventory[second], inventory[first]) = (inventory[first], inventory[second]);
             }
         }
 
@@ -35,19 +35,19 @@ namespace CW
         [ContextMenu("GetTiles")]
         public CardSO[] GetCards(int count = 10, bool suffledGet = false)
         {
-            if (_inventory.Count == 0) return null;
-            else if (_inventory.Count < count)
-                count = _inventory.Count - 1;
+            if (inventory.Count == 0) return null;
+            else if (inventory.Count < count)
+                count = inventory.Count - 1;
 
-            if (suffledGet) Suffle(_inventory);
+            if (suffledGet) Suffle();
 
             CardSO[] returnList = new CardSO[count];
-            int lastIdx = _inventory.Count - 1;
+            int lastIdx = inventory.Count - 1;
             for (int i = 0; i < count; ++i)
             {
-                returnList[i] = _inventory[lastIdx - i];
+                returnList[i] = inventory[lastIdx - i];
 
-                _inventory.RemoveAt(lastIdx - i);
+                inventory.RemoveAt(lastIdx - i);
             }
 
             return returnList;
@@ -62,7 +62,7 @@ namespace CW
         {
             for (int i = 0; i < count; i++)
             {
-                _inventory.Add(card);
+                inventory.Add(card);
             }
         }
 

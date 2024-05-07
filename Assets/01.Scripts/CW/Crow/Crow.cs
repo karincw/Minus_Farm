@@ -11,26 +11,27 @@ namespace CW
         private Vector2 currentPosition;
         [SerializeField] private GameObject destroyCropEffect;
         public bool canThrow = true;
+        public bool canMove = true;
 
         private void Awake()
         {
             canThrow = true;
+            canMove = true;
         }
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.G))
+            if (Input.GetMouseButtonDown(0) && Vector2.Distance(Camera.main.ScreenToWorldPoint(Input.mousePosition), transform.position) < .5f)
             {
-                MoveTile();
-            }
-            else if (Input.GetKeyDown(KeyCode.E))
-            {
+                DOTween.Kill(this.gameObject);
+                StopAllCoroutines();
                 MoveExit();
             }
         }
 
         public void MoveTile()
         {
+            canMove = false;
             List<string> strList = new List<string>();
 
             Vector2 startPos = CrowManager.Instance.crowStartPos;
@@ -63,7 +64,12 @@ namespace CW
             Vector2 endPos = CrowManager.Instance.crowEndPos;
             endPos.y += Random.Range(-3, 3);
 
-            transform.DOMove(endPos, 2f);
+            transform.DOMove(endPos, 2f)
+                .OnComplete( () => {
+
+                    canMove = true;
+                }
+                );
 
         }
 

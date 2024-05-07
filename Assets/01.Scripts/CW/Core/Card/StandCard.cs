@@ -10,7 +10,6 @@ namespace CW
     {
         [SerializeField] Card[] _standImages;
         [SerializeField] TextMeshProUGUI _descriptionText;
-        [SerializeField] List<CardSO> _currentCards = new();
         private CardInven _cardInven;
 
         private void Awake()
@@ -50,15 +49,15 @@ namespace CW
         [ContextMenu("Stand")]
         public void Stand()
         {
-            _currentCards.AddRange(_cardInven.GetCards(1000, true));
+            _cardInven.Suffle();
 
-            int curCardSize = _currentCards.Count - 1;
+            int curCardSize = _cardInven.inventory.Count - 1;
             for (int i = 0; i < 6; i++)
             {
                 int cur = curCardSize - i;
-                CardSO nextCard = _currentCards[cur];
+                CardSO nextCard = _cardInven.inventory[cur];
                 _standImages[i].CurrentCard = nextCard;
-                _currentCards.RemoveAt(cur);
+                _cardInven.inventory.RemoveAt(cur);
             }
         }
 
@@ -75,22 +74,22 @@ namespace CW
                     {
                         nextCard = _standImages[nextIdx].CurrentCard;
                     }
-                    else if (nextCard == null && _currentCards.Count > 0)
+                    else if (_cardInven.inventory.Count > 0)
                     {
-                        int cur = _currentCards.Count - 1;
-                        nextCard = _currentCards[cur];
-                        _currentCards.RemoveAt(cur);
+                        int cur = _cardInven.inventory.Count - 1;
+                        nextCard = _cardInven.inventory[cur];
+                        _cardInven.inventory.RemoveAt(cur);
                     }
 
                     _standImages[i].CurrentCard = nextCard;
                 }
                 else
                 {
-                    if (nextCard == null && _currentCards.Count > 0)
+                    if (nextCard == null && _cardInven.inventory.Count > 0)
                     {
-                        int cur = _currentCards.Count - 1;
-                        nextCard = _currentCards[cur];
-                        _currentCards.RemoveAt(cur);
+                        int cur = _cardInven.inventory.Count - 1;
+                        nextCard = _cardInven.inventory[cur];
+                        _cardInven.inventory.RemoveAt(cur);
                     }
 
                     _standImages[i].CurrentCard = nextCard;
