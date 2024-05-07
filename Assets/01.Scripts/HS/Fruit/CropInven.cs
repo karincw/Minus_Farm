@@ -28,7 +28,7 @@ namespace HS
             _priceText = transform.Find("Price").GetComponent<TextMeshProUGUI>();
             _priceImage = transform.Find("PriceImage").GetComponent<Image>();
             _countText = transform.Find("Count").GetComponent<TextMeshProUGUI>();
-            _drag = transform.Find("CropImage").GetComponent<Drag>();
+            //_drag = transform.Find("CropImage").GetComponent<Drag>();
             _priceImage.sprite = _priceSprite[0];
             _countText.text = _fruitCount.ToString();
             _priceText.text = _currentPrice.ToString();
@@ -40,8 +40,8 @@ namespace HS
 
         private void Start()
         {
-            _minPrice = _drag.currentCard.sellMinPrice;
-            _maxPrice = _drag.currentCard.sellMaxPrice;
+            //_minPrice = _drag.currentCard.sellMinPrice;
+            //_maxPrice = _drag.currentCard.sellMaxPrice;
         }
 
         public void SetCount(int count)
