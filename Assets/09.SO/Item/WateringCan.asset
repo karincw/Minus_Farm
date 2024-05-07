@@ -15,9 +15,11 @@ MonoBehaviour:
   cardType: 2
   curName: WateringCan
   description: WateringCan
-  sprite: {fileID: 21300000, guid: ef6097801059d6047aa749ea5b55714c, type: 3}
+  sprite: {fileID: 21300000, guid: b4ca5e5bceeb5224986420634d2e3615, type: 3}
   tileBase: {fileID: 0}
   price: 0
+  sellMinPrice: 0
+  sellMaxPrice: 0
   itemType: 2
   action_water_changeValue: 50
   action_nutrition_changeValue: 0

@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f343d575cb3fb8d40a94a6abfb8f3494, type: 3}
-  m_Name: Umul
+  m_Name: sprinkler
   m_EditorClassIdentifier: 
   cardType: 3
-  curName: "\uC6B0\uBB3C"
-  description: "\uC6B0\uBB3C"
-  sprite: {fileID: 21300000, guid: ed237e5b1c2918d46a8ffaaebea6a837, type: 3}
-  tileBase: {fileID: 11400000, guid: daa8e13a31dee654f96365901848bfdd, type: 2}
+  curName: "\uC2A4\uD504\uB9C1\uCFE8\uB7EC"
+  description: "\uC2A4\uD504\uB9C1\uCFE8\uB7EC"
+  sprite: {fileID: 21300000, guid: 54faa8543630c2b46b7ccecbeb9eee34, type: 3}
+  tileBase: {fileID: 11400000, guid: b5f09bba56a956644a8fd185f0989e91, type: 2}
   price: 0
   itemType: 0
   action_water_changeValue: 0
   action_nutrition_changeValue: 0
-  building: {fileID: 11400000, guid: ab22e29caeb9ae04bb7e043476b6a290, type: 2}
-  Building_water_changeValue: 0
+  building: {fileID: 11400000, guid: b5f09bba56a956644a8fd185f0989e91, type: 2}
+  Building_water_changeValue: 10
   Building_Nutrition_changeValue: 0

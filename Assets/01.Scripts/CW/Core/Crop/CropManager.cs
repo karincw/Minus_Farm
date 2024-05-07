@@ -22,6 +22,13 @@ namespace CW
         public float Cooldown { get => plantingCooldown; }
         public bool CanPlanting => plantingCooldown <= 0;
 
+        [Header("Values")]
+        [SerializeField] private int CropStartWater;
+        [SerializeField] private int CropStartNutrition;
+        [Space(3)]
+        [SerializeField] private int CropDecreaseWater;
+        [SerializeField] private int CropDecreaseNutrition;
+
         private void Awake()
         {
             cropUtility = FindObjectOfType<CropUtility>();
@@ -68,7 +75,7 @@ namespace CW
         public void AddCrop(Vector3Int pos, CardSO card)
         {
             Crop newCropData = cropUtility.cardToCropDataDic[card];
-            Crop newCrop = new Crop(newCropData.growCycle, newCropData.cropTile, newCropData.sprite, card);
+            Crop newCrop = new Crop(newCropData.growCycle, newCropData.cropTile, newCropData.sprite, card, CropStartWater, CropStartNutrition);
 
             if (tiles.ContainsKey(pos))
             {
@@ -88,6 +95,7 @@ namespace CW
             if (tiles.ContainsKey(pos))
             {
                 tiles[pos] = building;
+                _tileMap.SetTile(pos, building.currentCard.building);
                 return;
             }
 
@@ -169,30 +177,53 @@ namespace CW
             {
                 var targetKey = tiles.Keys.ToList()[i];
                 Crop crop = tiles[targetKey];
+
+                if (crop.currentCard == _groundSO) continue; //일반땅이면 나가리
+
+                if (crop.currentCard.cardType == CardType.Building)
+                {
+
+                    foreach(var dir in Directions.eightDirections)
+                    {
+                        Vector3Int tileDir = new Vector3Int((int)dir.x, (int)dir.y);
+
+                        if (!tiles.Keys.Contains(targetKey + tileDir)) continue;
+
+                        Crop dirCrop = tiles[targetKey + tileDir];
+                        if (dirCrop.currentCard.cardType == CardType.Seed)
+                        {
+                            dirCrop.water += crop.currentCard.Building_water_changeValue;
+                            dirCrop.nutrition += crop.currentCard.Building_Nutrition_changeValue;
+
+                            tiles[targetKey + tileDir] = dirCrop;
+                        }
+
+                    }
+
+                    continue;
+                }
+
                 crop.growIdx++;
 
+                crop.water -= CropDecreaseWater;
+                crop.nutrition -= CropDecreaseNutrition;
 
-
-                crop.water -= 10;
-                crop.nutrition -= 10;
-
-                //식물이 자랐는지 확인
-                TileBase tilebase = null;
                 int cropGrowIdx = crop.growIdx / crop.growCycle;
 
-                if (crop.cropTile.Length - 1 >= cropGrowIdx)
+
+                if (crop.water <= 0 && crop.nutrition <= 0) //썩으면 나가리
                 {
-                    tilebase = crop.cropTile[cropGrowIdx];
+                    Debug.Log($"{targetKey} : 식물 썩음");
+                }
+
+                if (crop.cropTile.Length - 1 >= cropGrowIdx)//자르는중
+                {
+                    _tileMap.SetTile(targetKey, crop.cropTile[cropGrowIdx]);
                 }
                 else //다자랐음
                 {
-                    if (crop.currentCard == _groundSO) continue;
                     Harvest(targetKey, crop);
                     continue;
-                }
-                if (tilebase != null)
-                {
-                    _tileMap.SetTile(targetKey, tilebase);
                 }
 
                 tiles[targetKey] = crop;
@@ -209,6 +240,23 @@ namespace CW
 
             return keys[randomIndex];
         }
+    }
+
+
+    public static class Directions
+    {
+        public static Vector2[] eightDirections =
+        {
+            Vector2.up,
+            Vector2.down,
+            Vector2.left,
+            Vector2.right,
+            Vector2.up + Vector2.right,
+            Vector2.up + Vector2.left,
+            Vector2.down + Vector2.right,
+            Vector2.down + Vector2.left,
+        };
+
     }
 
 }

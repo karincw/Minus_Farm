@@ -30,8 +30,8 @@ namespace CW
                     if (!isNull)
                     {
                         _descriptionText.text = crop.currentCard.description;
-                        _descriptionText.text += $"\nwater : {crop.water} / 100\n";
-                        _descriptionText.text += $"nutrition : {crop.nutrition} / 100\n";
+                        _descriptionText.text += $"\nwater : \n{crop.water} / 100\n";
+                        _descriptionText.text += $"nutrition : \n{crop.nutrition} / 100";
                     }
 
                 }
