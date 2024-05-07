@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f343d575cb3fb8d40a94a6abfb8f3494, type: 3}
+  m_Name: WateringCan
+  m_EditorClassIdentifier: 
+  cardType: 2
+  curName: WateringCan
+  description: WateringCan
+  sprite: {fileID: 21300000, guid: ef6097801059d6047aa749ea5b55714c, type: 3}
+  tileBase: {fileID: 0}
+  price: 0
+  itemType: 2
+  action_water_changeValue: 50
+  action_nutrition_changeValue: 0
+  building: {fileID: 0}
+  Building_water_changeValue: 0
+  Building_Nutrition_changeValue: 0
