@@ -60,19 +60,16 @@ namespace CW
             bool isHit = Physics2D.OverlapCircle(transform.position, _detectRadius, _dropToPlantLayer);
             if (isHit)
             {
-                CropManager.Instance.ActiveCooldown();
                 Vector3Int tilePos = _tileMap.WorldToCell(transform.position);
 
                 bool isNull = true;
                 Crop crop = CropManager.Instance.GetPosToCrop(tilePos, ref isNull);
                 if (!isNull)
                 {
-                    CropManager.Instance.DeleteTile(tilePos);
-
-                    CropManager.Instance.AddCrop(tilePos, currentCard);
-
+                    CropManager.Instance.AddBuilding(tilePos, currentCard);
 
                     CardManager.Instance.UpdateCard();
+                    CropManager.Instance.ActiveCooldown();
                 }
 
             }
@@ -89,7 +86,6 @@ namespace CW
             bool isHit = Physics2D.OverlapCircle(transform.position, _detectRadius, _dropToPlantLayer);
             if (isHit)
             {
-                CropManager.Instance.ActiveCooldown();
                 Vector3Int tilePos = _tileMap.WorldToCell(transform.position);
 
                 bool isNull = true;
@@ -113,6 +109,7 @@ namespace CW
                             break;
                     }
                     CardManager.Instance.UpdateCard();
+                    CropManager.Instance.ActiveCooldown();
 
                 }
 
@@ -129,13 +126,13 @@ namespace CW
             bool isHit = Physics2D.OverlapCircle(transform.position, _detectRadius, _dropToPlantLayer);
             if (isHit)
             {
-                CropManager.Instance.ActiveCooldown();
                 Vector3Int cellPos = _tileMap.WorldToCell(transform.position);
                 if (_tileMap.GetTile(cellPos) != _canPlantingTile) return;
 
                 _tileMap.SetTile(cellPos, currentCard.tileBase);
                 CropManager.Instance.AddCrop(cellPos, currentCard);
                 CardManager.Instance.UpdateCard();
+                CropManager.Instance.ActiveCooldown();
 
             }
         }

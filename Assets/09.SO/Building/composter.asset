@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f343d575cb3fb8d40a94a6abfb8f3494, type: 3}
-  m_Name: Shovel
+  m_Name: composter
   m_EditorClassIdentifier: 
-  cardType: 2
-  curName: Shovel
-  description: "\uC0BD \uB545\uC704\uC758 \uC2DD\uBB3C \uD30C\uAD34\uAC00\uB2A5"
-  sprite: {fileID: 21300000, guid: 8ba565d89a8f2754085de1b66cc245ff, type: 3}
-  tileBase: {fileID: 0}
+  cardType: 3
+  curName: "\uD1F4\uBE44\uD1B5"
+  description: "\uD1F4\uBE44\uD1B5"
+  sprite: {fileID: 21300000, guid: a6dde3a6d4507264db680a4400065d21, type: 3}
+  tileBase: {fileID: 11400000, guid: d92f8a70eafe02c4d86f903ddaf6f905, type: 2}
   price: 0
-  itemType: 1
+  itemType: 0
   action_water_changeValue: 0
   action_nutrition_changeValue: 0
-  building: {fileID: 0}
+  building: {fileID: 11400000, guid: d92f8a70eafe02c4d86f903ddaf6f905, type: 2}
   Building_water_changeValue: 0
-  Building_Nutrition_changeValue: 0
+  Building_Nutrition_changeValue: 10
