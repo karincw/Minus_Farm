@@ -591,7 +591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9032189624701866483, guid: 5ff980c03df2ba04495799da45823b87, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9032189624701866483, guid: 5ff980c03df2ba04495799da45823b87, type: 3}
       propertyPath: m_SortingOrder
@@ -5589,6 +5589,10 @@ MonoBehaviour:
     _serializedList: []
   cropUtility: {fileID: 0}
   plantingCooltime: 3
+  CropStartWater: 0
+  CropStartNutrition: 0
+  CropDecreaseWater: 0
+  CropDecreaseNutrition: 0
 --- !u!1 &1020755540
 GameObject:
   m_ObjectHideFlags: 0
@@ -7085,7 +7089,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9032189624701866483, guid: 5ff980c03df2ba04495799da45823b87, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9032189624701866483, guid: 5ff980c03df2ba04495799da45823b87, type: 3}
       propertyPath: m_SortingOrder
@@ -7340,7 +7344,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -514086037
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8790,7 +8794,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9032189624701866483, guid: 5ff980c03df2ba04495799da45823b87, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9032189624701866483, guid: 5ff980c03df2ba04495799da45823b87, type: 3}
       propertyPath: m_SortingOrder
@@ -11129,9 +11133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbb94fe44918eea4aa03fb8155af0161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passesTime: 5
-  startDay: 0
-  startMonth: 0
+  passesTime: 3
+  startDay: 11
+  startMonth: 4
   sprite:
   - {fileID: 21300000, guid: d8c5467f8b6aab54e8361b5da4005286, type: 3}
   - {fileID: 21300000, guid: 8417f713d01d4a146983eb2702d2a510, type: 3}
