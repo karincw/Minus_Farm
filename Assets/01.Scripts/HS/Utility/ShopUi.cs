@@ -33,11 +33,17 @@ namespace HS
                 _sellCard[i] = _cropCardSO[i];
             }
 
-            for (int i = 2;  i < 4; i++)
+            for (int i = 0;  i < 2; i++)
             {
-                image[i].sprite = _allCardSO[i].sprite;
-                priceText[i].text = $"{_allCardSO[i].price}G";
-                _sellCard[i] = _allCardSO[i];
+                if (_allCardSO[i] == _cropCardSO[0] || _allCardSO[i] == _cropCardSO[1]) 
+                {
+                    i--;
+                    CardSuffle(_allCardSO);
+                    continue;
+                }
+                image[i + 2].sprite = _allCardSO[i].sprite;
+                priceText[i + 2].text = $"{_allCardSO[i].price}G";
+                _sellCard[i + 2] = _allCardSO[i];
             }
         }
 
