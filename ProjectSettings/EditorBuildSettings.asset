@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Shy_Title.unity
+    guid: 6fae230226bd859409c35c1dcc1f17a4
+  - enabled: 1
+    path: Assets/Scenes/Shy_Story.unity
+    guid: 1379891e940ec7b48b35dc9bb0a5662e
+  - enabled: 1
     path: Assets/Scenes/TutorialScene.unity
     guid: 58f5cea2672612447bb668c40b3ac992
   - enabled: 1

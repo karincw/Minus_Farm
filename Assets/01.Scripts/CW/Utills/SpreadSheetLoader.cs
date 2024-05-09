@@ -22,7 +22,7 @@ namespace CW
                 Debug.Log($"{sheetID} : 불러오기 중 오류 발생");
                 yield break;
             }
-
+             
             string fileText = www.downloadHandler.text;
             Debug.Log($"{sheetID} : 로딩 완료. 텍스트 데이터 파싱 시작");
             yield return null; //텍스트가 ui에 그려질 시간 확보

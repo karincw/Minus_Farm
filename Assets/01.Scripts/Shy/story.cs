@@ -96,8 +96,8 @@ public class story : MonoBehaviour
     {
         bad.gameObject.SetActive(false);
         nong.gameObject.SetActive(true);
-        nong.DORotate(new Vector3(0, 0, -50f), 0.66f).SetLoops(6, LoopType.Yoyo);
+        nong.DORotate(new Vector3(0, 0, -50f), 0.66f).SetLoops(6, LoopType.Yoyo).OnComplete(() => { SceneManager.LoadScene("TutorialScene"); });
 
-        SceneManager.LoadScene("wa");
+        
     }
 }

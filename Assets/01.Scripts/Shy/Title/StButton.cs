@@ -40,7 +40,7 @@ public class StButton : MonoBehaviour
         tit.transform.DOMove(tit.transform.position, 0.3f).OnComplete(() => tit.transform.DOLocalMoveY(1300, 1f).
         OnStart(()=>poong.transform.DOLocalMoveY(1300, 1f)));
 
-        transform.DOMove(transform.position, 1.2f).OnComplete(()=>transform.DOLocalMoveY(-1500, 1f).OnComplete(() =>/*SceneManager.LoadScene("스토리 게임")*/Debug.Log("wa")));
+        transform.DOMove(transform.position, 1.2f).OnComplete(()=>transform.DOLocalMoveY(-1500, 1f).OnComplete(() => SceneManager.LoadScene("Shy_Story")));
     }
 
     private void OnMouseExit()
