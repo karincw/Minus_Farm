@@ -15,11 +15,14 @@ MonoBehaviour:
   cardType: 1
   curName: SweetPotato
   description: SweetPotato
-  sprite: {fileID: 21300000, guid: b0bb345edc1d9be4e83bca49834e5ed7, type: 3}
+  sprite: {fileID: 21300000, guid: ff219db35c0a4e9449130c84b1437052, type: 3}
   tileBase: {fileID: 11400000, guid: 792bc098446bdc04ab844cd027a981b0, type: 2}
-  price: 0
+  price: 1
+  sellMinPrice: 0
+  sellMaxPrice: 0
+  itemType: 0
   action_water_changeValue: 0
   action_nutrition_changeValue: 0
-  itemType: 0
+  building: {fileID: 0}
   Building_water_changeValue: 0
   Building_Nutrition_changeValue: 0

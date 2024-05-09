@@ -16,6 +16,8 @@ public class CrowManager : MonoSingleton<CrowManager>
     private float _crowSpawnCooldown;
     private float Cooltime => _crowSpawnCooltimebase + Random.Range(-_crowSpawnCooltimeoffset, _crowSpawnCooltimeoffset);
 
+    private bool canSpawn = true;
+
     private void Start()
     {
         _crowSpawnCooldown = Cooltime;
@@ -25,17 +27,7 @@ public class CrowManager : MonoSingleton<CrowManager>
 
         if (_crowSpawnCooldown < 0)
         {
-            Crow currentCrow = null;
-            foreach (var crow in _crows)
-            {
-                if (crow.canMove == false) continue;
-
-                currentCrow = crow;
-            }
-            if (currentCrow == null)
-                Debug.LogError("CurrentCrow Is NULL _crows haven't activeCrow");
-
-            currentCrow.MoveTile();
+            SummonCrow();
 
             _crowSpawnCooldown = Cooltime;
         }
@@ -44,6 +36,32 @@ public class CrowManager : MonoSingleton<CrowManager>
 
     }
 
+    public void SummonCrow()
+    {
+        if (!canSpawn) return;
+
+        Crow currentCrow = null;
+        foreach (var crow in _crows)
+        {
+            if (crow.canMove == false) continue;
+
+            currentCrow = crow;
+        }
+        if (currentCrow == null)
+            Debug.LogError("CurrentCrow Is NULL _crows haven't activeCrow");
+
+        currentCrow.MoveTile();
+    }
+    
+    public void StopSummonCrow()
+    {
+        canSpawn = false;
+    }
+
+    public void StartSummonCrow()
+    {
+        canSpawn = true;
+    }
 
 
 }

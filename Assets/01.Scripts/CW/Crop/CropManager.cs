@@ -137,7 +137,6 @@ namespace CW
             else
             {
                 IsNull = true;
-                Debug.LogError($"tiles is Not Have {pos}");
                 return new Crop();
             }
             return tiles[pos];

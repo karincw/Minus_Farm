@@ -32,17 +32,6 @@ namespace CW
             {
                 trm.GetComponent<Image>().fillAmount = 0;
             }
-
-#if UNITY_EDITOR
-            if (Input.GetKeyDown(KeyCode.U))
-            {
-                UpdateCard();
-            }
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                Stand();
-            }
-#endif
         }
 
 
@@ -62,37 +51,51 @@ namespace CW
         }
 
         [ContextMenu("Update")]
-        public void UpdateCard()
+        public void UpdateCard(bool shop = false)
         {
-            for (int i = 0; i < 6; i++)
+            if (shop)
             {
-                int nextIdx = i + 1;
-                CardSO nextCard = null;
-                if (nextIdx < _standImages.Length)
+                int cur = _cardInven.inventory.Count - 1;
+                foreach (var card in _standImages)
                 {
-                    if (_standImages[nextIdx] != null)
+                    if(card.CurrentCard == null)
                     {
-                        nextCard = _standImages[nextIdx].CurrentCard;
-                    }
-                    else if (_cardInven.inventory.Count > 0)
-                    {
-                        int cur = _cardInven.inventory.Count - 1;
-                        nextCard = _cardInven.inventory[cur];
+                        card.CurrentCard = _cardInven.inventory[cur];
                         _cardInven.inventory.RemoveAt(cur);
+                        return;
                     }
-
-                    _standImages[i].CurrentCard = nextCard;
                 }
-                else
+            }
+            else
+            {
+                _cardInven.Suffle();
+                for (int i = 0; i < 6; ++i)
                 {
-                    if (nextCard == null && _cardInven.inventory.Count > 0)
+                    int cur = _cardInven.inventory.Count - 1;
+                    int next = i + 1;
+                    if (i == 5)
                     {
-                        int cur = _cardInven.inventory.Count - 1;
-                        nextCard = _cardInven.inventory[cur];
+                        if (_cardInven.inventory.Count > 0)
+                        {
+                            _standImages[i].CurrentCard = _cardInven.inventory[cur];
+                            _cardInven.inventory.RemoveAt(cur);
+                        }
+                        else
+                        {
+                            _standImages[i].CurrentCard = null;
+                        }
+
+                        return;
+                    }
+                    if (_standImages[next].CurrentCard == null
+                        && _cardInven.inventory.Count > 0) //다음카드가 비어있음
+                    {
+                        _standImages[next].CurrentCard = _cardInven.inventory[cur];
                         _cardInven.inventory.RemoveAt(cur);
                     }
 
-                    _standImages[i].CurrentCard = nextCard;
+                    _standImages[i].CurrentCard = _standImages[next].CurrentCard;
+
                 }
 
             }
