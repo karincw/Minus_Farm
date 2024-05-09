@@ -29,7 +29,7 @@ namespace CW
 
         [Header("Seed Settings")]
         public string curName;
-        public string description;
+        [TextArea(1, 3)] public string description;
         public Sprite sprite;
         public TileBase tileBase;
         public int price;

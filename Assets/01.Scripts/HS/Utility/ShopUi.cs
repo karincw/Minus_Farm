@@ -16,8 +16,10 @@ namespace HS
         [SerializeField] private List<Image> image = new List<Image>();
         [SerializeField] private List<TextMeshProUGUI> priceText = new List<TextMeshProUGUI>();
 
+        StandCard _standCard;
         private void Awake()
         {
+            _standCard = FindObjectOfType<StandCard>();
             SeedChange();
         }
 
@@ -60,12 +62,13 @@ namespace HS
             
         }
 
-        public void BuyFruit(int num)
+        public void BuyItem(int num)
         {
             if (topBarRightUi.credit >= _sellCard[num].price)
             {
                 CardManager.Instance.AddCard(_sellCard[num]);
                 topBarRightUi.ChangeCredit(-_sellCard[num].price);
+                _standCard.UpdateCard(true);
             }
             else
             {

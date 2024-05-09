@@ -24,11 +24,16 @@ namespace CW
         {
             if (Input.GetMouseButtonDown(0) && Vector2.Distance(Camera.main.ScreenToWorldPoint(Input.mousePosition), transform.position) < .5f)
             {
-                DOTween.Kill(this);
-                StopAllCoroutines();
-                isThrow = true;
-                MoveExit();
+                Catch();
             }
+        }
+
+        public void Catch()
+        {
+            DOTween.Kill(this);
+            StopAllCoroutines();
+            isThrow = true;
+            MoveExit();
         }
 
         public void MoveTile()
@@ -41,6 +46,14 @@ namespace CW
             transform.position = startPos;
 
             Vector3Int pos = CropManager.Instance.GetRandomCropPos();
+            bool isNull = false;
+            Crop crop = CropManager.Instance.GetPosToCrop(pos, ref isNull);
+            if (!isNull)
+            {
+                if (crop.currentCard.cardType == CardType.Building)
+                    CrowManager.Instance.SummonCrow();
+                Catch();
+            }
             currentPosition = (Vector3)pos;
 
             transform.DOMove(pos, 2.5f).OnComplete(() => { StartCoroutine("DestroyCropAndExitCoroutine"); });

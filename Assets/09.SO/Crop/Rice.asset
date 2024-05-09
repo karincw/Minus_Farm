@@ -15,11 +15,14 @@ MonoBehaviour:
   cardType: 1
   curName: Rice
   description: Rice
-  sprite: {fileID: 21300000, guid: bfb8392f1f7f1544089113eb9ec31b22, type: 3}
+  sprite: {fileID: 21300000, guid: 42cb299ef03651147bc205bbec989e1b, type: 3}
   tileBase: {fileID: 11400000, guid: 9823dbf7d88803a4da0e3d8b1581b34e, type: 2}
-  price: 0
+  price: 1
+  sellMinPrice: 0
+  sellMaxPrice: 0
+  itemType: 0
   action_water_changeValue: 0
   action_nutrition_changeValue: 0
-  itemType: 0
+  building: {fileID: 0}
   Building_water_changeValue: 0
   Building_Nutrition_changeValue: 0

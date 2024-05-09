@@ -15,11 +15,14 @@ MonoBehaviour:
   cardType: 1
   curName: Radish
   description: Radish
-  sprite: {fileID: 21300000, guid: d6cda425158e00941a40b48fa6a53474, type: 3}
+  sprite: {fileID: 21300000, guid: 0f4b0f6c22b0bd945a7f859f8fb0e0e7, type: 3}
   tileBase: {fileID: 11400000, guid: 5ef4d121dd98d3748a4a23e7f0a5c458, type: 2}
-  price: 0
+  price: 1
+  sellMinPrice: 0
+  sellMaxPrice: 0
+  itemType: 0
   action_water_changeValue: 0
   action_nutrition_changeValue: 0
-  itemType: 0
+  building: {fileID: 0}
   Building_water_changeValue: 0
   Building_Nutrition_changeValue: 0

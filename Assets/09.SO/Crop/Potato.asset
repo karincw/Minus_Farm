@@ -15,11 +15,14 @@ MonoBehaviour:
   cardType: 1
   curName: Potato
   description: potato
-  sprite: {fileID: 21300000, guid: 6500de04d5323a24fb6541d2270b39cc, type: 3}
+  sprite: {fileID: 21300000, guid: f0d3844cd09c29149a1b2eeb3685b2ad, type: 3}
   tileBase: {fileID: 11400000, guid: 32657bbee02d1314692d512edc6279cb, type: 2}
-  price: 0
+  price: 1
+  sellMinPrice: 0
+  sellMaxPrice: 0
+  itemType: 0
   action_water_changeValue: 0
   action_nutrition_changeValue: 0
-  itemType: 0
+  building: {fileID: 0}
   Building_water_changeValue: 0
   Building_Nutrition_changeValue: 0
