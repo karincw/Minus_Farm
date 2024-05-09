@@ -13,7 +13,7 @@ namespace CW
         [SerializeField] private LayerMask _dropToSellLayer;
         [SerializeField] private Tilemap _tileMap;
         [SerializeField] private TileBase _canPlantingTile;
-        public CropInven _cropInven;
+        [HideInInspector] public CropInven _cropInven;
         private UtilityButton _utility;
         CardSO currentCard;
 
@@ -110,6 +110,7 @@ namespace CW
                     }
                     CardManager.Instance.UpdateCard();
                     CropManager.Instance.ActiveCooldown();
+                    DragAndDropManager.Instance.PlaySound();
 
                 }
 
@@ -133,6 +134,7 @@ namespace CW
                 CropManager.Instance.AddCrop(cellPos, currentCard);
                 CardManager.Instance.UpdateCard();
                 CropManager.Instance.ActiveCooldown();
+                DragAndDropManager.Instance.PlaySound();
 
             }
         }

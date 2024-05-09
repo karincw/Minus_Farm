@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace CW
@@ -9,6 +10,9 @@ namespace CW
         private CardSO _card;
         public CardSO Card { get => _card; }
         public bool CanDrop { get; private set; }
+        private AudioSource _audio;
+
+        
 
         public CardType currentType;
 
@@ -39,7 +43,8 @@ namespace CW
 
         private void Awake()
         {
-            _spriteRenderer = dragObject.GetComponent<SpriteRenderer>();
+            _spriteRenderer = dragObject.GetComponent<SpriteRenderer>(); 
+            _audio = GetComponent<AudioSource>();
         }
 
         private void Update()
@@ -49,6 +54,11 @@ namespace CW
                 Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 dragObject.transform.position = mousePos;
             }
+        }
+
+        public void PlaySound()
+        {
+            _audio.Play();
         }
     }
 }

@@ -17,6 +17,8 @@ namespace HS
         [SerializeField] private List<TextMeshProUGUI> priceText = new List<TextMeshProUGUI>();
 
         StandCard _standCard;
+        [SerializeField] private GameObject _warning;
+
         private void Awake()
         {
             _standCard = FindObjectOfType<StandCard>();
@@ -27,7 +29,7 @@ namespace HS
         {
             CardSuffle(_cropCardSO);
             CardSuffle(_allCardSO);
-            
+
             for (int i = 0; i < 2; i++)
             {
                 image[i].sprite = _cropCardSO[i].sprite;
@@ -35,9 +37,9 @@ namespace HS
                 _sellCard[i] = _cropCardSO[i];
             }
 
-            for (int i = 0;  i < 2; i++)
+            for (int i = 0; i < 2; i++)
             {
-                if (_allCardSO[i] == _cropCardSO[0] || _allCardSO[i] == _cropCardSO[1]) 
+                if (_allCardSO[i] == _cropCardSO[0] || _allCardSO[i] == _cropCardSO[1])
                 {
                     i--;
                     CardSuffle(_allCardSO);
@@ -58,8 +60,8 @@ namespace HS
 
                 (_card[first], _card[second]) = (_card[second], _card[first]);
             }
-            
-            
+
+
         }
 
         public void BuyItem(int num)
@@ -78,12 +80,13 @@ namespace HS
 
         public void CloseWarning()
         {
-            transform.Find("Warning").gameObject.SetActive(false);
+            _warning.SetActive(false);
         }
 
         public void OpenWarning()
         {
-            transform.Find("Warning").gameObject.SetActive(true);
+            _warning.SetActive(true);
+            _warning.GetComponentInChildren<TextMeshProUGUI>().text = "돈이 부족해요!";
         }
     }
 }

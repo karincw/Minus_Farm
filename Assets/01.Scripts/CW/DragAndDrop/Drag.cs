@@ -14,10 +14,18 @@ namespace CW
         [Header("ClickToDescription")]
         [SerializeField] private bool _clickToDescription = false;
         [SerializeField] public Card _card;
-        public CropInven _cropInven;
+        [HideInInspector] public CropInven _cropInven;
+        [SerializeField] private GameObject _warning;
 
         public void OnPointerDown(PointerEventData eventData)
         {
+            if (currentCard == null)
+            {
+                _warning.SetActive(true);
+                _warning.GetComponentInChildren<TextMeshProUGUI>().text = "사용할 카드가 없어요!";
+                return;
+            }
+
             if (_clickToDescription)
             {
                 _card.SetDescription(currentCard.description);

@@ -10,13 +10,15 @@ namespace CW
     {
         private Vector2 currentPosition;
         [SerializeField] private GameObject destroyCropEffect;
-        public bool canThrow = true;
+        private GameObject _trail;
         public bool canMove = true;
         private bool isThrow = false;
 
+        Coroutine coroutine = null;
+
         private void Awake()
         {
-            canThrow = true;
+            _trail = transform.Find("Trail").gameObject;
             canMove = true;
         }
 
@@ -24,7 +26,17 @@ namespace CW
         {
             if (Input.GetMouseButtonDown(0) && Vector2.Distance(Camera.main.ScreenToWorldPoint(Input.mousePosition), transform.position) < .5f)
             {
+                CrowManager.Instance.PlaySound();
+                isThrow = true;
                 Catch();
+            }
+
+            if(isThrow)
+            {
+                if(coroutine != null)
+                {
+                    StopCoroutine(coroutine);
+                }
             }
         }
 
@@ -32,18 +44,19 @@ namespace CW
         {
             DOTween.Kill(this);
             StopAllCoroutines();
-            isThrow = true;
             MoveExit();
         }
 
         public void MoveTile()
         {
+            isThrow = false;
             canMove = false;
             List<string> strList = new List<string>();
 
             Vector2 startPos = CrowManager.Instance.crowStartPos;
             startPos.y += Random.Range(-1, 3);
             transform.position = startPos;
+            _trail.SetActive(true);
 
             Vector3Int pos = CropManager.Instance.GetRandomCropPos();
             bool isNull = false;
@@ -56,7 +69,7 @@ namespace CW
             }
             currentPosition = (Vector3)pos;
 
-            transform.DOMove(pos, 2.5f).OnComplete(() => { StartCoroutine("DestroyCropAndExitCoroutine"); });
+            transform.DOMove(pos, 2.5f).OnComplete(() => { coroutine = StartCoroutine("DestroyCropAndExitCoroutine"); });
         }
 
         public IEnumerator DestroyCropAndExitCoroutine()
@@ -65,14 +78,13 @@ namespace CW
 
             yield return new WaitForSeconds(1);
 
-            if (isThrow) yield break;
-            canThrow = false;
             CropManager.Instance.SetGroundTile(currentIntPos);
             Instantiate(destroyCropEffect, transform.position + new Vector3(0, -0.3f), Quaternion.identity);
 
             yield return new WaitForSeconds(1);
 
             MoveExit();
+
         }
 
         public void MoveExit()
@@ -81,13 +93,11 @@ namespace CW
             endPos.y += Random.Range(-3, 3);
 
             transform.DOMove(endPos, 2f)
-                .OnComplete(() =>
+            .OnComplete(() =>
                 {
-                    canThrow = true;
+                    _trail.SetActive(false);
                     canMove = true;
-                    isThrow = false;
-                }
-                );
+                });
 
         }
 

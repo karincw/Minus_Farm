@@ -1,9 +1,7 @@
-using System;
 using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using HS;
+using System.Collections;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -17,6 +15,13 @@ namespace CW
         [SerializeField] private float[] times;
         [SerializeField] private float cropSpawnDealy;
         [SerializeField] private Transform _cropParents;
+
+        private AudioSource _audio;
+
+        private void Awake()
+        {
+            _audio = GetComponent<AudioSource>();
+        }
 
 
         public void Harvest(Vector3 pos, Crop crop, int count)
@@ -50,6 +55,7 @@ namespace CW
                     .OnComplete(() =>
                     {
                         _cropParents.Find(crop.currentCard.curName).GetComponent<CropInven>().AddCount(1);
+                        _audio.Play();
                         Destroy(move.gameObject);
                     });
 

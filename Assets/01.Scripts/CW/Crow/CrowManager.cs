@@ -18,6 +18,12 @@ public class CrowManager : MonoSingleton<CrowManager>
 
     private bool canSpawn = true;
 
+    private AudioSource _audio;
+
+    private void Awake()
+    {
+        _audio = GetComponent<AudioSource>();
+    }
     private void Start()
     {
         _crowSpawnCooldown = Cooltime;
@@ -34,6 +40,11 @@ public class CrowManager : MonoSingleton<CrowManager>
 
         _crowSpawnCooldown -= Time.deltaTime;
 
+    }
+
+    public void PlaySound()
+    {
+        _audio.Play();
     }
 
     public void SummonCrow()

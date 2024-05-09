@@ -27,11 +27,15 @@ namespace HS
         public void DebtCancel()
         {
             credit -= debt;
+            
             debt *= 2;
+            //계산식 추가 
+            if (debt < 0) debt = 1;
+
             _creditText.text = $"{credit}G";
             _debtText.text = $"-{debt}G";
         }
-        
+
         public void FailureCheck()
         {
             if (credit < 0)

@@ -11,6 +11,7 @@ namespace CW
         [Header("Settings")]
         [SerializeField] private Tilemap _tileMap;
         [SerializeField] private CardSO _groundSO;
+        [SerializeField] private CardSO _roatCropSO;
         public bool nextTurn;
 
         [SerializeField] private SerializedDictionary<Vector3Int, Crop> tiles = new SerializedDictionary<Vector3Int, Crop>();
@@ -106,6 +107,11 @@ namespace CW
         {
             AddCrop(tilePos, _groundSO);
             _tileMap.SetTile(tilePos, _groundSO.tileBase);
+        }
+        public void SetRoatTile(Vector3Int tilePos)
+        {
+            AddCrop(tilePos, _roatCropSO);
+            _tileMap.SetTile(tilePos, _roatCropSO.tileBase);
         }
 
         public void ChangeCrop(Vector3Int pos, Crop crop)
@@ -212,7 +218,8 @@ namespace CW
 
                 if (crop.water <= 0 && crop.nutrition <= 0) //썩으면 나가리
                 {
-                    Debug.Log($"{targetKey} : 식물 썩음");
+                    //Debug.Log($"{targetKey} : 식물 썩음");
+                    SetRoatTile(targetKey);
                 }
 
                 if (crop.cropTile.Length - 1 >= cropGrowIdx)//자르는중

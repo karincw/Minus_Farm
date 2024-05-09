@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
@@ -6,22 +5,28 @@ using UnityEngine.UI;
 
 public class Setting : MonoBehaviour
 {
-    private Slider _slider;
+    [SerializeField] private Slider _bgSlider;
+    [SerializeField] private Slider _imSlider;
     [SerializeField] private AudioMixer _masterMixer;
 
-    private void Awake()
+    public void BGAudioControl()
     {
-        _slider = transform.Find("Slider").GetComponent<Slider>();
-    }
-
-    public void AudioControl()
-    {
-        float sound = _slider.value;
+        float sound = _bgSlider.value;
 
         if (sound == -40f) _masterMixer.SetFloat("BGM", -80);
         else
         {
             _masterMixer.SetFloat("BGM", sound);
+        }
+    }
+    public void IMAudioControl()
+    {
+        float sound = _imSlider.value;
+
+        if (sound == -40f) _masterMixer.SetFloat("Impact", -80);
+        else
+        {
+            _masterMixer.SetFloat("Impact", sound);
         }
     }
 
@@ -32,7 +37,7 @@ public class Setting : MonoBehaviour
 
     public void TitleButton()
     {
-        //SceneManager.LoadScene("¹¹½Ã±â ¾À");
+        SceneManager.LoadScene("Shy_Title");
     }
     
     
