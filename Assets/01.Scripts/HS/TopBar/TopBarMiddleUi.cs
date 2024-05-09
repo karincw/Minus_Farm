@@ -15,6 +15,7 @@ namespace HS
         private Slider _slider;
         private Image _fillImage;
         private Image _image;
+        [HideInInspector] public float timeSpeed = 1;
         [SerializeField] private float passesTime;
         [SerializeField] private int startDay, startMonth;
         [SerializeField] private Sprite[] sprite;
@@ -41,7 +42,7 @@ namespace HS
 
         private void Update()
         {
-            _currentTime += Time.deltaTime;
+            _currentTime += Time.deltaTime * timeSpeed;
 
             if (_currentTime >= passesTime)
             {
