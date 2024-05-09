@@ -9,6 +9,7 @@ namespace HS
         private TextMeshProUGUI _debtText;
         public int debt;
         public int credit;
+        private int _count;
 
         private void Awake()
         {
@@ -29,6 +30,22 @@ namespace HS
             debt *= 2;
             _creditText.text = $"{credit}G";
             _debtText.text = $"-{debt}G";
+        }
+        
+        public void FailureCheck()
+        {
+            if (credit < 0)
+            {
+                _count++;
+                if (_count >= 7)
+                {
+                    //SceneManager.LoadScene("");
+                }
+            }
+            else
+            {
+                _count = 0;
+            }
         }
     }
 }
