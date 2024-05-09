@@ -68,6 +68,7 @@ namespace CW
             }
             else
             {
+                _cardInven.Suffle();
                 for (int i = 0; i < 6; ++i)
                 {
                     int cur = _cardInven.inventory.Count - 1;

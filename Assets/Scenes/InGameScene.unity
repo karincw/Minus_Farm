@@ -9866,7 +9866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbb94fe44918eea4aa03fb8155af0161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passesTime: 3
+  passesTime: 10
   startDay: 11
   startMonth: 4
   sprite:
